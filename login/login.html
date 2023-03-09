@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="height=device-height , width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="shortcut icon" href="../_images/common/favicon.ico">
+    <title>HuBIS_Sam v4.0</title>
+
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css">  
+    <link rel="stylesheet" type="text/css" href="../easyui/demo.css">  
+    <link rel="stylesheet" href="../_common/css/reset.css">
+    <link rel="stylesheet" href="../_common/css/xeicon.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../_common/css/font.css">
+    <link rel="stylesheet" type="text/css" href="../_common/css/style.css">  
+    <link rel="stylesheet" type="text/css" href="../_common/css/layout.css">  
+    <link rel="stylesheet" type="text/css" href="../easyui/easyui_sal.css"> 
+    <link rel="stylesheet" type="text/css" href="../_common/css/header.css">  
+
+
+    <!-- <script src="../_common/js/jquery-latest.min.js"></script> -->
+    <script type="text/javascript" src="../easyui/jquery.min.js"></script>  
+    <script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script> 
+
+    <script type="text/javascript" src="../_common/js/common.js"></script> 
+
+</head>
+<body class="easyui-layout moveLayout" >
+
+	<link rel="stylesheet" href="../_common/css/login.css">
+    <div id="loginPage">
+        <div class="inner">
+            <div class="infoBox">
+                <div class="topBox">
+                    <figure class="logo">
+                        <img src="../_images/login/loginpage_infobox_logo.png">
+                    </figure>
+                    <h1>
+                        인체유래물 정보관리 시스템,<br>
+                        <strong>HuBIS_Sam</strong> 입니다.
+                    </h1>
+                    <a href="#" class="downVersionInfo">
+                        <p class="tit">버전 정보:4.0</p>
+                        <span class="date">(배포일:2022.12.30)</span>
+                    </a>
+                </div>
+                <div class="guideBox">
+                    <p class="txt">
+                        은행에서 관리중인 인체유래물의 정보관리를 위한 업무를 처리할 수 있습니다.<br>
+                        정보처리 과정 중 문의사항이나 장애가 있으실 경우, 헬프데스크로 전화 문의 주시기 바랍니다.
+                    </p>
+                    
+                    <dl>
+                        <dt>
+                            <span>전화문의</span>
+                            <p>070-4607-3205</p>
+                        </dt>
+                        <dd>(주)베데스타소프트</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="loginBox">
+                <div class="inner">
+                    <div class="topBox">
+                        <figure>
+                            <img src="../_images/login/loginpage_loginbox_logo01.png">
+                        </figure>
+                        <p>
+                            로그인
+                        </p>
+                    </div>
+                    <form>
+                        <div class="log_input_box">
+                            <label for="">아이디</label>
+                            <input type="text">
+                        </div>
+                        <div class="log_input_box">
+                            <label for="">비밀번호</label>
+                            <input type="text">
+                        </div>
+                        <button type="submit">로그인</button>
+                        <ul class="log_btn_wrap">
+                            <li>
+                                <div class="log_checks etrans">
+                                    <input type="checkbox" id="ex_chk" name="saveId" value="Y" class="input_checkbox" onkeypress="javascript:press_it()">
+                                    <label for="ex_chk">아이디 저장</label> 
+                                </div>
+                            </li>
+                            <li class="log_search">
+                                <a onclick="fnShowPop('pop_findIdPass');">
+                                    아이디/비밀번호 찾기
+                                </a>
+                            </li>
+                        </ul>
+                    </form>
+                    <p class="copyright">
+                        COPYRIGHT © 2019 질병관리청. ALL RIGHTS RESERVED.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup" id="pop_findIdPass">
+        <div class="inner">
+            <!--<div class="topBox">
+                <p></p>
+            </div>-->
+            <div>              
+                항목제공필요
+            </div>
+            <div class="btnWrap">
+                <div class="flxWrap" style="justify-content:center">
+                    <!-- <a href="#" class="btn_gray"><i class="xi-close"></i> 확인</a>     -->
+                    <a href="#" class="btn_gray" onclick="fnHidePop('pop_findIdPass')"><i class="xi-close"></i> <span>닫기</span></a>    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

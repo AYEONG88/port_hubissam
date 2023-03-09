@@ -1,0 +1,35 @@
+{"total":28,"rows":[
+	{"idnumber":"AaaaaaaaD","name":"테스트002","gender":"남자","barCode":12345678,"dateRegist":"2022-09-30","pjName":"예방유전체 지사회기반 코호트 사업 1기","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"666666","name":"테스트001","gender":"여자","barCode":1039686,"dateRegist":"2022-09-30","pjName":"국내이주자 코호트격리","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"테스트","name":"테스트","gender":"남자","barCode":1039686,"dateRegist":"2022-09-30","pjName":"OGTT 코호트 시설사","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"AA1","name":"김테스트","gender":"남자","barCode":1039686,"dateRegist":"2022-09-30","pjName":"당뇨병 유전체 연구","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"RP-LI-02","name":"홍길동","gender":"여자","barCode":1039686,"dateRegist":"2022-09-30","pjName":"지역사회기반 코호트","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"FL-DSH-01","name":"홍길동2","gender":"남자","barCode":12345678,"dateRegist":"2022-09-30","pjName":"예방유전체 지사회기반 코호트 사업 1기","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"FL-DSH-01","name":"이름다섯자","gender":"남자","barCode":12345678,"dateRegist":"2022-09-30","pjName":"예방유전체 지사회기반 코호트 사업 1기","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"FL-DLH-02","name":"무지개","gender":"여자","barCode":12345678,"dateRegist":"2022-09-30","pjName":"예방유전체 지사회기반 코호트 사업 1기","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"FL-DLH-02","name":"김베데","gender":"여자","barCode":12345678,"dateRegist":"2022-09-30","pjName":"예방유전체 지사회기반 코호트 사업 1기","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"AV-CB-01","name":"이름부분","gender":"남자","barCode":12345678,"dateRegist":"2022-09-30","pjName":"예방유전체 지사회기반 코호트 사업 1기","dateRevise":"2022-10-01 16:28:38"},
+
+	{"idnumber":"AaaaaaaaD","name":"테스트002","gender":"남자","barCode":12345678,"dateRegist":"2022-09-30","pjName":"예방유전체 지사회기반 코호트 사업 1기","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"666666","name":"테스트001","gender":"여자","barCode":1039686,"dateRegist":"2022-09-30","pjName":"국내이주자 코호트격리","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"테스트","name":"테스트","gender":"남자","barCode":1039686,"dateRegist":"2022-09-30","pjName":"OGTT 코호트 시설사","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"AA1","name":"김테스트","gender":"남자","barCode":1039686,"dateRegist":"2022-09-30","pjName":"당뇨병 유전체 연구","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"RP-LI-02","name":"홍길동","gender":"여자","barCode":1039686,"dateRegist":"2022-09-30","pjName":"지역사회기반 코호트","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"FL-DSH-01","name":"홍길동2","gender":"남자","barCode":12345678,"dateRegist":"2022-09-30","pjName":"예방유전체 지사회기반 코호트 사업 1기","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"FL-DSH-01","name":"이름다섯자","gender":"남자","barCode":12345678,"dateRegist":"2022-09-30","pjName":"예방유전체 지사회기반 코호트 사업 1기","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"FL-DLH-02","name":"무지개","gender":"여자","barCode":12345678,"dateRegist":"2022-09-30","pjName":"예방유전체 지사회기반 코호트 사업 1기","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"FL-DLH-02","name":"김베데","gender":"여자","barCode":12345678,"dateRegist":"2022-09-30","pjName":"예방유전체 지사회기반 코호트 사업 1기","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"AV-CB-01","name":"이름부분","gender":"남자","barCode":12345678,"dateRegist":"2022-09-30","pjName":"예방유전체 지사회기반 코호트 사업 1기","dateRevise":"2022-10-01 16:28:38"},
+
+	{"idnumber":"AaaaaaaaD","name":"테스트002","gender":"남자","barCode":12345678,"dateRegist":"2022-09-30","pjName":"예방유전체 지사회기반 코호트 사업 1기","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"666666","name":"테스트001","gender":"여자","barCode":1039686,"dateRegist":"2022-09-30","pjName":"국내이주자 코호트격리","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"테스트","name":"테스트","gender":"남자","barCode":1039686,"dateRegist":"2022-09-30","pjName":"OGTT 코호트 시설사","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"AA1","name":"김테스트","gender":"남자","barCode":1039686,"dateRegist":"2022-09-30","pjName":"당뇨병 유전체 연구","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"RP-LI-02","name":"홍길동","gender":"여자","barCode":1039686,"dateRegist":"2022-09-30","pjName":"지역사회기반 코호트","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"FL-DSH-01","name":"홍길동2","gender":"남자","barCode":12345678,"dateRegist":"2022-09-30","pjName":"예방유전체 지사회기반 코호트 사업 1기","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"FL-DSH-01","name":"이름다섯자","gender":"남자","barCode":12345678,"dateRegist":"2022-09-30","pjName":"예방유전체 지사회기반 코호트 사업 1기","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"FL-DLH-02","name":"무지개","gender":"여자","barCode":12345678,"dateRegist":"2022-09-30","pjName":"예방유전체 지사회기반 코호트 사업 1기","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"FL-DLH-02","name":"김베데","gender":"여자","barCode":12345678,"dateRegist":"2022-09-30","pjName":"예방유전체 지사회기반 코호트 사업 1기","dateRevise":"2022-10-01 16:28:38"},
+	{"idnumber":"AV-CB-01","name":"이름부분","gender":"남자","barCode":12345678,"dateRegist":"2022-09-30","pjName":"예방유전체 지사회기반 코호트 사업 1기","dateRevise":"2022-10-01 16:28:38"}
+
+]}

@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="height=device-height , width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="shortcut icon" href="../_images/common/favicon.ico">
+    <title>HuBIS_Sam v4.0</title>
+
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css">  
+    <link rel="stylesheet" type="text/css" href="../easyui/demo.css">  
+    <link rel="stylesheet" href="../_common/css/reset.css">
+    <link rel="stylesheet" href="../_common/css/xeicon.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../_common/css/font.css">
+    <link rel="stylesheet" type="text/css" href="../_common/css/style.css">  
+    <link rel="stylesheet" type="text/css" href="../_common/css/layout.css">  
+    <link rel="stylesheet" type="text/css" href="../easyui/easyui_sal.css"> 
+    <link rel="stylesheet" type="text/css" href="../_common/css/header.css">  
+
+
+    <!-- <script src="../_common/js/jquery-latest.min.js"></script> -->
+    <script type="text/javascript" src="../easyui/jquery.min.js"></script>  
+    <script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script> 
+    <script type="text/javascript" src="../easyui/datagrid-detailview.js"></script>
+
+    <script type="text/javascript" src="../_common/js/common.js"></script> 
+
+</head>
+<body class="easyui-layout moveLayout" >
+	<div class="loaderWrap">
+        <div class="loaderWrap__cont">
+            <div class="loading-container">
+                <div class="loading"></div>
+                <div id="loading-text">loading</div>
+            </div>
+        </div>        
+    </div><!--loaderWrap //-->
+    <div class="header" data-options="region:'north',border:false">
+        <nav>
+            <h1 class="h1 flxWrap">
+                <a href="#" class="logo_hubis"><strong>HuBIS_Sam</strong><span>인체자원관리시스템</span></a>
+                <a href="#" class="logo_organ"><img src="../_images/common/logo_snuh.png"/></a>
+            </h1>
+
+            <ul class="gnb flxWrap">
+                <li><a href="../storeAndReleased/donor.html" class="oneDepth">입출고관리</a></li>
+                <li><a href="../resourceManagement/menuPageLink.html" class="oneDepth">자원관리</a></li>
+                <li><a href="../smartSearch/selectBaseSearchForm.html" class="oneDepth">스마트검색</a></li>
+                <li><a href="../batch/selectBatchMainView.html" class="oneDepth">일괄처리</a></li>
+                <li><a href="../configuration/linkInfoRegis.html" class="oneDepth">환경설정</a></li>
+                <li><a href="#" class="oneDepth">도움말</a></li>  
+            </ul>
+      
+            <div class="navRightWrap flxWrap">
+                <a href="#" class="headersearchWrap"><input type="text"><i class="xi-search"></i></a>
+                <p class="login_user"><span>자원관리자</span><span class="name">홍길동</span></p>
+
+                <!-- 아코디언 -->
+                <div class="hamWrap">
+
+                    <div class="hamWrap__icoWrap">
+                        <input class="checkbox" type="checkbox" id="hamCheck">
+                        <label class="btn_ham" for="hamCheck">
+                            <span class="bar"></span>
+                        </label>
+                    </div>                          
+                    
+                    <div class="hamContWrap">
+                        <div class="hamCont">
+                            <ul class="hamAcco scro">
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">change_circle</span>
+                                    입출고관리<i class="xi-angle-down-min btn_tog"></i>
+                                </li>
+                                <li class="hamAcco__twoDepth" >
+                                    <a href="../storeAndReleased/donor.html">제공자</a>
+                                    <a href="../storeAndReleased/resourceReceipt.html">자원접수</a>
+                                    <a href="../storeAndReleased/resourceInspection.html">자원검수</a>
+                                    <a href="../storeAndReleased/consent.html">동의서</a>
+                                    <a href="#">STR</a>
+                                    <a href="../storeAndReleased/snp.html">SNP</a>
+                                    <a href="../storeAndReleased/qualityControl.html">정도관리</a>
+                                    <a href="../storeAndReleased/resourceDistribute.html">자원분양</a>
+                                </li>
+                            
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-symbols-outlined">slow_motion_video</span>
+                                    자원관리<i class="xi-angle-down-min btn_tog"></i></li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../resourceManagement/menuPageLink.html">자원백업</a>
+                                    <a href="../resourceManagement/resourceDivision.html">자원분주</a>
+                                    <a href="#">자원배양</a>
+                                    <a href="#">자원추출</a>
+                                    <a href="#">반송폐기</a>
+                                    <a href="#">자원소진</a>
+                                    <a href="#">자원정체</a>
+                                    <a href="#">SPREC 변경</a>
+                                    <a href="#">연계정보</a>
+                                </li>
+
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">view_in_ar</span>
+                                    스마트검색<i class="xi-angle-down-min btn_tog"></i>
+                                </li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../smartSearch/selectBaseSearchForm.html">검색기반관리</a>
+                                    <a href="#">저장된 검색어</a>
+                                    <a href="#">내 검색어</a>
+                                    <a href="../smartSearch/frozenCart.html">냉동카트</a>
+                                    <a href="#">비주얼카트</a>
+                                    <a href="#">STP 비교검색</a>
+                                    <a href="../smartSearch/snpCompareSearch.html">SNP 비교검색</a>
+                                    <a href="../smartSearch/inOutView.html">입출고장조회</a>
+                                    <a href="../smartSearch/atchmnFile.html">첨부파일검색</a>
+                                </li>
+                                
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">playlist_add_check</span>
+                                    일괄처리<i class="xi-angle-down-min btn_tog"></i>
+                                </li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../batch/selectBatchMainView.html">일괄처리</a>
+                                    <a href="../batch/selectBatchStatusView.html">처리현황판</a>
+                                    <a href="#">다운로드센터</a>
+                                    <a href="#">저장고관리</a>
+                                    <a href="#">정보편차검출</a>
+                                </li>
+
+                                <li class="hamAcco__oneDepth">
+                                    <i class="xi-wrench"></i>
+                                    환경설정
+                                    <i class="xi-angle-down-min btn_tog"></i></li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../configuration/linkInfoRegis.html">연계정보 등록시 화면</a>
+                                    <a href="../configuration/projectManagement.html">프로젝트관리</a>
+                                    <a href="../configuration/protocol.html">수집프로토콜</a>
+                                    <a href="../configuration/storageMain.html">저장장비</a>
+                                    <a href="../configuration/storageEquipmentHistory.html">저장장비이력</a>
+                                    <a href="../configuration/monitorMain.html">저장장비온도로그</a>
+                                    <a href="#">Quick Link 관리</a>
+                                    <a href="../configuration/userSetting.html">사용자 환경설정</a>
+                                </li>
+
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">info</span>
+                                    도움말
+                                    <i class="xi-angle-down-min btn_tog"></i></li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="#">동의서(for tablet)</a>
+                                    <a href="../help/statisticsMainView.html">통계쿼리관리</a>
+                                    <a href="#">About HuBIS_Sam</a>
+                                    <a href="../help/resourceReceiptForTablet.html">자원접수(for tablet)</a>
+                                    <a href="../help/resourceDistributeForTablet.html">자원분양(for tablet)</a>
+                                </li>
+                            </ul>
+
+                            <div class="hamBottom">
+                                <div class="hamBottom__btnWrap">
+                                    <a href="#">HuBIS-Desk</a>
+                                    <a href="#">HuBIS-Tracker</a>
+                                </div>
+                                <div class="flxWrap hamBottom__footer">
+                                    <a href="../configuration/userSetting.html"><span class="material-icons expt">manage_accounts</span><p>사용자설정</p></a>
+                                    <a href="../sys/sysManager.html"><span class="material-icons">settings</span><p>시스템 환경설정</p></a>
+                                </div>
+                            </div><!-- hamBottom //-->
+                        </div><!--hamCont //-->
+                    </div><!-- hamContWrap  //-->
+                </div><!-- hamWrap //-->        
+            </div><!-- navRightWrap //-->
+        </nav>
+    </div><!-- north //-->
+
+    <link rel="stylesheet" href="../_common/css/storeAndReleased.css">
+    <!-- 왼쪽 컨텐츠 -->
+	<div class="easyuiLeft easyuiLeft_rR" data-options="region:'center',title:'왼쪽 컨텐츠'">
+        <h2 class="flxWrap" >
+            <p class="h2__left"><i class="xi-caret-down-square"></i><span>입출고관리</span><i class="xi-play"></i><span class="txtBold">접수 대상자원 검색</span></p></h2>
+        
+        <div id="toolbar">
+            <div class="searchWrap ">
+                <form id="" action="" name="" method="">
+                    <fieldset>
+                        <legend>접수 대상자원 검색</legend>
+                        <div class="searchInput flxWrap">
+                            <input type="text" class="input-search" id="text-search" placeholder="검색어를 입력 해 주세요"/>
+                            <div class="flxWrap">
+                                <a href="#"><i class="xi-search"></i></a>
+                            </div>
+                        </div>
+                        
+                        <ul class="flxWrap mb20">
+                            <li class="check_wrap">
+                                <input type="checkbox" name="chk_rR_pjName" id="chk_rR_pjName" name="프로젝트명" />
+                                <label for="chk_rR_pjName"><span class="checkmark"></span>프로젝트명</label>
+                            </li>
+                            <li class="check_wrap">
+                                <input type="checkbox" name="chk_rR_barcode" id="chk_rR_barcode" name="바코드" />
+                                <label for="chk_rR_barcode"><span class="checkmark"></span>바코드</label>
+                            </li>
+                            <li class="check_wrap">
+                                <input type="checkbox" name="chk_rR_rKind" id="chk_rR_rKind" name="자원종류"/>
+                                <label for="chk_rR_rKind"><span class="checkmark"></span>자원종류</label>
+                            </li>
+                        </ul>
+
+                        <div class="flxVertical mb30">
+                            <label for="" class="mb5">바코드 발행일</label>
+                            <div class="easyuiLeft__dateBtnWrap">
+                                <input class="easyui-datebox" style="width:120px;">
+                                <span class="mr3 ml3">~</span>
+                                <input class="easyui-datebox" style="width:120px;">
+                                <a href="#" class="btnClassic ml3">당일</a>
+                                <a href="#" class="btnClassic">3일</a>
+                                <a href="#" class="btnClassic">1주</a>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div><!--doner__searchWrap -->
+
+            <ul class="tblCaption flxWrap">
+                <li class="left flxWrap">
+                    <i class="xi-comment-o"></i><div class="txt"><span>전체&nbsp;:</span>&nbsp;<p>25,154</p></div>
+                </li>
+                <li class="right">
+                    <div class="mb10">
+                        <label for="donor_regist">접수일자 변경</label>
+                        <input class="easyui-datebox" style="width:130px;">
+                    </div>
+                </li>
+            </ul>
+        </div><!-- toolbar -->
+
+        <table id="dg_rR" class="dg easyui-datagrid showEast"
+            toolbar="#toolbar" 
+            data-options="rownumbers:true, url:'../_data/dg_rR.json', striped:true, singleSelect:true, collapsible:true, 
+            displayMsg: false, showPageList: false, showRefresh: false, showPageInfo: true, 
+            pagination:true, pageList:[10,50,100,500], pageSize:10, fit:true, method:'get',
+            ">
+            <thead>
+                <tr>
+                    <th data-options="field:'ck',checkbox:true"></th>
+                    <th data-options="field:'dg_rR__pjName', width:300" >프로젝트명</th>
+                    <th data-options="field:'dg_rR__barcode', width:90" >바코드</th>
+                    <th data-options="field:'dg_rR__rKind', width:100" >자원종류</th>
+                    <th data-options="field:'dg_rR__rDKind', width:100" >자원상세종류</th>
+                    <th data-options="field:'dg_rR__issuDate', width:100" >발행일</th>
+                    <th data-options="field:'dg_rR__rBarcode', width:100" >자원바코드</th>
+                    <th data-options="field:'dg_rR__storeStatue', width:100" >저장상태</th>
+                </tr>
+            </thead>
+        </table>
+        
+        <script type="text/javascript">
+            $(function(){
+                var pager = $('#dg_rR').datagrid().datagrid('getPager');	// get the pager of datagrid
+                               
+                pager.pagination({
+                    
+                    buttons:[{
+                            iconCls:'icon-selectReceipt',
+                            title:"선택내역접수",
+                            handler:function(){
+                                alert('선택내역접수');
+                            }
+                        },{
+                            iconCls:'icon-AllReceipt',
+                            title:"검색결과전체접수",
+                            handler:function(){
+                                alert('검색결과전체접수');
+                            }
+                        },{
+                            iconCls:'icon-editRemove',
+                            title:"edit",
+                            handler:function(){
+                                alert('editRemove');
+                            }
+                        },{
+                            iconCls:'icon-trashBin',
+                            title:"삭제",
+                            handler:function(){
+                                alert('trashBin');
+                            }
+                        },{
+                            iconCls:'icon-createExcel',
+                            title:"엑셀",
+                            handler:function(){
+                                alert('엑셀');
+                            }
+                        }]
+                });
+            })
+        </script>
+        
+    </div><!-- easyuiLeft //-->
+
+    <!-- 오른쪽 컨텐츠 -->
+    <div class="easyuiRight easyuiRight_rR" data-options="region:'east',split:true,collapsed:false,title:'오른쪽 컨텐츠', collapsedSize:20," style="width:1250px;">
+        <h3 class="flxWrap">
+            <p class="h3__left">
+                <span class="h3__left--numCircle">02SB031815</span>
+                <span class="h3__left--num">국립중앙인체자원은행 1층 </span> <i class="xi-play"></i>
+                <span class="h3__left--num">MF002</span> <i class="xi-play"></i>
+                <span class="h3__left--num fc_blue">SB020</span>
+            </p>
+        </h3>
+        
+        <div class="RightCommonWrap">
+            <div class="forScro">
+                <div class="RightTopBox">
+                    <h3 class="flxWrap bb_no tit_h3_inLeft">
+                        <div class="h3__right flxWrap">
+                            <div class="barcodeBoxWrap flxWrap">
+                                <input type="text" placeholder="       박스바코드를 읽어주세요">
+                                <div class="btnClassic xi-list-number" onclick="fnShowPop('popup_viewTree')"></div>
+                            </div>
+                            <div class="boxMoveArwWrap">
+                                <a href="#"><i class="xi-arrow-left"></i></a>
+                                <p>박스이동</p>
+                                <a href="#"><i class="xi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </h3>
+                    <ul class="droppableLeftRightWrap__contentTop flxWrap">
+                        <li class="left flxWrap">
+                            <p class="droppableLeftRightWrap__contentTop-tit">자원 그룹 생성 기준</p>
+                            <div class="radioWrap flxWrap">
+                                <label class="radio_container">자원접수일자
+                                    <input type="radio" name="radio_resourceGroupCreateCriteria" checked="checked">
+                                    <span class="radio_chkmark"></span>
+                                </label>                                    
+                                <label class="radio_container">자원채취일자
+                                    <input type="radio" name="radio_resourceGroupCreateCriteria">
+                                    <span class="radio_chkmark"></span>
+                                </label>
+                                <label class="radio_container">자원동결일자
+                                    <input type="radio" name="radio_resourceGroupCreateCriteria">
+                                    <span class="radio_chkmark"></span>
+                                </label>
+                                <label class="radio_container">자원저장일자
+                                    <input type="radio" name="radio_resourceGroupCreateCriteria">
+                                    <span class="radio_chkmark"></span>
+                                </label>
+                            </div>
+                            
+                        </li>
+                        <li class="right flxWrap">
+                            <p class="droppableLeftRightWrap__contentTop-tit ml30">홀번호</p>
+                            <div class="radioWrap flxWrap">
+                                <label class="radio_container">1
+                                    <input type="radio" name="radio_holeNum" checked="checked">
+                                    <span class="radio_chkmark"></span>
+                                </label>                                    
+                                <label class="radio_container">A
+                                    <input type="radio" name="radio_holeNum">
+                                    <span class="radio_chkmark"></span>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div><!--RightTopBox //-->
+
+                <div class="droppableLeftRightWrap flxWrap">
+                    <div class="droppableLeftRightWrap__Left">
+                        <div class="boxAlignWrapWrap">
+                            <p class="xy_coordinate x_coordinate">X <i class="xi-long-arrow-right"></i></p>
+                            <p class="xy_coordinate y_coordinate">Y <i class="xi-long-arrow-right"></i></p>
+                            <div class="scro">
+                                <div class="boxAlignWrap flxWrap">
+                                    <div class="dropWrap">
+                                        <table>
+                                            <tr>
+                                                <td class="drop">
+                                                    <div class="item assigned easyui-tooltip" data-options="
+                                                    content: function(){
+                                                        return $('.droppableTooltip1');
+                                                    },">
+                                                        <dl>
+                                                            <dt class="back_blue">1</dt>
+                                                            <dd>
+                                                                <p>01399693</p>
+                                                                <p>DNA</p>
+                                                                <p>B0-B307010701</p>
+                                                            </dd>
+                                                        </dl>
+                                                    </div><!-- item //-->
+                                                </td>
+                                                <td class="drop"></td>
+                                                <td class="drop">
+                                                    <div class="item assigned easyui-tooltip" data-options="
+                                                    content: function(){
+                                                        return $('.droppableTooltip3');
+                                                    },">
+                                                        <dl>
+                                                            <dt class="back_black">3</dt>
+                                                            <dd>
+                                                                <p>01399693</p>
+                                                                <p>DNA</p>
+                                                                <p>B0-B307010701</p>
+                                                            </dd>
+                                                        </dl>
+                                                    </div><!-- item //-->
+                                                </td>
+                                                <td class="drop">
+                                                    <div class="item assigned easyui-tooltip" data-options="
+                                                    content: function(){
+                                                        return $('.droppableTooltip4');
+                                                    },">
+                                                        <dl>
+                                                            <dt class="back_green">4</dt>
+                                                            <dd>
+                                                                <p>01399693</p>
+                                                                <p>DNA</p>
+                                                                <p>B0-B307010701</p>
+                                                            </dd>
+                                                        </dl>
+                                                    </div><!-- item //-->
+                                                </td>
+                                                <td class="drop">
+                                                    <div class="item assigned easyui-tooltip" data-options="
+                                                    content: function(){
+                                                        return $('.droppableTooltip5');
+                                                    },">
+                                                        <dl>
+                                                            <dt class="back_purple">5</dt>
+                                                            <dd>
+                                                                <p>01399693</p>
+                                                                <p>DNA</p>
+                                                                <p>B0-B307010701</p>
+                                                            </dd>
+                                                        </dl>
+                                                    </div><!-- item //-->
+                                                </td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop">
+                                                    <div class="item assigned easyui-tooltip" data-options="
+                                                    content: function(){
+                                                        return $('.droppableTooltip10');
+                                                    },">
+                                                        <dl>
+                                                            <dt class="back_red">10</dt>
+                                                            <dd>
+                                                                <p>01399693</p>
+                                                                <p>DNA</p>
+                                                                <p>B0-B307010701</p>
+                                                            </dd>
+                                                        </dl>
+                                                    </div><!-- item //-->
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop">
+                                                    <div class="item assigned easyui-tooltip" data-options="
+                                                    content: function(){
+                                                        return $('.droppableTooltip20');
+                                                    },">
+                                                        <dl>
+                                                            <dt class="back_gray">20</dt>
+                                                            <dd>
+                                                                <p>01399693</p>
+                                                                <p>DNA</p>
+                                                                <p>B0-B307010701</p>
+                                                            </dd>
+                                                        </dl>
+                                                    </div><!-- item //-->
+                                                </td>
+                                                <td class="drop"></td>
+                                                <td class="drop">
+                                                    <div class="item assigned easyui-tooltip" data-options="
+                                                    content: function(){
+                                                        return $('.droppableTooltip26');
+                                                    },">
+                                                        <dl>
+                                                            <dt class="back_blue">25</dt>
+                                                            <dd>
+                                                                <p>01399693</p>
+                                                                <p>DNA</p>
+                                                                <p>B0-B307010701</p>
+                                                            </dd>
+                                                        </dl>
+                                                    </div><!-- item //-->
+                                                </td>
+                                                <td class="drop"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                                <td class="drop"></td>
+                                            </tr>
+                                        </table>
+                                    </div><!-- dropWrap// -->
+
+                                    <!-- droppable 툴팁 -->
+                                    <div class="droppableTooltipWrap">
+                                        <div style="display:none">
+                                            <div>
+                                            <table class="droppableTooltip droppableTooltip1">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>저장위치</th>
+                                                        <td>접수실2층 > MF001 > FR005 > SB009</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>식별번호</th>
+                                                        <td>RCOPD-KHU-100</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>바코드</th>
+                                                        <td>41527333</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>성명</th>
+                                                        <td>윤성</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>성별</th>
+                                                        <td>남자</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>접수일자</th>
+                                                        <td>2020-11-03</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원량</th>
+                                                        <td>1000.000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원채취일</th>
+                                                        <td>2020-07-30</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원저장일</th>
+                                                        <td>2020-11-03</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>SPREC</th>
+                                                        <td>URN-PET-Z-N-N-I-J</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>사망일자</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>혈액채혈일</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>바코드부착일</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>프로젝트명</th>
+                                                        <td>간암22</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원명</th>
+                                                        <td>URN</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원상세코드</th>
+                                                        <td>WHLE</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>농도</th>
+                                                        <td>0.000</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            </div>
+                                        </div>
+                                        <div style="display:none">
+                                            <table class="droppableTooltip droppableTooltip3">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>저장위치</th>
+                                                        <td>접수실2층 > MF001 > FR005 > SB009</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>식별번호</th>
+                                                        <td>RCOPD-KHU-100</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>바코드</th>
+                                                        <td>41527333</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>성명</th>
+                                                        <td>윤성</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>성별</th>
+                                                        <td>남자</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>접수일자</th>
+                                                        <td>2020-11-03</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원량</th>
+                                                        <td>1000.000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원채취일</th>
+                                                        <td>2020-07-30</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원저장일</th>
+                                                        <td>2020-11-03</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>SPREC</th>
+                                                        <td>URN-PET-Z-N-N-I-J</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>사망일자</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>혈액채혈일</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>바코드부착일</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>프로젝트명</th>
+                                                        <td>간암22</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원명</th>
+                                                        <td>URN</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원상세코드</th>
+                                                        <td>WHLE</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>농도</th>
+                                                        <td>0.000</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div style="display:none">
+                                            <table class="droppableTooltip droppableTooltip4">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>저장위치</th>
+                                                        <td>접수실2층 > MF001 > FR005 > SB009</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>식별번호</th>
+                                                        <td>RCOPD-KHU-100</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>바코드</th>
+                                                        <td>41527333</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>성명</th>
+                                                        <td>윤성</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>성별</th>
+                                                        <td>남자</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>접수일자</th>
+                                                        <td>2020-11-03</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원량</th>
+                                                        <td>1000.000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원채취일</th>
+                                                        <td>2020-07-30</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원저장일</th>
+                                                        <td>2020-11-03</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>SPREC</th>
+                                                        <td>URN-PET-Z-N-N-I-J</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>사망일자</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>혈액채혈일</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>바코드부착일</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>프로젝트명</th>
+                                                        <td>간암22</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원명</th>
+                                                        <td>URN</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원상세코드</th>
+                                                        <td>WHLE</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>농도</th>
+                                                        <td>0.000</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div style="display:none">
+                                            <table class="droppableTooltip droppableTooltip5">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>저장위치</th>
+                                                        <td>접수실2층 > MF001 > FR005 > SB009</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>식별번호</th>
+                                                        <td>RCOPD-KHU-100</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>바코드</th>
+                                                        <td>41527333</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>성명</th>
+                                                        <td>윤성</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>성별</th>
+                                                        <td>남자</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>접수일자</th>
+                                                        <td>2020-11-03</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원량</th>
+                                                        <td>1000.000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원채취일</th>
+                                                        <td>2020-07-30</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원저장일</th>
+                                                        <td>2020-11-03</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>SPREC</th>
+                                                        <td>URN-PET-Z-N-N-I-J</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>사망일자</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>혈액채혈일</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>바코드부착일</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>프로젝트명</th>
+                                                        <td>간암22</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원명</th>
+                                                        <td>URN</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원상세코드</th>
+                                                        <td>WHLE</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>농도</th>
+                                                        <td>0.000</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div style="display:none">
+                                            <table class="droppableTooltip droppableTooltip10">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>저장위치</th>
+                                                        <td>접수실2층 > MF001 > FR005 > SB009</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>식별번호</th>
+                                                        <td>RCOPD-KHU-100</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>바코드</th>
+                                                        <td>41527333</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>성명</th>
+                                                        <td>윤성</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>성별</th>
+                                                        <td>남자</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>접수일자</th>
+                                                        <td>2020-11-03</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원량</th>
+                                                        <td>1000.000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원채취일</th>
+                                                        <td>2020-07-30</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원저장일</th>
+                                                        <td>2020-11-03</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>SPREC</th>
+                                                        <td>URN-PET-Z-N-N-I-J</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>사망일자</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>혈액채혈일</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>바코드부착일</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>프로젝트명</th>
+                                                        <td>간암22</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원명</th>
+                                                        <td>URN</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원상세코드</th>
+                                                        <td>WHLE</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>농도</th>
+                                                        <td>0.000</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div style="display:none">
+                                            <table class="droppableTooltip droppableTooltip20">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>저장위치</th>
+                                                        <td>접수실2층 > MF001 > FR005 > SB009</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>식별번호</th>
+                                                        <td>RCOPD-KHU-100</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>바코드</th>
+                                                        <td>41527333</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>성명</th>
+                                                        <td>윤성</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>성별</th>
+                                                        <td>남자</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>접수일자</th>
+                                                        <td>2020-11-03</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원량</th>
+                                                        <td>1000.000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원채취일</th>
+                                                        <td>2020-07-30</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원저장일</th>
+                                                        <td>2020-11-03</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>SPREC</th>
+                                                        <td>URN-PET-Z-N-N-I-J</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>사망일자</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>혈액채혈일</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>바코드부착일</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>프로젝트명</th>
+                                                        <td>간암22</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원명</th>
+                                                        <td>URN</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원상세코드</th>
+                                                        <td>WHLE</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>농도</th>
+                                                        <td>0.000</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div style="display:none">
+                                            <table class="droppableTooltip droppableTooltip25">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>저장위치</th>
+                                                        <td>접수실2층 > MF001 > FR005 > SB009</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>식별번호</th>
+                                                        <td>RCOPD-KHU-100</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>바코드</th>
+                                                        <td>41527333</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>성명</th>
+                                                        <td>윤성</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>성별</th>
+                                                        <td>남자</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>접수일자</th>
+                                                        <td>2020-11-03</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원량</th>
+                                                        <td>1000.000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원채취일</th>
+                                                        <td>2020-07-30</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원저장일</th>
+                                                        <td>2020-11-03</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>SPREC</th>
+                                                        <td>URN-PET-Z-N-N-I-J</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>사망일자</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>혈액채혈일</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>바코드부착일</th>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>프로젝트명</th>
+                                                        <td>간암22</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원명</th>
+                                                        <td>URN</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>자원상세코드</th>
+                                                        <td>WHLE</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>농도</th>
+                                                        <td>0.000</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div><!--droppableTooltipWrap //-->
+
+                                    <script>
+                                        $(function(){
+                                            $('.dropWrap .item').draggable({
+                                                revert:true, //드래그 멈추면, 원래자리로 이동
+                                                //proxy:'clone', // 드래그후, 해당아이템 지우지않고, 복사시킴
+                                            });
+
+                                            $('.dropWrap td.drop').droppable({
+                                                accept: '.item',
+                                                onDragEnter:function(){
+                                                    $(this).addClass('over');
+                                                    
+                                                },
+                                                onDragLeave:function(){
+                                                    $(this).removeClass('over');
+                                                    
+                                                },
+                                                onDrop:function(e,source){
+                                                    $(this).removeClass('over');
+                                                    
+                                                    if ($(this).children().hasClass('assigned')){
+                                                        //alert('할당된 아이템이 있음');
+                                                        $(this).removeClass('droppable');
+                                                    } else {
+                                                        //alert('할당된 아이템 없음');
+                                                        var c = $(source).addClass('assigned');
+                                                        $(this).empty().append(c);
+                                                        
+                                                    }
+                                                }
+                                            });
+                                        });
+                                    </script>
+                                </div><!--boxAlignWrap //-->
+                            </div><!-- scro -->
+                        </div><!-- boxAlignWrapWrap //-->
+                    </div><!-- droppableLeftRightWrap__Left-->
+
+                    <div class="droppableLeftRightWrap__Right">
+                        
+                        <div class="specimenInfoTit">
+                            <p><i class="xi-play-circle"></i>Specimen Information</p>
+                            <a href="#" class="pop_resultPrintSetting" onclick="fnShowPop('popup_view_RPS'); return false;"><i class="xi-cog"></i></a>
+                        </div>
+                        <input type="text" value="01039683">
+
+                        <dl class="specimenInfoBarcodeWrap flxWrap">
+                            <dt><img src="../_images/common/img_barcode.png" alt=""></dt>
+                            <dd>01394181<br/>
+                                DNA D-@BLD:PRBL<br/>
+                                02  1  01<br/>
+                                (BO-J304019101)
+                            </dd>
+                        </dl><!--specimenInfoBarcodeWrap //-->
+
+                        <dl class="specimenInfoHoleWrap flxWrap">
+                            <dt>Total : <span class="fc_orange">88</span>hole</dt>
+                            <dd>
+                                <div><p>40</p></div>
+                                <a href="#"><i class="xi-angle-left-min"></i></a>
+                                <div><p class="specimenInfoHoleWrap__on">41</p><span>hole</span></div>
+                                <a href="#"><i class="xi-angle-right-min"></i></a>
+                                <div><p>42</p></div>
+                            </dd>
+                        </dl><!--specimenInfoHoleWrap //-->
+
+                        <div class="forScro forScro_SpeciInfo">
+                            <table class="specimenInfoBarcodeWrap_detail">
+                                <tbody>
+                                    <tr>
+                                        <th><p>저 장 위 치</p></th>
+                                        <td><p>건식DNA저장고(임시) > MF110 > FR001 > SB001</p></td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>식 별 번 호</p></th>
+                                        <td><p>BO-J304019101</p></td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>바 코 드</p></th>
+                                        <td><p>01394181</p></td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>성 명</p></th>
+                                        <td><p>남숙</p></td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>성 별</p></th>
+                                        <td><p>여자</p></td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>프 로 젝 트</p></th>
+                                        <td><p>국민건강영양조사 사업(2012)</p></td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>자 원 명</p></th>
+                                        <td><p>DNA</p></td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>접 수 일 자</p></th>
+                                        <td><p class="date"><input class="easyui-datebox"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>자 원 량</p></th>
+                                        <td><p><input type="text"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>프 로 젝 트 명</p></th>
+                                        <td><p>프로젝트명</p></td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>자 원 명</p></th>
+                                        <td><p>자원명</p></td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>자 원 채 취 일</p></th>
+                                        <td><p class="date"><input class="easyui-datebox"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>자 원 저 장 일</p></th>
+                                        <td><p class="date"><input class="easyui-datebox"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>S P R E C</p></th>
+                                        <td><p><input type="text"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>자 원 상 세 코 드</p></th>
+                                        <td>
+                                            <p class="select">
+                                                <select name="" id="">
+                                                    <option value="">선택1</option>
+                                                    <option value="">선택2</option>
+                                                </select>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>농 도</p></th>
+                                        <td><p class="inputTxt"><input type="text"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>사 망 일 자</p></th>
+                                        <td><p class="date"><input class="easyui-datebox"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>혈 액 채 혈 일</p></th>
+                                        <td><p class="date"><input class="easyui-datebox"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>바 코 드 부 착 일</p></th>
+                                        <td><p class="date"><input class="easyui-datebox"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>비 고</p></th>
+                                        <td><p class="txtArea"><textarea name="" id=""></textarea></p></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="btnWrap flxWrap">
+                                <a href="#" class="btn_black"> 저장</a>    
+                                <a href="#" class="btn_black"> 삭제</a>    
+                            </div><!--btnWrap//-->
+                        </div><!-- forScro //-->
+
+                        <div class="nomatchResourceListWrap">
+                            <div class="specimenInfoTit"><p><i class="xi-play-circle"></i>미일치 자원 리스트</p><span class="num">14</span></div>
+                            <div class="nomatchResourceList">
+                                <table class="tbl">
+                                    <colgroup>
+                                        <col width="54px">
+                                        <col width="auto">
+                                    </colgroup><tbody>
+                                        <tr>
+                                            <th>홀번호<span>A799</span></th>
+                                            <td>
+                                                <dl>
+                                                    <dt>제공자 바코드</dt>
+                                                    <dd class="fc_orange">01394181</dd>
+                                                </dl>
+                                                <dl class="wd50 fl">
+                                                    <dt>박스</dt>
+                                                    <dd>01394181</dd>
+                                                </dl>
+                                                <dl class="wd50 fr">
+                                                    <dt>자원</dt>
+                                                    <dd>01394181</dd>
+                                                </dl>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>홀번호<span>A799</span></th>
+                                            <td>
+                                                <dl>
+                                                    <dt>제공자 바코드</dt>
+                                                    <dd class="fc_orange">01394181</dd>
+                                                </dl>
+                                                <dl class="wd50 fl">
+                                                    <dt>박스</dt>
+                                                    <dd>01394181</dd>
+                                                </dl>
+                                                <dl class="wd50 fr">
+                                                    <dt>자원</dt>
+                                                    <dd>01394181</dd>
+                                                </dl>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div><!--nomatchResourceList //-->
+                        </div><!--nomatchResourceListWrap //-->
+
+                        <div class="btnWrap">
+                            <a href="#" class="btn_black"> 미일치 넘기기</a>    
+                        </div><!--btnWrap//-->
+                        
+                    </div><!-- droppableLeftRightWrap__Right //-->
+                </div><!-- droppableLeftRightWrap //-->
+            </div><!-- forScro //-->
+            
+            <div class="flxWrap btnWrap bottomBtnWrap">
+                <div class="left flxWrap"></div>
+                <div class="right flxWrap">
+                    <a href="#" class="btn_blue left"><i class="xi-refresh"></i> <span>초기화</span></a>    
+                    <a href="#" class="btn_gray right"><i class="xi-close"></i> <span>전체삭제</span></a>    
+                </div><!--right-->
+            </div><!--bottomBtnWrap //-->
+        </div><!--RightCommonWrap //-->
+    </div><!-- easyuiRight // -->
+
+<!-- 팝업_결과 출력항목 설정 START -->
+<div class="dimmodal" id="popup_view_RPS" class="popup_divide">
+    <div class="modal_container">
+        <p class="modal_container__title"><i class="xi-check-circle"></i>결과 출력항목 설정</p>
+        
+        <div class="DivideContWrap DivideContWrap_Normal">
+            <dl class="left">
+                <dt>항목명</dt>
+                <dd>
+                    <ul class="leftCont listCont">
+                        <li>자원명</li>
+                        <li>자원저장일</li>
+
+                        <li>프로젝트명</li>
+                        <li>자원채취일</li>
+                        <li>SPREC</li>
+                        <li>자원상세코드</li>
+                        <li>농도</li>
+                        <li>사망일자</li>
+                        <li>혈액 채혈일</li>
+                        <li>바코드 부착일</li>
+                        <li>비고</li>
+                        <li>프로젝트명</li>
+                        <li>자원채취일</li>
+                        <li>SPREC</li>
+                        <li>자원상세코드</li>
+                        <li>농도</li>
+                        <li>사망일자</li>
+                        <li>혈액 채혈일</li>
+                        <li>바코드 부착일</li>
+                        <li>비고</li>
+                        <li>프로젝트명</li>
+                        <li>자원채취일</li>
+                        <li>SPREC</li>
+                        <li>자원상세코드</li>
+                        <li>농도</li>
+                        <li>사망일자</li>
+                        <li>혈액 채혈일</li>
+                        <li>바코드 부착일</li>
+                        <li>비고</li>
+                    </ul>
+                </dd>
+            </dl>
+            <ul class="center btn_divide ">
+                <li><span class="material-symbols-outlined">navigate_next</span></li>
+                <li><span class="material-symbols-outlined">keyboard_double_arrow_right</span></li>
+                <li><span class="material-symbols-outlined">navigate_before</span></li>
+                <li><span class="material-symbols-outlined">keyboard_double_arrow_left</span></li>
+            </ul>
+            <dl class="right">
+                <dt>항목명</dt>
+                <dd>
+                    <ul class="rightCont listCont">
+                        <li>프로젝트명</li>
+                        <li>자원채취일</li>
+                        <li>SPREC</li>
+                        <li>자원상세코드</li>
+                        <li>농도</li>
+                        <li>사망일자</li>
+                        <li>혈액 채혈일</li>
+                        <li>바코드 부착일</li>
+                        <li>비고</li>
+
+                        <li>프로젝트명</li>
+                        <li>자원채취일</li>
+                        <li>SPREC</li>
+                        <li>자원상세코드</li>
+                        <li>농도</li>
+                        <li>사망일자</li>
+                        <li>혈액 채혈일</li>
+                        <li>바코드 부착일</li>
+                        <li>비고</li>
+                        <li>프로젝트명</li>
+                        <li>자원채취일</li>
+                        <li>SPREC</li>
+                        <li>자원상세코드</li>
+                        <li>농도</li>
+                        <li>사망일자</li>
+                        <li>혈액 채혈일</li>
+                        <li>바코드 부착일</li>
+                        <li>비고</li>
+                        <li>프로젝트명</li>
+                        <li>자원채취일</li>
+                        <li>SPREC</li>
+                        <li>자원상세코드</li>
+                        <li>농도</li>
+                        <li>사망일자</li>
+                        <li>혈액 채혈일</li>
+                        <li>바코드 부착일</li>
+                        <li>비고</li>
+                    </ul>
+                </dd>
+            </dl>
+            <ul class="rightContSide btn_divide">
+                <li><span class="material-symbols-outlined">keyboard_double_arrow_up</span></li>
+                <li><span class="material-symbols-outlined">keyboard_arrow_up</span></li>
+                <li><span class="material-symbols-outlined">keyboard_arrow_down</span></li>
+                <li><span class="material-symbols-outlined">keyboard_double_arrow_down</span></li>
+            </ul>
+        </div><!--RPSContWrap //-->
+
+        <div class="btnWrap">
+                <div class="flxWrap">
+                    <a href="#" class="btn_gray"><i class="xi-check"></i> <span>확인</span></a>    
+                    <a href="#" class="btn_gray" onclick="fnHidePop('popup_view_RPS')"><i class="xi-close"></i> <span>취소</span></a>    
+                </div>
+        </div><!--btnWrap //-->
+
+    </div><!--modal_container //-->
+</div><!--dimmodal //-->
+<!-- 팝업_결과 출력항목 설정 END-->
+</body>
+</html>
+    

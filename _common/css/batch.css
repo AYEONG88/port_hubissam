@@ -1,0 +1,21 @@
+/*** 스마트검색 > 일괄처리 ***/
+.toolbar_selectBatchMainView__Step{width: 50%; padding: 10px 0 40px; margin: 0 auto;}
+    .toolbar_selectBatchMainView__Step a{flex:1; position:relative; color:#bfbfbf; text-align: center;}
+    .toolbar_selectBatchMainView__Step a:before, .toolbar_selectBatchMainView__Step a:after{position:absolute; top:50%; transform:translateY(-50%); width:50%; height:4px; background:#bfbfbf; display:block; content:''; }
+    .toolbar_selectBatchMainView__Step a:before{left:0;}
+    .toolbar_selectBatchMainView__Step a:after{right:0;}
+    .toolbar_selectBatchMainView__Step a:first-child:before, .toolbar_selectBatchMainView__Step a:last-child:after{display:none;}
+    
+        .toolbar_selectBatchMainView__Step .num{font-size:16px; font-weight:500;}
+        .toolbar_selectBatchMainView__Step .dot{position:relative; z-index:1; margin: 5px auto 8px; width:14px; height:14px; border-radius: 50%; background:#fff; border:3px solid #bfbfbf;}
+        .toolbar_selectBatchMainView__Step .des{font-size:15px;}
+
+        .toolbar_selectBatchMainView__Step a.active_step{color:var(--blue);}
+        .toolbar_selectBatchMainView__Step a.active_step .dot{border:none; background: var(--blue);}
+
+        /*.toolbar_selectBatchMainView__Step a.active_step02{color:var(--blue);}
+        .toolbar_selectBatchMainView__Step a.active_step02 .dot{border:none; background: var(--blue);}
+        .toolbar_selectBatchMainView__Step a.active_step02:before{background:var(--blue);} */
+
+        .toolbar_selectBatchMainView__Step a.active_stepBefore:before{background:var(--blue);}
+        .toolbar_selectBatchMainView__Step a.active_stepAfter:after{background:var(--blue);}

@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="height=device-height , width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="shortcut icon" href="../_images/common/favicon.ico">
+    <title>HuBIS_Sam v4.0</title>
+
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css">  
+    <link rel="stylesheet" type="text/css" href="../easyui/demo.css">  
+    <link rel="stylesheet" href="../_common/css/reset.css">
+    <link rel="stylesheet" href="../_common/css/xeicon.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../_common/css/font.css">
+    <link rel="stylesheet" type="text/css" href="../_common/css/style.css">  
+    <link rel="stylesheet" type="text/css" href="../_common/css/layout.css">  
+    <link rel="stylesheet" type="text/css" href="../easyui/easyui_sal.css"> 
+    <link rel="stylesheet" type="text/css" href="../_common/css/header.css">  
+
+
+    <!-- <script src="../_common/js/jquery-latest.min.js"></script> -->
+    <script type="text/javascript" src="../easyui/jquery.min.js"></script>  
+    <script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script> 
+
+    <script type="text/javascript" src="../_common/js/common.js"></script> 
+
+</head>
+<body class="easyui-layout moveLayout" ><!--moveLayout-->
+	<div class="loaderWrap">
+			<div class="loaderWrap__cont">
+				<div class="loading-container">
+					<div class="loading"></div>
+					<div id="loading-text">loading</div>
+				</div>
+			</div>        
+	</div><!--loaderWrap //-->
+	<div class="header" data-options="region:'north',border:false">
+        <nav>
+            <h1 class="h1 flxWrap">
+                <a href="#" class="logo_hubis"><strong>HuBIS_Sam</strong><span>인체자원관리시스템</span></a>
+                <a href="#" class="logo_organ"><img src="../_images/common/logo_snuh.png"/></a>
+            </h1>
+
+            <ul class="gnb flxWrap">
+                <li><a href="../storeAndReleased/donor.html" class="oneDepth">입출고관리</a></li>
+                <li><a href="../resourceManagement/menuPageLink.html" class="oneDepth">자원관리</a></li>
+                <li><a href="../smartSearch/selectBaseSearchForm.html" class="oneDepth">스마트검색</a></li>
+                <li><a href="../batch/selectBatchMainView.html" class="oneDepth">일괄처리</a></li>
+                <li><a href="../configuration/linkInfoRegis.html" class="oneDepth">환경설정</a></li>
+                <li><a href="#" class="oneDepth">도움말</a></li>  
+            </ul>
+      
+            <div class="navRightWrap flxWrap">
+                <a href="#" class="headersearchWrap"><input type="text"><i class="xi-search"></i></a>
+                <p class="login_user"><span>자원관리자</span><span class="name">홍길동</span></p>
+
+                <!-- 아코디언 -->
+                <div class="hamWrap">
+
+                    <div class="hamWrap__icoWrap">
+                        <input class="checkbox" type="checkbox" id="hamCheck">
+                        <label class="btn_ham" for="hamCheck">
+                            <span class="bar"></span>
+                        </label>
+                    </div>                          
+                    
+                    <div class="hamContWrap">
+                        <div class="hamCont">
+                            <ul class="hamAcco scro">
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">change_circle</span>
+                                    입출고관리<i class="xi-angle-down-min btn_tog"></i>
+                                </li>
+                                <li class="hamAcco__twoDepth" >
+                                    <a href="../storeAndReleased/donor.html">제공자</a>
+                                    <a href="../storeAndReleased/resourceReceiptIntro.html">자원접수</a>
+                                    <a href="../storeAndReleased/resourceInspection.html">자원검수</a>
+                                    <a href="../storeAndReleased/consent.html">동의서</a>
+                                    <a href="#">STR</a>
+                                    <a href="../storeAndReleased/snp.html">SNP</a>
+                                    <a href="../storeAndReleased/qualityControl.html">정도관리</a>
+                                    <a href="../storeAndReleased/resourceDistribute.html">자원분양</a>
+                                </li>
+                            
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-symbols-outlined">slow_motion_video</span>
+                                    자원관리<i class="xi-angle-down-min btn_tog"></i></li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../resourceManagement/menuPageLink.html">자원백업</a>
+                                    <a href="../resourceManagement/resourceDivision.html">자원분주</a>
+                                    <a href="#">자원배양</a>
+                                    <a href="#">자원추출</a>
+                                    <a href="#">반송폐기</a>
+                                    <a href="#">자원소진</a>
+                                    <a href="#">자원정체</a>
+                                    <a href="#">SPREC 변경</a>
+                                    <a href="#">연계정보</a>
+                                </li>
+
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">view_in_ar</span>
+                                    스마트검색<i class="xi-angle-down-min btn_tog"></i>
+                                </li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../smartSearch/selectBaseSearchForm.html">검색기반관리</a>
+                                    <a href="#">저장된 검색어</a>
+                                    <a href="#">내 검색어</a>
+                                    <a href="../smartSearch/frozenCart.html">냉동카트</a>
+                                    <a href="#">비주얼카트</a>
+                                    <a href="#">STP 비교검색</a>
+                                    <a href="../smartSearch/snpCompareSearch.html">SNP 비교검색</a>
+                                    <a href="../smartSearch/inOutView.html">입출고장조회</a>
+                                    <a href="../smartSearch/atchmnFile.html">첨부파일검색</a>
+                                </li>
+                                
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">playlist_add_check</span>
+                                    일괄처리<i class="xi-angle-down-min btn_tog"></i>
+                                </li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../batch/selectBatchMainView.html">일괄처리</a>
+                                    <a href="../batch/selectBatchStatusView.html">처리현황판</a>
+                                    <a href="#">다운로드센터</a>
+                                    <a href="#">저장고관리</a>
+                                    <a href="#">정보편차검출</a>
+                                </li>
+
+                                <li class="hamAcco__oneDepth">
+                                    <i class="xi-wrench"></i>
+                                    환경설정
+                                    <i class="xi-angle-down-min btn_tog"></i></li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../configuration/linkInfoRegis.html">연계정보 등록시 화면</a>
+                                    <a href="../configuration/projectManagement.html">프로젝트관리</a>
+                                    <a href="../configuration/protocol.html">수집프로토콜</a>
+                                    <a href="../configuration/storageMain.html">저장장비</a>
+                                    <a href="../configuration/storageEquipmentHistory.html">저장장비이력</a>
+                                    <a href="../configuration/monitorMain.html">저장장비온도로그</a>
+                                    <a href="#">Quick Link 관리</a>
+                                    <a href="../configuration/userSetting.html">사용자 환경설정</a>
+                                </li>
+
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">info</span>
+                                    도움말
+                                    <i class="xi-angle-down-min btn_tog"></i></li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="#">동의서(for tablet)</a>
+                                    <a href="../help/statisticsMainView.html">통계쿼리관리</a>
+                                    <a href="#">About HuBIS_Sam</a>
+                                    <a href="../help/resourceReceiptForTablet.html">자원접수(for tablet)</a>
+                                    <a href="../help/resourceDistributeForTablet.html">자원분양(for tablet)</a>
+                                </li>
+                            </ul>
+
+                            <div class="hamBottom">
+                                <div class="hamBottom__btnWrap">
+                                    <a href="#">HuBIS-Desk</a>
+                                    <a href="#">HuBIS-Tracker</a>
+                                </div>
+                                <div class="flxWrap hamBottom__footer">
+                                    <a href="../configuration/userSetting.html"><span class="material-icons expt">manage_accounts</span><p>사용자설정</p></a>
+                                    <a href="../sys/sysManager.html"><span class="material-icons">settings</span><p>시스템 환경설정</p></a>
+                                </div>
+                            </div><!-- hamBottom //-->
+                        </div><!--hamCont //-->
+                    </div><!-- hamContWrap  //-->
+                </div><!-- hamWrap //-->        
+            </div><!-- navRightWrap //-->
+        </nav>
+    </div><!-- north //-->
+
+    <link rel="stylesheet" href="../_common/css/configuration.css">
+
+    <!-- 왼쪽 컨텐츠 -->
+	<div class="easyuiLeft easyuiLeft_storageMainWrap" data-options="region:'center',title:'왼쪽 컨텐츠'">
+        <h2 class="flxWrap" >
+            <p class="h2__left"><i class="xi-caret-down-square"></i><span>환경설정</span><i class="xi-play"></i><span class="txtBold">저장장비</span></p>
+        </h2>
+        
+        <div id="toolbar">
+            <div class="searchWrap">
+                <form id="" action="" name="" method="">
+                    <fieldset>
+                        <legend>제공자 조건검색</legend>
+                        <div class="searchInput flxWrap">
+                            <input type="text" class="input-search" id="text-search" placeholder="저장고명을 입력 해 주세요"/>
+                            <div class="flxWrap">
+                                <a href="#"><i class="xi-search"></i></a>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div><!--searchWrap //-->
+        </div><!-- toolbar -->
+        <div class="treeWrap">
+            <div class="easyui-panel" style="padding:10px 5px">
+                <ul id="storageMain_tree" class="easyui-tree" onclick="showEast();"
+                        data-options="
+                        url: '../_data/tree_configuration_storageMain.json', 
+                        method: 'get', animate: true, lines: true,
+                        onContextMenu: function(e,node){
+                            alert('d');
+                            e.preventDefault();
+                            $(this).tree('select',node.target);
+                            $('#storageMain_tree_RightClick').menu('show',{
+                                left: e.pageX,
+                                top: e.pageY
+                            });
+                        }
+                    "></ul>
+            </div><!--easyui-panel //-->
+            <div id="storageMain_tree_RightClick" class="easyui-menu" style="width:120px;">
+                <div onclick="append()" data-options="iconCls:'icon-add'">저장고 생성</div>
+                <div onclick="fnShowPop('popup_storageRevised'); return false;" data-options="iconCls:'icon-edit'">저장고 수정</div>
+                <div onclick="removeit()" data-options="iconCls:'icon-remove'">저장고 삭제</div>
+            </div><!--storageMain_tree_RightClick //-->
+            <script type="text/javascript">
+                function append(){
+                    var t = $('#storageMain_tree');
+                    var node = t.tree('getSelected');
+                    t.tree('append', {
+                        parent: (node?node.target:null),
+                        data: [{
+                            text: 'new item1'
+                        },{
+                            text: 'new item2'
+                        }]
+                    });
+                }
+                function removeit(){
+                    var node = $('#storageMain_tree').tree('getSelected');
+                    $('#storageMain_tree').tree('remove', node.target);
+                }
+            </script>
+        </div> <!--treeWrap //-->
+    </div><!-- easyuiLeft //-->
+
+    <!-- 오른쪽 컨텐츠 -->
+    <div class="easyuiRight easyuiRight_tab_ver2 easyuiRight_storageMainWrap" data-options="region:'east',split:true,collapsed:true,title:'오른쪽 컨텐츠', collapsedSize:20," style="width:1441px;">
+        <h3 class="flxWrap">
+            <p class="h3__left"><span class="h3__left--name">국립중앙인체자원은행1층</span> <i class="xi-play"></i>
+                <span class="h3__left--num">MF002</span></p>
+        </h3>
+
+        <div class="RightCommonWrap">
+            <div class="tapTopCont">
+                <div class="inputWrapAll flxWrap gap20">
+                    <div class="item inputWrap flxVertical">
+                        <label for="storage_name">저장고명</label>
+                        <input type="text" id="storage_name" style="width:340px;">
+                    </div>
+                    <div class="item inputWrap flxVertical">
+                        <label for="storage_devType">장비타입</label>
+                        <input type="text" id="storage_devType" style="width:340px;">
+                    </div>
+                    <div class="item inputWrap flxVertical">
+                        <label for="storage_xAxis">X축</label>
+                        <input type="text" id="storage_xAxis" style="width:80px;">
+                    </div>
+                    <div class="item inputWrap flxVertical">
+                        <label for="storage_yAxis">Y축</label>
+                        <input type="text" id="storage_yAxis" style="width:80px;">
+                    </div>
+                    <div class="item inputWrap flxVertical">
+                        <label for="storage_totalCapacity">전체가용량</label>
+                        <input type="text" id="storage_totalCapacity" style="width:120px;">
+                    </div>
+                    <div class="item inputWrap flxVertical">
+                        <label for="storage_currentStorage">현재저장량</label>
+                        <input type="text" id="storage_currentStorage" style="width:120px;">
+                    </div>
+                </div><!--inputWrapAll -->
+                <div class="inputWrapAll flxWrap gap20">
+                    <div class="item inputWrap flxVertical">
+                        <label for="storage_name">저장고명</label>
+                        <input type="text" id="storage_name" style="width:340px;">
+                    </div>
+                    <div class="item inputWrap flxVertical">
+                        <label for="storage_devType">장비타입</label>
+                        <input type="text" id="storage_devType" style="width:340px;">
+                    </div>
+                    <div class="item inputWrap flxVertical">
+                        <label for="storage_xAxis">X축</label>
+                        <input type="text" id="storage_xAxis" style="width:80px;">
+                    </div>
+                    <div class="item inputWrap flxVertical">
+                        <label for="storage_yAxis">Y축</label>
+                        <input type="text" id="storage_yAxis" style="width:80px;">
+                    </div>
+                    <div class="item inputWrap flxVertical">
+                        <label for="storage_totalCapacity">전체가용량</label>
+                        <input type="text" id="storage_totalCapacity" style="width:120px;">
+                    </div>
+                    <div class="item inputWrap flxVertical">
+                        <label for="storage_currentStorage">현재저장량</label>
+                        <input type="text" id="storage_currentStorage" style="width:120px;">
+                    </div>
+                    <div class="item inputWrap flxVertical">
+                        <label for="storage_use">저장고 용도</label>
+                        <input type="text" id="storage_use" style="width:340px;">
+                    </div>
+                    <div class="item inputWrap flxVertical">
+                        <label for="storage_rack">RACK 개수</label>
+                        <input type="text" id="storage_rack" style="width:96px;">
+                    </div>
+                    <div class="item inputWrap flxVertical">
+                        <label for="storage_box">BOX 개수</label>
+                        <input type="text" id="storage_box" style="width:96px;">
+                    </div>
+                    <div class="item inputWrap flxVertical">
+                        <label for="storage_hresource">인체자원 개수</label>
+                        <input type="text" id="storage_hresource" style="width:96px;">
+                    </div>
+                </div><!--inputWrapAll -->
+            </div><!--tapTopCont //-->
+
+            
+            <div class="easyuiTabsWrap">
+                <div class="configSDLInfo__progressbar">
+                    <ul>
+                        <li>0</li>
+                        <li>50</li>
+                        <li>100</li>
+                    </ul>
+                </div>
+            
+                <div class="easyui-tabs easyui-tabs_ver2" data-options="fit:true,plain:true">
+                    <!-- 탭_속성정보 -->
+                    <div title="속성정보" class="easyuiTab__cont"><!-- configSDPInfo //-->
+                        <div class="configSDPInfo">
+                            <table id="dg_storageMain__propertyInfo" class="easyui-datagrid " title="환경설정 > 저장장비 > 속성정보" 
+                                data-options="rownumbers:true, url:'../_data/datagrid_data_configuration_storageMain_propertyInfo.json', striped:true, singleSelect:false, collapsible:true, fit:true, method:'get',
+                                ">
+                                <thead>
+                                    <tr>
+                                        <th data-options="field:'ck',checkbox:true"></th>
+                                        <th data-options="field:'configStoPro_loca', width:'280'" formatter="formatDetail">위치</th><!--formatter="formatDetail"-->
+                                        <th data-options="field:'configStoPro_DType', width:80, align:'center'">장비종류</th>
+                                        <th data-options="field:'configStoPro_use', width:90, align:'center'">저장고 용도</th>
+                                        <th data-options="field:'configStoPro_size', width:70, align:'center'">규격</th>
+                                        <th data-options="field:'configStoPro_barcode', width:100, align:'center'">바코드</th>
+                                        <th data-options="field:'configStoPro_box', width:160, ">가용박스[입고량/총량]</th>
+                                        <th data-options="field:'configStoPro_resource', width:160,">가용자원[입고량/총량]</th>
+                                        <th data-options="field:'configStoPro_stoName', width:80, align:'center'">저장고명</th>
+                                        <th data-options="field:'configStoPro_note', width:200">비고</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <script>
+                                function formatDetail(value,row){
+                                    //var href = 'get_details.php?userid='+row.id;
+                                    var href = '#';
+                                    return '<a target="_blank" class="dg_link" href="' + href + '">국립중앙인체자원은행1층 > MF002 > FR001</a>';
+                                }
+                            </script>
+
+                            <div class="resourceInspection__contentWrap__Right configSDPInfo__Right pb0" >
+                                
+                                <div class="specimenInfoTit">
+                                    <i class="xi-play-circle"></i>Specimen Information 
+                                    <a href="#" class="pop_resultPrintSetting" onclick="fnShowPop('popup_view_RPS'); return false;"><i class="xi-cog"></i></a>
+                                </div>
+
+                                <dl class="specimenInfoBarcodeWrap flxWrap">
+                                    <dt><img src="../_images/common/img_barcode.png" alt=""></dt>
+                                    <dd>01394181<br/>
+                                        DNA D-@BLD:PRBL<br/>
+                                        02  1  01<br/>
+                                        (BO-J304019101)
+                                    </dd>
+                                </dl><!--specimenInfoBarcodeWrap //-->
+
+                                <div class="forScro forScro_SpeciInfo mb0">
+                                    <table class="specimenInfoBarcodeWrap_detail">
+                                        <tbody>
+                                            <tr>
+                                                <th><p>저 장 위 치</p></th>
+                                                <td><p>건식DNA저장고(임시) > MF110 > FR001 > SB001</p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>식 별 번 호</p></th>
+                                                <td><p>BO-J304019101</p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>바 코 드</p></th>
+                                                <td><p>01394181</p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>성 명</p></th>
+                                                <td><p>남숙</p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>성 별</p></th>
+                                                <td><p>여자</p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>프 로 젝 트</p></th>
+                                                <td><p>국민건강영양조사 사업(2012)</p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>자 원 명</p></th>
+                                                <td><p>DNA</p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>접 수 일 자</p></th>
+                                                <td><p class="date"><input class="easyui-datebox"></p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>자 원 량</p></th>
+                                                <td><p><input type="text"></p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>프 로 젝 트 명</p></th>
+                                                <td><p>프로젝트명</p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>자 원 명</p></th>
+                                                <td><p>자원명</p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>자 원 채 취 일</p></th>
+                                                <td><p class="date"><input class="easyui-datebox"></p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>자 원 저 장 일</p></th>
+                                                <td><p class="date"><input class="easyui-datebox"></p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>S P R E C</p></th>
+                                                <td><p><input type="text"></p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>자 원 상 세 코 드</p></th>
+                                                <td>
+                                                    <p class="select">
+                                                        <select name="" id="">
+                                                            <option value="">자원상세코드 선택1</option>
+                                                            <option value="">자원상세코드 선택2</option>
+                                                        </select>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>농 도</p></th>
+                                                <td><p class="inputTxt"><input type="text"></p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>사 망 일 자</p></th>
+                                                <td><p class="date"><input class="easyui-datebox"></p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>혈 액 채 혈 일</p></th>
+                                                <td><p class="date"><input class="easyui-datebox"></p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>바 코 드 부 착 일</p></th>
+                                                <td><p class="date"><input class="easyui-datebox"></p></td>
+                                            </tr>
+                                            <tr>
+                                                <th><p>비 고</p></th>
+                                                <td><p class="txtArea"><textarea name="" id=""></textarea></p></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!-- forScro-->
+                            </div><!-- resourceInspection__contentWrap__Right //-->
+                        </div><!--configSDPInfo //-->
+                        
+
+                        <div class="flxWrap btnWrap bottomBtnWrap">
+                                <div class="left flxWrap">
+                                    <a href="#" class="btn_black"><i class="xi-cart-add"></i> <span>카트저장</span></a> 
+                                </div>
+                                <div class="right flxWrap">
+                                    <a href="#" class="btn_blue left"><i class="xi-check"></i> <span>저장</span></a>    
+                                    <a href="#" class="btn_gray right"><i class="xi-close"></i> <span>삭제</span></a>    
+                                </div><!-- right //-->
+                        </div><!--bottomBtnWrap //-->
+                    </div><!--easyuiTab__cont //-->
+                    
+                    <!-- 탭_위치정보 -->
+                    <div title="위치정보" class="easyuiTab__cont">
+                        <div class="configSDLInfo" >
+                            <!-- <div class="forScro"> -->
+                            <div class="droppableLeftRightWrap flxWrap">
+                                <div class="droppableLeftRightWrap__Left">
+                                    <div class="boxAlignWrapWrap">
+                                        <p class="xy_coordinate x_coordinate">SB <i class="xi-long-arrow-right"></i></p>
+                                        <p class="xy_coordinate y_coordinate">FR <i class="xi-long-arrow-right"></i></p>
+                                        <div class="scro">
+                                            <div class="boxAlignWrap flxWrap">
+                                                <div class="dropWrap">
+                                                    <table>
+                                                        <tr>
+                                                            <td class="drop">
+                                                                <div class="item assigned">
+                                                                    <dl>
+                                                                        <dt class="sm_back_gray">001</dt>
+                                                                        <dd>0</dd>
+                                                                    </dl>
+                                                                </div><!-- item //-->
+                                                            </td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop">
+                                                                <div class="item assigned">
+                                                                    <dl>
+                                                                        <dt class="sm_back_yellow">001</dt>
+                                                                        <dd>20</dd>
+                                                                    </dl>
+                                                                </div><!-- item //-->
+                                                            </td>
+                                                            <td class="drop">
+                                                                <div class="item assigned">
+                                                                    <dl>
+                                                                        <dt class="sm_back_lightorange">001</dt>
+                                                                        <dd>0</dd>
+                                                                    </dl>
+                                                                </div><!-- item //-->
+                                                            </td>
+                                                            <td class="drop">
+                                                                <div class="item assigned">
+                                                                    <dl>
+                                                                        <dt class="sm_back_orange">001</dt>
+                                                                        <dd>0</dd>
+                                                                    </dl>
+                                                                </div><!-- item //-->
+                                                            </td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop">
+                                                                <div class="item assigned">
+                                                                    <dl>
+                                                                        <dt class="sm_back_red">001</dt>
+                                                                        <dd>0</dd>
+                                                                    </dl>
+                                                                </div><!-- item //-->
+                                                            </td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop">
+                                                                <div class="item assigned">
+                                                                    <dl>
+                                                                        <dt class="sm_back_red">022</dt>
+                                                                        <dd>25</dd>
+                                                                    </dl>
+                                                                </div><!-- item //-->
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop">
+                                                                <div class="item assigned">
+                                                                    <dl>
+                                                                        <dt class="sm_back_orange">001</dt>
+                                                                        <dd>10</dd>
+                                                                    </dl>
+                                                                </div><!-- item //-->
+                                                            </td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop">
+                                                                <div class="item assigned">
+                                                                    <dl>
+                                                                        <dt class="sm_back_orange">001</dt>
+                                                                        <dd>0</dd>
+                                                                    </dl>
+                                                                </div><!-- item //-->
+                                                            </td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                            <td class="drop"></td>
+                                                        </tr>
+                                                    </table>
+                                                </div><!-- dropWrap// -->
+            
+                                                <script>
+                                                    $(function(){
+                                                        $('.dropWrap .item').draggable({
+                                                            revert:true, //드래그 멈추면, 원래자리로 이동
+                                                            //proxy:'clone', // 드래그후, 해당아이템 지우지않고, 복사시킴
+                                                        });
+            
+                                                        $('.dropWrap td.drop').droppable({
+                                                            accept: '.item',
+                                                            onDragEnter:function(){
+                                                                $(this).addClass('over');
+                                                                
+                                                            },
+                                                            onDragLeave:function(){
+                                                                $(this).removeClass('over');
+                                                                
+                                                            },
+                                                            onDrop:function(e,source){
+                                                                $(this).removeClass('over');
+                                                                
+                                                                if ($(this).children().hasClass('assigned')){
+                                                                    //alert('할당된 아이템이 있음');
+                                                                    //$(this).removeClass('droppable');
+                                                                } else {
+                                                                    //alert('할당된 아이템 없음');
+                                                                    var c = $(source).addClass('assigned');
+                                                                    $(this).empty().append(c);
+                                                                    
+                                                                }
+                                                            }
+                                                        });
+                                                    });
+                                                </script>
+                                            </div><!--boxAlignWrap //-->
+                                        </div><!-- scro -->
+                                    </div><!-- boxAlignWrapWrap //-->
+                                </div><!-- droppableLeftRightWrap__Left-->
+                            </div><!-- droppableLeftRightWrap //-->
+                            <!--</div> forScro//-->
+                            
+                        </div><!-- configSDLInfo //-->
+
+                        <div class="flxWrap btnWrap bottomBtnWrap">
+                            <div class="left flxWrap">
+                                <a href="#" class="btn_black"><i class="xi-cart-add"></i> <span>카트저장</span></a> 
+                            </div>
+                            <div class="right flxWrap">
+                                <a href="#" class="btn_blue left"><i class="xi-check"></i> <span>저장</span></a>    
+                                <a href="#" class="btn_gray right"><i class="xi-close"></i> <span>삭제</span></a>    
+                            </div>
+                        </div><!--bottomBtnWrap //-->
+
+                    </div><!--easyuiTab__cont //-->
+                </div><!-- easyui-tabs //-->
+            </div><!--easyuiTabsWrap //-->
+        </div><!--RightCommonWrap //-->
+    </div><!-- easyuiRight // -->
+
+
+    <!-- 팝업_결과 출력항목 설정 START -->
+    <div class="dimmodal" id="popup_view_RPS" class="popup_divide">
+        <div class="modal_container">
+            <p class="modal_container__title"><i class="xi-check-circle"></i>결과 출력항목 설정</p>
+            
+            <div class="DivideContWrap DivideContWrap_Normal">
+                <dl class="left">
+                    <dt>항목명</dt>
+                    <dd>
+                        <ul class="leftCont listCont">
+                            <li>자원명</li>
+                            <li>자원저장일</li>
+
+                            <li>프로젝트명</li>
+                            <li>자원채취일</li>
+                            <li>SPREC</li>
+                            <li>자원상세코드</li>
+                            <li>농도</li>
+                            <li>사망일자</li>
+                            <li>혈액 채혈일</li>
+                            <li>바코드 부착일</li>
+                            <li>비고</li>
+                            <li>프로젝트명</li>
+                            <li>자원채취일</li>
+                            <li>SPREC</li>
+                            <li>자원상세코드</li>
+                            <li>농도</li>
+                            <li>사망일자</li>
+                            <li>혈액 채혈일</li>
+                            <li>바코드 부착일</li>
+                            <li>비고</li>
+                            <li>프로젝트명</li>
+                            <li>자원채취일</li>
+                            <li>SPREC</li>
+                            <li>자원상세코드</li>
+                            <li>농도</li>
+                            <li>사망일자</li>
+                            <li>혈액 채혈일</li>
+                            <li>바코드 부착일</li>
+                            <li>비고</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <ul class="center btn_divide ">
+                    <li><span class="material-symbols-outlined">navigate_next</span></li>
+                    <li><span class="material-symbols-outlined">keyboard_double_arrow_right</span></li>
+                    <li><span class="material-symbols-outlined">navigate_before</span></li>
+                    <li><span class="material-symbols-outlined">keyboard_double_arrow_left</span></li>
+                </ul>
+                <dl class="right">
+                    <dt>항목명</dt>
+                    <dd>
+                        <ul class="rightCont listCont">
+                            <li>프로젝트명</li>
+                            <li>자원채취일</li>
+                            <li>SPREC</li>
+                            <li>자원상세코드</li>
+                            <li>농도</li>
+                            <li>사망일자</li>
+                            <li>혈액 채혈일</li>
+                            <li>바코드 부착일</li>
+                            <li>비고</li>
+
+                            <li>프로젝트명</li>
+                            <li>자원채취일</li>
+                            <li>SPREC</li>
+                            <li>자원상세코드</li>
+                            <li>농도</li>
+                            <li>사망일자</li>
+                            <li>혈액 채혈일</li>
+                            <li>바코드 부착일</li>
+                            <li>비고</li>
+                            <li>프로젝트명</li>
+                            <li>자원채취일</li>
+                            <li>SPREC</li>
+                            <li>자원상세코드</li>
+                            <li>농도</li>
+                            <li>사망일자</li>
+                            <li>혈액 채혈일</li>
+                            <li>바코드 부착일</li>
+                            <li>비고</li>
+                            <li>프로젝트명</li>
+                            <li>자원채취일</li>
+                            <li>SPREC</li>
+                            <li>자원상세코드</li>
+                            <li>농도</li>
+                            <li>사망일자</li>
+                            <li>혈액 채혈일</li>
+                            <li>바코드 부착일</li>
+                            <li>비고</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <ul class="rightContSide btn_divide">
+                    <li><span class="material-symbols-outlined">keyboard_double_arrow_up</span></li>
+                    <li><span class="material-symbols-outlined">keyboard_arrow_up</span></li>
+                    <li><span class="material-symbols-outlined">keyboard_arrow_down</span></li>
+                    <li><span class="material-symbols-outlined">keyboard_double_arrow_down</span></li>
+                </ul>
+            </div><!--RPSContWrap //-->
+
+            <div class="btnWrap">
+                    <div class="flxWrap">
+                        <a href="#" class="btn_gray"><i class="xi-check"></i> <span>확인</span></a>    
+                        <a href="#" class="btn_gray" onclick="fnHidePop('popup_view_RPS')"><i class="xi-close"></i> <span>취소</span></a>    
+                    </div>
+            </div><!--btnWrap //-->
+
+        </div><!--modal_container //-->
+    </div><!--dimmodal //-->
+    <!-- 팝업_결과 출력항목 설정 END-->
+
+    <script>
+        $(function(){
+            //$('.easyui-tabs_ver2 .tabs-panels').css('height','calc(100% - 134px)');
+            //$('.configSDPInfo').parent('.easyuiTab__cont').css('height','calc(100vh - 306px)');
+            
+
+            $('.tapTopCont').children('.inputWrapAll').hide();
+            $('.tapTopCont').children('.inputWrapAll:nth-child(1)').show();
+            $('.easyuiRight_storageMainWrap .RightCommonWrap .tapTopCont').css('height','75px');
+            //$('.easyuiRight_storageMainWrap .RightCommonWrap .tapTopCont .inputWrapAll').css('width','1200px');
+            $('.easyuiRight_storageMainWrap .easyui-tabs_ver2 .tabs-panels').css('height','calc(100% - 46px)');
+            $('.easyuiRight_storageMainWrap .configSDPInfo').css('height','calc(100% - 65px)');
+            $('.easyuiRight_storageMainWrap .easyui-tabs_ver2 .tabs-panels .easyuiTab__cont').css('height','calc(100vh - 309px)');
+            
+
+            $('.tabs li:nth-child(1)').click(function(){
+                //$('.easyui-tabs_ver2 .tabs-panels').css('height','calc(100% - 134px)');
+                $('.tapTopCont').children('.inputWrapAll').hide();
+                $('.tapTopCont').children('.inputWrapAll:nth-child(1)').show();
+                
+                $('.easyuiRight_storageMainWrap .RightCommonWrap .tapTopCont').css('height','75px');
+                //$('.easyuiRight_storageMainWrap .RightCommonWrap .tapTopCont inputWrapAll').css('width','1200px');
+                $('.easyuiRight_storageMainWrap .easyui-tabs_ver2 .tabs-panels').css('height','calc(100% - 46px)');
+                $('.easyuiRight_storageMainWrap .easyui-tabs_ver2 .tabs-panels .easyuiTab__cont').css('height','calc(100vh - 309px)');
+                
+
+                $('.configSDLInfo__progressbar').hide();
+            });
+            $('.tabs li:nth-child(2)').click(function(){
+                //$('.easyui-tabs_ver2 .tabs-panels').css('height','calc(100% - 208px)');
+                $('.tapTopCont').children('.inputWrapAll').hide();
+                $('.tapTopCont').children('.inputWrapAll:nth-child(2)').show();
+
+                $('.easyuiRight_storageMainWrap .RightCommonWrap .tapTopCont').css('height','149px');
+                //$('.easyuiRight_storageMainWrap .RightCommonWrap .tapTopCont .inputWrapAll').css('width','1200px');
+                $('.easyuiRight_storageMainWrap .easyui-tabs_ver2 .tabs-panels').css('height','calc(100% - 200px)');
+                $('.easyuiRight_storageMainWrap .easyui-tabs_ver2 .tabs-panels .easyuiTab__cont').css('height','calc(100vh - 383px)');
+
+
+
+                $('.configSDLInfo__progressbar').show();
+            });
+
+            //
+            $('.DivideContWrap .listCont li').click(function(){
+                    $('.DivideContWrap .listCont li').removeClass('on');
+                    $(this).addClass('on');
+            });
+        });
+    </script>
+</body>
+</html>

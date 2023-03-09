@@ -1,0 +1,156 @@
+
+#popup_settingDefault .scro {height:301px !important;}
+
+
+/*** 입출고관리 > 제공자 ***/
+.easyuiLeft_donorWrap .panel-header, .easyuiLeft_donorWrap .panel-title, .easyuiLeft_donorWrap .panel-tool{ height:0;}
+/* .easyuiLeft_donorWrap h2+.panel{position: relative; top: 40px;} */
+
+.doner__searchWrap{margin-bottom:30px;}
+    .doner__searchWrap li{margin-right:20px; color: #4c4c4c;font-size: 13px;}
+    .doner__searchWrap label{font-size: 13px;}
+
+
+
+.easyuiRight_donorWrap{padding:0;}
+
+/* 프로젝트 정보 */
+.td_date{display:flex; align-items: center;}
+/* .td_date >.easyui-datebox+.textbox{width:calc(100% - 80px) !important;} */
+.viewNT{margin-left:10px; vertical-align: middle; font-size:13px;}
+.viewNT:hover{color:var(--orange); cursor: pointer;}
+
+
+/*** 입출고관리 > 인체자원 탭 ***/
+.easyuiTab__cont_hr .accordion textarea{min-width:570px; max-width:570px; height:38px;}
+
+.table_td_hr_UpdateOneTime__Top{align-items: center;}
+    .table_td_hr_UpdateOneTime__Top input{flex:1; margin-right:10px; margin-bottom:5px;}
+
+.table_td_hr_UpdateOneTime__Bottom > div{display: flex; flex: 1; align-items: center; }
+.table_td_hr_UpdateOneTime__Bottom > div > span{padding:0 5px;}
+
+/*** 입출고관리 > 연계정보 탭 ***/
+.connectionInfoListWrap{display: flex;}
+    .connectionInfoListWrap dl{flex:1; border: 1px solid var(--line-color); border-top:none; border-right:none;}
+    .connectionInfoListWrap dl:last-child{border-right: 1px solid var(--line-color);}
+    .connectionInfoListWrap dt{background: var(--light-yellow); font-size: 16px; height: 40px; line-height: 40px; padding: 0 20px; border-bottom: 1px solid var(--line-color);}
+    .connectionInfoListWrap dd{padding:20px;}
+    .connectionInfoListWrap dd .check_wrap{margin-bottom:10px;}
+    .connectionInfoListWrap dd .check_wrap textarea{margin-top:10px; min-height:85px; max-width:220px; min-width:220px;}
+
+
+/*** 입출고관리 > 자원접수 (진입화면) ***/
+.easyuiLeft_ResourceInspectionWrap{}
+    .barcodeBoxWrap{margin-right:23px;}
+
+
+
+.tit_Left_h3{}
+.easyuiLeft_ResourceInspectionWrap .boxAlignWrapWrap{padding:0; /*height: calc(100% - 159px); /*125px*/ height: calc(100% - 51px - 37px); }
+
+
+
+/*** 입출고관리 > 자원접수 (접수화면) ***/
+.easyuiLeft_rR{}
+    
+
+
+
+.easyuiRight_rR{}
+    .easyuiRight_rR .RightTopBox{height:97px; padding-bottom: 0;}
+    .easyuiRight_rR .droppableLeftRightWrap{height:calc(100% - 97px);}
+    .easyuiRight_rR .boxAlignWrapWrap{position:relative; padding:20px; height:100%;}
+    .easyuiRight_rR .dropWrap td{width:calc(100%/10);}
+    .easyuiRight_rR .boxAlignWrapWrap .scro{width:1150px}
+
+
+/*** 입출고관리 > 자원검수 ***/
+/* 상단 박스 */
+.resourceInspection__topBoxWrap{padding-bottom:30px;}
+    .resourceInspection__topBoxWrap .tit{margin-bottom:8px; font-size:18px; font-weight:500;}
+    .resourceInspection__topBoxWrap .color_orange{color:var(--orange); font-weight:600;}
+
+    .contWrap{width:100%; height:80px !important; overflow: auto;}
+    
+    .resourceInspection__topBoxWrap .cont{width:max-content;}
+    .resourceInspection__topBoxWrap .cont:after{display:none;}
+        .resourceInspection__topBoxWrap .cont li{float:left; margin-right:5px; padding:3px; border:1px solid var(--line-color); border-radius:4px; cursor: pointer;}
+        .resourceInspection__topBoxWrap .titBox{margin-right:5px; width:40px; height:40px; line-height:40px; background:#4881ff; color:#fff; border-radius:4px; text-align:center;}
+        .resourceInspection__topBoxWrap .location{margin:3px 10px 5px 0; color:#666; font-size:13px; line-height:1;}
+        .resourceInspection__topBoxWrap .dcode{font-size:16px; font-weight:600; line-height:1;}
+        .resourceInspection__topBoxWrap .cont li:hover, .resourceInspection__topBoxWrap .cont li.clkeve{background:var(--blue); color:#fff;}
+        .resourceInspection__topBoxWrap .cont li:hover .location, .resourceInspection__topBoxWrap .cont li.clkeve .location{color:#fff;}
+
+/* 바코드 버튼클릭시 트리보기 */
+#popup_viewTree .layerpopupContWrap_forscro{width:700px;}
+#popup_viewTree .panel-body{width:100%; height:100%;}
+
+
+
+
+/*** 입출고관리 > 자원접수 ***/
+.rRI_TopWrap, .rRI_ListWrap{max-width: 1260px; margin: 0 auto;}
+
+
+.rRI_TopWrap{padding:70px 0; margin-bottom:75px; border-bottom:2px solid var(--blue);}
+    .rRI_TopWrap img{margin:0 auto 20px; display: block;}
+    .rRI_TopWrap .barcodeBoxWrap{height: 55px; line-height:55px; justify-content: center;}
+    .rRI_TopWrap .barcodeBoxWrap input{height: 100%; width: 320px;}
+    .rRI_TopWrap .barcodeBoxWrap input::placeholder{font-size: 16px;}
+    .rRI_TopWrap .btnClassic{height: 100%; line-height: 55px; width: 50px;}
+    .rRI_TopWrap div.btnClassic.xi-list-number{width:50px; height: 55px; line-height: 55px;}
+
+
+.rRI_ListWrap{font-size: 13px; font-weight: 300;}
+    .rRI_ListWrap > ul{display: flex;}
+    .rRI_ListWrap > ul li+ li{margin-left:10px;}
+    .rRI_ListWrap li{flex:1; padding:10px; border:1px solid var(--line-color); border-radius: 4px;}
+    .rRI_ListWrap li dt{opacity: .5;}
+
+        .rRI_ListWrap_date{margin-bottom:10px; padding:10px; display:flex; justify-content:space-between; background:#4881ff; color:#fff; border-radius: 4px;}
+        .rRI_ListWrap_date:after{content: inherit;}
+            .rRI_ListWrap_date dd{font-size: 16px; }
+
+        .rRI_ListWrap_loca{margin-bottom:10px;}
+
+        .rRI_ListWrap_barcode{}
+            .rRI_ListWrap_barcode a{margin-bottom:10px; font-size:16px; font-weight: 600;}
+            .rRI_ListWrap_barcode a:hover{color:var(--blue);}
+
+
+.dimmodal .treeWrap{height:500px; max-height: 70vh;}
+
+
+
+/*** 입출고관리 > 자원분양 ***/
+.rDWrap{}
+    .easyuiLeft_rDWrap{}
+        .easyuiLeft_rDWrap > .panel{height:calc(100% - 144px);}
+        .easyuiLeft_rDWrap > .panel > .panel-body{height:100% !important;} 
+        .easyuiLeft_rDWrap .panel-header{display:none;}
+
+        
+
+    .easyuiRight_rDWrap{}
+        .easyuiRight_rDWrap .rightCont{height:100%; position: relative;}
+
+        .easyuiRight_rDWrap .radioWrap{height: 36px; line-height: 36px; border-bottom: 1px solid var(--line-color);}
+        .easyuiRight_rDWrap .btnClassic{height:36px; line-height:36px; display:block;}
+        .easyuiRight_rDWrap .flx3 .item{width:calc((100%/3) - 14px);}
+
+
+        .easyuiRight_rDWrap .panel{height:220px; width:100% !important;}
+        .easyuiRight_rDWrap .panel-body{height:100% !important; }
+
+
+/*** 입출고관리 > 동의서 ***/
+.easyuiRight_consentWrap textarea{min-width:368px; max-width:368px;}
+
+        
+        
+
+
+
+
+

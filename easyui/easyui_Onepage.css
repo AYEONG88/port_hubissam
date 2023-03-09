@@ -1,0 +1,4 @@
+body > .layout-panel-center{padding-right:20px !important;}
+body > .layout-panel-center .panel-header{width:100%;}
+body > .layout-panel-center .easyuiLeft{width:100%;}
+body > .layout-panel-center .easyuiLeft h2{width:calc(100% - 40px);}

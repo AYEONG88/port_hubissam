@@ -1,0 +1,105 @@
+/*** 환경설정 > 저장장비 > 속성정보 ***/
+.tab_ver2 + .tabCont{height:calc(100% - 134px); /*background:yellow;*/}
+.tabCont > article.configSDPInfo div.forScro{padding:0; display:flex; border:3px solid var(--blue);}
+.easyuiRight_storageMainWrap .panel-header{display:none;}
+.tabCont > article.configSDPInfo .datagrid{height:100%; width:100% !important;}
+.tabCont > article.configSDPInfo .datagrid .panel-body{/*border:3px solid var(--blue);*/ height:100% !important; width:100% !important;}
+.tabCont > article.configSDPInfo .datagrid-view{height:100% !important;}
+
+.configSDPInfo__Right{padding:20px; padding-right:0; margin-left:20px; background:#f7f7f7; width:400px; min-height:100%; overflow: auto; border-radius: 10px;}
+/* .configSDPInfo__Right .forScro{padding:0; min-width:unset;} */
+
+
+.resourceInspection__contentWrap__Right .tit .pop_resultPrintSetting{float:right;}
+    .resourceInspection__contentWrap__Right .tit .pop_resultPrintSetting i{color:#000;}
+    .resourceInspection__contentWrap__Right .tit .pop_resultPrintSetting:hover i{color:var(--blue);}
+
+.easyuiRight_storageMainWrap .configSDPInfo{display:flex; height:calc(100% - 65px);}    
+.easyuiRight_storageMainWrap .configSDPInfo>.panel {border: 3px solid var(--blue) !important; }
+.easyuiRight_storageMainWrap .configSDPInfo .panel-body,
+.easyuiRight_storageMainWrap .configSDPInfo .datagrid-view{height: 100% !important;}
+
+.easyuiRight_storageMainWrap .bottomBtnWrap{padding:0;}
+
+/* .easyuiRight_storageMainWrap .easyuiTab__cont{height:605px !important;} */
+
+
+
+/*** 환경설정 > 저장장비 > 위치정보 ***/
+.configSDLInfo{background:var(--blue); height:calc(100% - 65px);}
+.tab_ver2 + .tabCont{/***height:calc(100% - 212px);***/}
+.tabCont > article.configSDLInfo{/***height:532px;***/ color:#fff; font-size:16px; font-weight:500; letter-spacing:-0.16px;} 
+.configSDLInfo div.forScro{padding:0; background:var(--blue); height:100%;}
+
+    .configSDLInfo .droppableLeftRightWrap{height:100%;}
+    .configSDLInfo .droppableLeftRightWrap__Left{overflow: auto; width:100%;}
+    .configSDLInfo .droppableLeftRightWrap .boxAlignWrapWrap{padding-top:30px; background:var(--blue); width:1335px;}
+    .configSDLInfo .xy_coordinate{color:#fff;}
+        .configSDLInfo .y_coordinate {top: 40px; left: 0px;}
+    .configSDLInfo .dropWrap td{width:calc(100%/22); height:61px; border:1px solid #375fb9; background:var(--blue);}
+    
+
+
+
+
+/* progress bar */
+.configSDLInfo__progressbar{display:none;
+    background: #ffb800; /* Old browsers */
+    background: -moz-linear-gradient(left,  #ffb800 0%, #ff1500 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #ffb800 0%,#ff1500 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #ffb800 0%,#ff1500 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb800', endColorstr='#ff1500',GradientType=1 ); /* IE6-9 */
+    width:350px; height:20px; border-radius:10px; 
+    position: absolute; right: 0; top: 20px;
+}
+.configSDLInfo__progressbar > ul{width:100%; justify-content: space-between; position: absolute; top:-30px; left:0; display: flex; color:#111; font-size:13px;}
+.configSDLInfo__progressbar > ul:after{content:inherit;}
+.configSDLInfo__progressbar > ul li{position: relative; line-height:initial;}
+.configSDLInfo__progressbar > ul li:after{display:block; content:''; position: absolute; bottom:-8px; left:50%; transform:translateX(-50%); background:#b2b2b2; width:1px; height:8px; }
+
+
+/* 박스 */
+.sb, .fr{position: absolute; color:#fff; }
+.sb{top:8px; left:30px;}
+.fr{top:39px; left:-3px; transform:rotate(90deg);}
+
+/* .boxAlignWrapWrap{height:100%;} */
+/* .configSDLInfo .boxAlignWrapWrap{height:537px !important;} */
+.configSDLInfo .boxAlignWrap{padding:0 12px; padding-bottom:20px; padding-right:0;}
+.configSDLInfo .boxAlignWrap > dl{width:56px; height:56px;}
+.configSDLInfo .boxAlignWrap dd{ height:34px; }
+
+
+
+/** 환경설정 > 저장장비 (속성정보&위치정보 공통높이 조정) */
+.easyuiRight_storageMainWrap .RightCommonWrap{height:100%;}
+/* .easyuiRight_storageMainWrap .RightCommonWrap .forScro{padding:0; height:100%;} */
+.easyuiTabsWrap{position: relative; overflow: inherit;}
+.easyuiRight_storageMainWrap .RightCommonWrap .tapTopCont{/**height:80px !important;**/ overflow-y: auto; overflow-x:auto; margin-bottom:15px;}
+.easyuiRight_storageMainWrap .inputWrapAll{margin-bottom:0; width:1200px;}
+/* .easyuiRight_storageMainWrap .RightCommonWrap .tapTopCont .inputWrapAll{width:max-content;} */
+
+.easyuiRight_storageMainWrap .easyui-tabs_ver2{/**height:calc(100% - 80px) !important;**/ overflow: hidden;}
+/* .easyuiRight_storageMainWrap .easyui-tabs_ver2 .tabs-panels{height:calc(100% - 46px) !important;} */
+/* .easyuiRight_storageMainWrap .configSDPInfo{height:calc(100% - 65px);} */
+
+
+/*** 환경설정 > 저장장비이력 > 장비이력 ***/
+.easyuiRight_storageEquipmentHistoryWrap .easyui-tabs_ver2{height:300px !important;}
+
+/*** 환경설정 > 프로젝트관리 ***/
+.contCtrlWrap{border:3px solid #bebebe; height:385px; }
+    .contCtrlWrap h5{padding:0 020px; margin-bottom:5px; position: relative; font-size:15px;}
+    .contCtrlWrap h5:before{ position:absolute; top:50%; left:0; transform: translateY(-50%); display: block; content:''; width:15px; height:15px; border-radius: 50%; background: var(--blue);}
+
+    .contCtrlWrap h5 + .flxWrap{padding-bottom:10px;}
+
+    .contCtrlWrap__oriWrap, .contCtrlWrap__ctrlWrap{padding:20px; width:calc(50% - 50px); height:100%;}
+        .contCtrlWrap__oriWrap .datagrid-view, .contCtrlWrap__ctrlWrap .datagrid-view{width:100% !important;}
+
+    .contCtrlWrap__ctrlBar{gap:3px; padding: 20px 10px; width: 100px; height:100%; background: #bebebe; text-align: center; }
+        .contCtrlWrap__ctrlBar li{display:flex; align-items: center; justify-content: center; height:100%; background-image: linear-gradient(to top, #efefef, #f9f9f9); border-radius:4px;}
+        .contCtrlWrap__ctrlBar li:hover{cursor: pointer; background:var(--blue); color:#fff;}
+        .contCtrlWrap__ctrlBar li span{display:inline-block; margin-bottom:5px; font-size:18px;}
+        .contCtrlWrap__ctrlBar li p{font-size:14px;}
+

@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="height=device-height , width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="shortcut icon" href="../_images/common/favicon.ico">
+    <title>HuBIS_Sam v4.0</title>
+
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css">  
+    <link rel="stylesheet" type="text/css" href="../easyui/demo.css">  
+    <link rel="stylesheet" href="../_common/css/reset.css">
+    <link rel="stylesheet" href="../_common/css/xeicon.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../_common/css/font.css">
+    <link rel="stylesheet" type="text/css" href="../_common/css/style.css">  
+    <link rel="stylesheet" type="text/css" href="../_common/css/layout.css">  
+    <link rel="stylesheet" type="text/css" href="../easyui/easyui_sal.css"> 
+    <link rel="stylesheet" type="text/css" href="../_common/css/header.css">  
+
+
+    <!-- <script src="../_common/js/jquery-latest.min.js"></script> -->
+    <script type="text/javascript" src="../easyui/jquery.min.js"></script>  
+	<script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script> 
+    <script type="text/javascript" src="../easyui/datagrid-detailview.js"></script>
+
+	
+    <script type="text/javascript" src="../_common/js/common.js"></script>
+	
+</head>
+<body class="easyui-layout moveLayout" >
+	<div class="loaderWrap">
+        <div class="loaderWrap__cont">
+            <div class="loading-container">
+                <div class="loading"></div>
+                <div id="loading-text">loading</div>
+            </div>
+        </div>        
+    </div><!--loaderWrap //-->
+
+    <div class="header" data-options="region:'north',border:false">
+        <nav>
+            <h1 class="h1 flxWrap">
+                <a href="#" class="logo_hubis"><strong>HuBIS_Sam</strong><span>인체자원관리시스템</span></a>
+                <a href="#" class="logo_organ"><img src="../_images/common/logo_snuh.png"/></a>
+            </h1>
+
+            <ul class="gnb flxWrap">
+                <li><a href="../storeAndReleased/donor.html" class="oneDepth">입출고관리</a></li>
+                <li><a href="../resourceManagement/menuPageLink.html" class="oneDepth">자원관리</a></li>
+                <li><a href="../smartSearch/selectBaseSearchForm.html" class="oneDepth">스마트검색</a></li>
+                <li><a href="../batch/selectBatchMainView.html" class="oneDepth">일괄처리</a></li>
+                <li><a href="../configuration/linkInfoRegis.html" class="oneDepth">환경설정</a></li>
+                <li><a href="#" class="oneDepth">도움말</a></li>  
+            </ul>
+      
+            <div class="navRightWrap flxWrap">
+                <a href="#" class="headersearchWrap"><input type="text"><i class="xi-search"></i></a>
+                <p class="login_user"><span>자원관리자</span><span class="name">홍길동</span></p>
+
+                <!-- 아코디언 -->
+                <div class="hamWrap">
+
+                    <div class="hamWrap__icoWrap">
+                        <input class="checkbox" type="checkbox" id="hamCheck">
+                        <label class="btn_ham" for="hamCheck">
+                            <span class="bar"></span>
+                        </label>
+                    </div>                          
+                    
+                    <div class="hamContWrap">
+                        <div class="hamCont">
+                            <ul class="hamAcco scro">
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">change_circle</span>
+                                    입출고관리<i class="xi-angle-down-min btn_tog"></i>
+                                </li>
+                                <li class="hamAcco__twoDepth" >
+                                    <a href="../storeAndReleased/donor.html">제공자</a>
+                                    <a href="../storeAndReleased/resourceReceiptIntro.html">자원접수</a>
+                                    <a href="../storeAndReleased/resourceInspection.html">자원검수</a>
+                                    <a href="../storeAndReleased/consent.html">동의서</a>
+                                    <a href="#">STR</a>
+                                    <a href="../storeAndReleased/snp.html">SNP</a>
+                                    <a href="../storeAndReleased/qualityControl.html">정도관리</a>
+                                    <a href="../storeAndReleased/resourceDistribute.html">자원분양</a>
+                                </li>
+                            
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-symbols-outlined">slow_motion_video</span>
+                                    자원관리<i class="xi-angle-down-min btn_tog"></i></li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../resourceManagement/menuPageLink.html">자원백업</a>
+                                    <a href="../resourceManagement/resourceDivision.html">자원분주</a>
+                                    <a href="#">자원배양</a>
+                                    <a href="#">자원추출</a>
+                                    <a href="#">반송폐기</a>
+                                    <a href="#">자원소진</a>
+                                    <a href="#">자원정체</a>
+                                    <a href="#">SPREC 변경</a>
+                                    <a href="#">연계정보</a>
+                                </li>
+
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">view_in_ar</span>
+                                    스마트검색<i class="xi-angle-down-min btn_tog"></i>
+                                </li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../smartSearch/selectBaseSearchForm.html">검색기반관리</a>
+                                    <a href="#">저장된 검색어</a>
+                                    <a href="#">내 검색어</a>
+                                    <a href="../smartSearch/frozenCart.html">냉동카트</a>
+                                    <a href="#">비주얼카트</a>
+                                    <a href="#">STP 비교검색</a>
+                                    <a href="../smartSearch/snpCompareSearch.html">SNP 비교검색</a>
+                                    <a href="../smartSearch/inOutView.html">입출고장조회</a>
+                                    <a href="../smartSearch/atchmnFile.html">첨부파일검색</a>
+                                </li>
+                                
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">playlist_add_check</span>
+                                    일괄처리<i class="xi-angle-down-min btn_tog"></i>
+                                </li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../batch/selectBatchMainView.html">일괄처리</a>
+                                    <a href="../batch/selectBatchStatusView.html">처리현황판</a>
+                                    <a href="#">다운로드센터</a>
+                                    <a href="#">저장고관리</a>
+                                    <a href="#">정보편차검출</a>
+                                </li>
+
+                                <li class="hamAcco__oneDepth">
+                                    <i class="xi-wrench"></i>
+                                    환경설정
+                                    <i class="xi-angle-down-min btn_tog"></i></li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../configuration/linkInfoRegis.html">연계정보 등록시 화면</a>
+                                    <a href="../configuration/projectManagement.html">프로젝트관리</a>
+                                    <a href="../configuration/protocol.html">수집프로토콜</a>
+                                    <a href="../configuration/storageMain.html">저장장비</a>
+                                    <a href="../configuration/storageEquipmentHistory.html">저장장비이력</a>
+                                    <a href="../configuration/monitorMain.html">저장장비온도로그</a>
+                                    <a href="#">Quick Link 관리</a>
+                                    <a href="../configuration/userSetting.html">사용자 환경설정</a>
+                                </li>
+
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">info</span>
+                                    도움말
+                                    <i class="xi-angle-down-min btn_tog"></i></li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="#">동의서(for tablet)</a>
+                                    <a href="../help/statisticsMainView.html">통계쿼리관리</a>
+                                    <a href="#">About HuBIS_Sam</a>
+                                    <a href="../help/resourceReceiptForTablet.html">자원접수(for tablet)</a>
+                                    <a href="../help/resourceDistributeForTablet.html">자원분양(for tablet)</a>
+                                </li>
+                            </ul>
+
+                            <div class="hamBottom">
+                                <div class="hamBottom__btnWrap">
+                                    <a href="#">HuBIS-Desk</a>
+                                    <a href="#">HuBIS-Tracker</a>
+                                </div>
+                                <div class="flxWrap hamBottom__footer">
+                                    <a href="../configuration/userSetting.html"><span class="material-icons expt">manage_accounts</span><p>사용자설정</p></a>
+                                    <a href="../sys/sysManager.html"><span class="material-icons">settings</span><p>시스템 환경설정</p></a>
+                                </div>
+                            </div><!-- hamBottom //-->
+                        </div><!--hamCont //-->
+                    </div><!-- hamContWrap  //-->
+                </div><!-- hamWrap //-->        
+            </div><!-- navRightWrap //-->
+        </nav>
+    </div><!-- north //-->
+
+    <link rel="stylesheet" href="../_common/css/storeAndReleased.css">
+    <!-- 왼쪽 컨텐츠 -->
+	<div class="easyuiLeft easyuiLeft_donorWrap" data-options="region:'center',title:'왼쪽 컨텐츠'">
+        <h2 class="flxWrap" >
+            <p class="h2__left"><i class="xi-caret-down-square"></i><span>입출고관리</span><i class="xi-play"></i><span class="txtBold">제공자</span></p>
+            <a href="#" class="h2__right"><i class="xi-plus-circle-o"></i><span>신규 제공자 등록</span></a>
+        </h2>
+        
+        <div id="toolbarDonor">
+            <div class="searchWrap doner__searchWrap">
+                <form id="" action="" name="" method="">
+                    <fieldset>
+                        <legend>제공자 조건검색</legend>
+                        <div class="searchInput flxWrap">
+                            <input type="text" class="input-search" id="text-search" placeholder="검색어를 입력 해 주세요"/>
+                            <div class="flxWrap">
+                                <a href="#"><i class="xi-search"></i></a>
+                                <a href="#"><i class="xi-tune"></i><span>멀티검색</span></a>
+                            </div>
+                        </div>
+                        
+                        <ul class="flxWrap">
+                            <li class="check_wrap">
+                                <input type="checkbox" name="searchCheck" id="searchCheckHnum" name="식별번호" />
+                                <label for="searchCheckHnum"><span class="checkmark"></span>식별번호</label>
+                            </li>
+                            <li class="check_wrap">
+                                <input type="checkbox" name="searchCheck" id="searchCheckDonorName" name="성명" />
+                                <label for="searchCheckDonorName"><span class="checkmark"></span>성명</label>
+                            </li>
+                            <li class="check_wrap">
+                                <input type="checkbox" name="searchCheck" id="searchCheckKbnDonor" name="바코드" />
+                                <label for="searchCheckKbnDonor"><span class="checkmark"></span>바코드</label>
+                            </li>
+                            <li class="check_wrap">
+                                <input type="checkbox" name="searchCheck" id="searchCheckDateRegister" name="등록일"/>
+                                <label for="searchCheckDateRegister"><span class="checkmark"></span>등록일</label>
+                            </li>
+                            <li class="check_wrap">
+                                <input type="checkbox" name="searchCheck" id="searchCheckDateUpdate" name="최종수정일시" />
+                                <label for="searchCheckDateUpdate"><span class="checkmark"></span>최종수정일시</label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </form>
+            </div><!--doner__searchWrap -->
+
+            <ul class="tblCaption flxWrap">
+                <li class="left flxWrap">
+                    <i class="xi-comment-o"></i><div class="txt"><span>전체&nbsp;:</span>&nbsp;<p>25,154</p></div>
+                </li>
+                <li class="right">
+                    <select name="" id="">
+                        <option value="">10개씩</option>
+                        <option value="">20개씩</option>
+                        <option value="">30개씩</option>
+                        <option value="">50개씩</option>
+                    </select>
+                </li>
+            </ul>
+        </div><!-- toolbar -->
+
+        <table id="dg_donor" class="easyui-datagrid"
+            toolbar="#toolbarDonor" 
+            data-options="rownumbers:true, url:'../_data/dg_testDonor.json', striped:true, singleSelect:true, collapsible:true, 
+            displayMsg: false, showPageList: false, showRefresh: false, showPageInfo: true, 
+            pagination:true, pageList:[10,50,100,500], pageSize:10, fit:true, method:'get',
+            ">
+            <thead>
+                <tr>
+                    <th data-options="field:'ck',checkbox:true"></th>
+                    <th data-options="field:'idnumber', width:90" >식별번호</th>
+                    <th data-options="field:'name', width:90">성명</th>
+                    <th data-options="field:'gender', width:50, align:'center'">성별</th>
+                    <th data-options="field:'barCode', width:90, align:'center'">바코드</th>
+                    <th data-options="field:'dateRegist', width:100, align:'center'">등록일자</th>
+                    <th data-options="field:'pjName', width:160">프로젝트명</th>
+                    <th data-options="field:'dateRevise', width:150, align:'center'">최종수정일시</th>
+                </tr>
+            </thead>
+        </table>
+        
+        <script type="text/javascript">
+            //showEast
+            $('.easyuiLeft .easyui-datagrid').datagrid({
+                onClickRow: function(){
+                    $('.moveLayout').layout('expand','east');
+                },
+            });
+
+            // 체크박스는 다중선택, row는 한줄만선택
+            $('.easyui-datagrid').datagrid({selectOnCheck:$(this).is(':checked')});
+            $('.easyui-datagrid').datagrid({checkOnSelect:$(this).is(':checked')});
+
+            $(function(){                
+                var pagerDonor = $('#dg_donor').datagrid('getPager');	// get the pager of datagrid
+                               
+                pagerDonor.pagination({
+                    
+                    buttons:[{
+                            iconCls:'icon-trashBin',
+                            title:"삭제",
+                            handler:function(){
+                                alert('trashBin');
+                            }
+                        },{
+                            iconCls:'icon-barcode',
+                            title:"바코드 출력",
+                            handler:function(){
+                                alert('edit');
+                            }
+                        },{
+                            iconCls:'icon-rebarcode',
+                            title:"바코드 재출력",
+                            handler:function(){
+                                alert('edit');
+                            }
+                        },{
+                            iconCls:'icon-allReceipt',
+                            title:"일괄접수",
+                            handler:function(){
+                                alert('edit');
+                            }
+                        }]
+                });
+            })
+        </script>
+        
+    </div><!-- easyuiLeft //-->
+
+    <!-- 오른쪽 컨텐츠 -->
+    <div class="easyuiRight easyuiRight_donorWrap" data-options="region:'east',split:true,collapsed:true,title:'오른쪽 컨텐츠', collapsedSize:20," style="width:1191px;">
+        <h3 class="flxWrap">
+            <p class="h3__left"><span class="h3__left--numCircle">01039686</span><span class="h3__left--name">김베데 이름</span></p>
+            <p class="h3__right"><img src="../_images/common/ico_calendar.png"> <span>2022-01-23</span></p>
+        </h3>
+
+        <div class="easyui-tabs" data-options="fit:true,plain:true">
+            <!-- 탭_제공자 -->
+            <div title="제공자" class="easyuiTab__cont">
+                <div class="forScro">
+                    <!--기본정보-->
+                    <h4 class="flxWrap mt0" style="margin-bottom:14px;">
+                        <p class="h4__left"><i class="xi-play-circle"></i><span class="h4__left--tit">기본정보</span></p>
+                        <p class="h4__right"><small><span class="star">*</span> 항목은 필수 입력 사항입니다.</small><i class="xi-cog" onclick="fnShowPop('popup_settingDefault'); return false;"></i></p>
+                    </h4>
+                    <div class="flxWrap flx3 gap20" style="margin-bottom:14px;">
+                        <div class="item inputWrap">
+                            <label for="donor_idnum">식별번호 <span class="star">*</span></label>
+                            <input type="text" id="donor_idnum">
+                        </div>
+                        <div class="item inputWrap">
+                            <label for="donor_barcode">바코드</label>
+                            <input type="text" id="donor_barcode">
+                        </div>
+                        <div class="item inputWrap">
+                            <label for="donor_name">성명 <span class="star">*</span></label>
+                            <input type="text" id="donor_name">
+                        </div>
+                        <div class="item inputWrap">
+                            <label for="donor_gender">성별</label>
+                            <div class="radioWrap flxWrap mt10">
+                                <label class="radio_container">남자
+                                    <input type="radio" name="radio_gender">
+                                    <span class="radio_chkmark"></span>
+                                </label>                                    
+                                <label class="radio_container">여자
+                                    <input type="radio" name="radio_gender" checked="checked">
+                                    <span class="radio_chkmark"></span>
+                                </label>
+                                <label class="radio_container">모름
+                                    <input type="radio" name="radio_gender">
+                                    <span class="radio_chkmark"></span>
+                                </label>
+                            </div><!--radioWrap -->
+                        </div>
+                        <div class="item inputWrap flxVertical">
+                            <label for="donor_birth">생년월일 <span class="star">*</span></label>
+                            <div class="inputBox flxWrap">
+                                <p><input type="text"> <span> 년</span></p>
+                                <p><input type="text"> <span> 월</span></p>
+                                <p><input type="text"> <span> 일</span></p>
+                            </div>
+                        </div>
+                        <div class="item inputWrap flxVertical">
+                            <label for="donor_regist">등록일</label>
+                            <input class="easyui-datebox" style="width:160px;">
+                        </div>
+                    </div><!--inputWrap -->
+
+                    <!--프로젝트 정보-->
+                    <h4 class="flxWrap">
+                        <p class="h4__left"><i class="xi-play-circle"></i><span class="h4__left--tit">프로젝트 정보</span></p>
+                    </h4>
+                    <table class="tbl" id="tbl_pjInfo">
+                        <colgroup>
+                            <col width="50px"/>
+                            <col width="218px"/>
+                            <col width="260px"/>
+                            <col width="38px"/>
+                            <col width="38px"/>
+                            <col width="38px"/>
+                            <col width="120px"/>
+                            <col width="auto"/>
+                        </colgroup>
+                        <thead class="thead_2rowspan">
+                            <tr>
+                                <th rowspan="2">선택</th>
+                                <th rowspan="2">프로젝트명</th>
+                                <th rowspan="2">참여일자</th>
+                                <th colspan="3">참여시 나이</th>
+                                <th rowspan="2">진행상태</th>
+                                <th rowspan="2">비고</th>
+                            </tr>
+                            <tr>
+                                <th>년</th>
+                                <th>개월</th>
+                                <th class="br">일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>
+                                    <select name="" id="">
+                                        <option value="">예방유전체 지역사회기반</option>
+                                        <option value="">예방유전체 지역사회기반2</option>
+                                        <option value="">예방유전체 지역사회기반3</option>
+                                        <option value="">예방유전체 지역사회기반4</option>
+                                    </select>
+                                </td>
+                                <td class="td_date">
+                                    <input class="easyui-datebox">
+                                    <a href="#" onclick="fnShowPop('popup_view_NT'); return false;" class="viewNT">차수보기 <i class="xi-plus"></i></a>    
+                                </td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>
+                                    <select name="" id="">
+                                        <option value="">진행완료</option>
+                                        <option value="">진행중</option>
+                                    </select>
+                                </td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>
+                                    <select name="" id="">
+                                        <option value="">예방유전체 지역사회기반</option>
+                                        <option value="">예방유전체 지역사회기반2</option>
+                                        <option value="">예방유전체 지역사회기반3</option>
+                                        <option value="">예방유전체 지역사회기반4</option>
+                                    </select>
+                                </td>
+                                <td class="td_date">
+                                    <input class="easyui-datebox">
+                                    <a href="#" onclick="fnShowPop('popup_view_NT'); return false;" class="viewNT">차수보기 <i class="xi-plus"></i></a>                                       
+                                </td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td>
+                                    <select name="" id="">
+                                        <option value="">진행완료</option>
+                                        <option value="">진행중</option>
+                                    </select>
+                                </td>
+                                <td><input type="text"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                    <div class="flxWrap btnWrap">
+                        <div class="left flxWrap">
+                            <a href="#" class="btn_gray"><i class="xi-close"></i><span>삭제</span></a>    
+                            <a href="#" class="btn_gray"><i class="xi-plus-circle"></i><span>통합</span></a>    
+                            <a href="#" class="btn_gray btn_barcode"><img src="../_images/common/btnIco_barcode.png"/><span>바코드발행</span></a>    
+                            <a href="#" class="btn_gray btn_barcode btn_barcodeR"><img src="../_images/common/btnIco_barcodeR.png"/><span>바코드재발행</span></a>
+                        </div><!-- left -->
+                        <div class="right flxWrap">
+                            <a href="#" class="btn_black" ><i class="xi-plus"></i><span>추가</span></a>    
+                        </div><!--right-->
+                    </div><!--btnWrap //-->
+            
+
+                    <!--참조번호 정보-->
+                    <h4 class="flxWrap">
+                        <p class="h4__left"><i class="xi-play-circle"></i><span class="h4__left--tit">참조번호 정보</span></p>
+                    </h4>
+                    <table class="tbl">
+                        <colgroup>
+                            <col width="50px"/>
+                            <col width="240px"/>
+                            <col width="auto"/>
+                        </colgroup>
+                        <thead class="thead_2rowspan">
+                            <tr>
+                                <th>선택</th>
+                                <th>참조번호</th>
+                                <th>비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    
+
+                    <div class="flxWrap btnWrap">
+                        <div class="left flxWrap">
+                            <a href="#" class="btn_gray"><i class="xi-close"></i><span>삭제</span></a>
+                        </div><!-- left -->
+                        <div class="right flxWrap">
+                            <a href="#" class="btn_black"><i class="xi-plus"></i><span>추가</span></a>    
+                        </div><!--right-->
+                    </div><!--btnWrap //-->
+
+                    <p class="bottomTextWrap">※동의서 유형 정보 ( <a href="#">1</a> )건 연계정보 ( <a href="#">0</a> )건이 존재합니다. 입력이나 수정을 하시려면 하이퍼링크를 클릭해주세요.</p>
+                </div><!--forScro //-->
+                <div class="flxWrap btnWrap bottomBtnWrap">
+                    <div class="left flxWrap"></div>
+                    <div class="right flxWrap">
+                        <a href="#" class="btn_blue left"><i class="xi-check"></i> <span>저장</span></a>    
+                        <a href="#" class="btn_gray right"><i class="xi-close"></i> <span>삭제</span></a>    
+                    </div><!--right-->
+                </div><!--bottomBtnWrap //-->
+            </div><!--easyuiTab__cont //-->
+
+            <!-- 탭_인체자원 -->
+            <div title="인체자원" class="easyuiTab__cont easyuiTab__cont_hr">
+                <div class="AccoWrap">
+                    <div class="easyui-accordion AccoCustom" data-options="multiple:true"><!--style="width:500px; height:400px;" -->
+                        <div title="인체자원" style="height:400px;"><!--data-options="selected:true"-->
+                            <table id="dg_donor_hr" class="easyui-datagrid showAcco" 
+                                    data-options="url:'../_data/dg_donor_hr.json',method:'get',rownumbers:true, striped:true, singleSelect:true, pagination:true, fit:true">
+                                <thead>
+                                    <tr>
+                                        <th data-options="field:'ck',checkbox:true"></th>
+                                        <th data-options="field:'donor_hr_lot',width:145">자원 LOT#</th>
+                                        <th data-options="field:'donor_hr_storageAmount',width:60">입고량</th>
+                                        <th data-options="field:'donor_hr_currentAmount',width:60">현재량</th>
+                                        <th data-options="field:'donor_hr_concent',width:70">농도</th>
+                                        <th data-options="field:'donor_hr_resouceCollectDate',width:100">자원 채취일자</th>
+                                        <th data-options="field:'donor_hr_resourceFreezeDate',width:100">자원 동결일자</th>
+                                        <th data-options="field:'donor_hr_bankReceiptDate',width:100">은행 접수일자</th>
+                                        <th data-options="field:'donor_hr_bankStorageDate',width:100">은행 저장일자</th>
+                                        <th data-options="field:'donor_hr_storageLocation',width:450">저장위치</th>
+                                        <th data-options="field:'donor_hr_resourceKind',width:150">자원종류</th>
+                                        <th data-options="field:'donor_hr_resouceDetailinfo',width:350">자원상세정보</th>
+                                        <th data-options="field:'donor_hr_lotTop',width:145">상위자원LOT#</th>
+                                        <th data-options="field:'donor_hr_resourceBarcode',width:140">자원바코드</th>
+                                        <th data-options="field:'donor_hr_num',width:50">번호</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <script type="text/javascript">
+                                // 체크박스는 다중선택, row는 한줄만선택
+                                $('.easyui-datagrid').datagrid({selectOnCheck:$(this).is(':checked')});
+                                $('.easyui-datagrid').datagrid({checkOnSelect:$(this).is(':checked')});
+
+                                $(function(){
+                                    var pagerDonorHr = $('#dg_donor_hr').datagrid('getPager');	// get the pager of datagrid
+                                                
+                                    pagerDonorHr.pagination({
+                                        
+                                        buttons:[{
+                                                iconCls:'icon-trashBin',
+                                                title:"삭제",
+                                                handler:function(){
+                                                    alert('trashBin');
+                                                }
+                                            }]
+                                    });
+                                })
+                            </script>
+                        </div>
+                        <div title="인체자원 특성정보"><!--style="overflow:auto; -->
+                            <!-- 기본정보 -->
+                            <div>
+                                <h4 class="flxWrap">
+                                    <p class="h4__left"><i class="xi-play-circle"></i><span class="h4__left--tit">기본정보</span></p>
+                                </h4>
+                                <table class="tbl" id="tbl_pjInfo">
+                                    <colgroup>
+                                        <col width="150px"/>
+                                        <col width="37%"/>
+                                        <col width="150px"/>
+                                        <col width="37%"/>
+                                    </colgroup>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>자원그룹명</th>
+                                            <td>
+                                                <select name="" id="">
+                                                    <option value="">예방유전체 지역사회기반 코호트 사업</option>
+                                                    <option value="">예방유전체 지역사회기반 코호트 사업2</option>
+                                                </select>
+                                            </td>
+                                            <th>자원그룹명</th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>자원 LOT#</th>
+                                            <td><input type="text"></td>
+                                            <th>자원바코드</th>
+                                            <td><input type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>자원종류</th>
+                                            <td><input type="text"></td>
+                                            <th>자원상세정보</th>
+                                            <td>
+                                                <select name="" id="">
+                                                    <option value="">Frozen | Whole Blood | Peripheral Blood</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>입고량</th>
+                                            <td><input type="text"></td>
+                                            <th>현재량</th>
+                                            <td><input type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>농도</th>
+                                            <td colspan="3"><input type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>보관상태</th>
+                                            <td><input type="text"></td>
+                                            <th>프로젝트 참여 일자</th>
+                                            <td><input class="easyui-datebox"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>자원 채취일자</th>
+                                            <td>
+                                                <input class="easyui-datebox">
+                                                <span>채취시간</span>
+                                                <input class="easyui-timespinner" data-options="min:'00:00',max:'24:00',showSeconds:false" style="width:140px;" ><!--label="채취시간:" required="required"-->
+                                            </td>
+                                            <th>채취 시 나이</th>
+                                            <td>
+                                                <div class="inputBox flxWrap">
+                                                    <p><input type="text"> <span>년</span></p> 
+                                                    <p><input type="text"><span>월</span></p> 
+                                                    <p><input type="text"><span>일</span></p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>은행 접수일자</th>
+                                            <td><input class="easyui-datebox"></td>
+                                            <th>접수 시 나이</th>
+                                            <td>
+                                                <div class="inputBox flxWrap">
+                                                    <p><input type="text"> <span>년</span></p> 
+                                                    <p><input type="text"><span>월</span></p> 
+                                                    <p><input type="text"><span>일</span></p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>자원 동결일자</th>
+                                            <td><input class="easyui-datebox"></td>
+                                            <th>은행 저장일자</th>
+                                            <td><input class="easyui-datebox"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>저장위치</th>
+                                            <td colspan="3"><input type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>저장온도</th>
+                                            <td colspan="3"><textarea name="" id="" style="min-height:100px;"></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <th>SPREC</th>
+                                            <td colspan="3">
+                                                <div class="flxWrap table_td_hr_UpdateOneTime__Top">
+                                                    <input type="text">
+                                                    <div class="check_wrap">
+                                                        <input type="checkbox" name="chk_donor_hr__UpdateOneTime" id="chk_donor_hr__UpdateOneTime">
+                                                        <label for="chk_donor_hr__UpdateOneTime"><span class="checkmark"></span>자원종류와 접수일이 같은 자원 일괄 업데이트</label>
+                                                    </div>
+                                                </div>
+                                                <div class="inputBox flxWrap table_td_hr_UpdateOneTime__Bottom">
+                                                    <div>
+                                                        <select name="" id="">
+                                                            <option value="">::: Type of sample</option>
+                                                        </select> 
+                                                        <span>-</span>
+                                                    </div> 
+                                                    <div>
+                                                        <select name="" id="">
+                                                            <option value="">::: Type of prime</option>
+                                                        </select> 
+                                                        <span>-</span>
+                                                    </div> 
+                                                    <div>
+                                                        <select name="" id="">
+                                                            <option value="">::: Precentrifugation</option>
+                                                        </select> 
+                                                        <span>-</span>
+                                                    </div> 
+                                                    <div>
+                                                        <select name="" id="">
+                                                            <option value="">::: Centrifugation</option>
+                                                        </select> 
+                                                        <span>-</span>
+                                                    </div> 
+                                                    <div>
+                                                        <select name="" id="">
+                                                            <option value="">::: Second Centrifugation</option>
+                                                        </select> 
+                                                        <span>-</span>
+                                                    </div> 
+                                                    <div>
+                                                        <select name="" id="">
+                                                            <option value="">::: Second Centrifugation</option>
+                                                        </select> 
+                                                        <span>-</span>
+                                                    </div> 
+                                                    <div>
+                                                        <select name="" id="">
+                                                            <option value="">::: Long-term</option>
+                                                        </select> 
+                                                    </div> 
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>비고</th>
+                                            <td colspan="3"><textarea name="" id="" style="min-height:60px;"></textarea></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- 참조번호 -->
+                            <div>
+                                <h4 class="flxWrap">
+                                    <p class="h4__left"><i class="xi-play-circle"></i><span class="h4__left--tit">참조번호</span></p>
+                                </h4>
+                                <table class="tbl">
+                                    <colgroup>
+                                        <col width="50px"/>
+                                        <col width="240px"/>
+                                        <col width="auto"/>
+                                    </colgroup>
+                                    <thead class="thead_2rowspan">
+                                        <tr>
+                                            <th>선택</th>
+                                            <th>참조번호</th>
+                                            <th>비고</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="text"></td>
+                                            <td><input type="text"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="flxWrap btnWrap">
+                                    <div class="left flxWrap">
+                                        <a href="#" class="btn_gray"><i class="xi-close"></i><span>삭제</span></a>
+                                    </div><!-- left -->
+                                    <div class="right flxWrap">
+                                        <a href="#" class="btn_black"><i class="xi-plus"></i><span>추가</span></a>    
+                                    </div><!--right-->
+                                </div><!--btnWrap //-->
+                            </div>
+                        </div>
+                    </div><!-- easyui-accordion AccoCustom //-->
+                </div><!-- AccoWrap //-->
+                <div class="flxWrap btnWrap bottomBtnWrap">
+                    <div class="left flxWrap"></div>
+                    <div class="right flxWrap">
+                        <a href="#" class="btn_blue left"><i class="xi-check"></i> <span>저장</span></a>    
+                        <a href="#" class="btn_gray right"><i class="xi-close"></i> <span>삭제</span></a>    
+                    </div><!--right-->
+                </div><!--bottomBtnWrap //-->
+            </div><!--easyuiTab__cont //-->
+
+            <!-- 탭_인체자원그룹 -->
+            <div title="인체자원그룹" class="easyuiTab__cont">
+                <div class="AccoWrap">
+                    <div class="easyui-accordion AccoCustom" data-options="multiple:true">
+                        <div title="인체자원그룹" data-options="selected:true" style="height:400px;">
+                            <table id="dg_donor_hrg" class="easyui-datagrid showAcco" 
+                                    data-options="url:'../_data/dg_donor_hrg.json',method:'get',rownumbers:true, striped:true, singleSelect:true, pagination:true, fit:true">
+                                <thead>
+                                    <tr>
+                                        <th data-options="field:'ck',checkbox:true"></th>
+                                        <th data-options="field:'donor_hrg_prName',width:330">프로젝트명</th>
+                                        <th data-options="field:'donor_hrg_groupName',width:400">자원그룹명</th>
+                                        <th data-options="field:'donor_hrg_diagnosisCode',width:100">진단코드</th>
+                                        <th data-options="field:'donor_hrg_diagnosisDate',width:100">진단일자</th>
+                                        <th data-options="field:'donor_hrg_surgeryCode',width:100">수술코드</th>
+                                        <th data-options="field:'donor_hrg_surgeryDate',width:100">수술일자</th>
+                                        <th data-options="field:'donor_hrg_tStage',width:100">T stage</th>
+                                        <th data-options="field:'donor_hrg_nStage',width:100">N stage</th>
+                                        <th data-options="field:'donor_hrg_mStage',width:100">M stage</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <script type="text/javascript">
+                                // 체크박스는 다중선택, row는 한줄만선택
+                                $('.easyui-datagrid').datagrid({selectOnCheck:$(this).is(':checked')});
+                                $('.easyui-datagrid').datagrid({checkOnSelect:$(this).is(':checked')});
+            
+                                $(function(){
+                                    var pagerDonorHrg = $('#dg_donor_hrg').datagrid('getPager');	// get the pager of datagrid
+                                                
+                                    pagerDonorHrg.pagination({
+                                        
+                                        buttons:[{
+                                                iconCls:'icon-add',
+                                                title:"추가",
+                                                handler:function(){
+                                                    alert('add');
+                                                }
+                                                },{
+                                                iconCls:'icon-trashBin',
+                                                title:"삭제",
+                                                handler:function(){
+                                                    alert('trashBin');
+                                                }
+                                            }]
+                                    });
+                                })
+                            </script>
+                        </div>
+                        <div title="인체자원그룹 상세정보" data-options="" ><!--style="overflow:auto; -->
+                            <div>
+                                <table class="tbl" id="tbl_pjInfo">
+                                    <colgroup>
+                                        <col width="200px"/>
+                                        <col width="34%"/>
+                                        <col width="200px"/>
+                                        <col width="34%"/>
+                                    </colgroup>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>프로젝트명</th>
+                                            <td colspan="3">
+                                                <select name="" id="">
+                                                    <option value="">예방유전체 지역사회기반 코호트 사업</option>
+                                                    <option value="">예방유전체 지역사회기반 코호트 사업2</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>자원그룹명<span class="star">*</span></th>
+                                            <td colspan="3"><input type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>진단정보(Primary)</th>
+                                            <td colspan="3" >
+                                                <div class="flxWrap">
+                                                    <div style="flex:1; align-items: center;">
+                                                        <span>일자</span>
+                                                        <input class="easyui-datebox">
+                                                    </div>
+
+                                                    <div class="flxWrap" style="flex:2; align-items: center; gap:5px">
+                                                        <span>진단코드</span>
+                                                        <select name="" id="" style="width:120px;">
+                                                            <option value="">전체</option>
+                                                        </select>
+                                                        <select name="" id=""style="width:calc(100% - 240px);">
+                                                            <option value="">선택</option>
+                                                        </select>
+                                                        <a href="#" class="btnClassic">추가</a>
+                                                    </div>
+                                                </div><!-- flxWrap //-->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>수술정보(Primary)</th>
+                                            <td colspan="3" >
+                                                <div class="flxWrap">
+                                                    <div style="flex:1">
+                                                        <span>일자</span>
+                                                        <input class="easyui-datebox">
+                                                    </div>
+
+                                                    <div class="flxWrap" style="flex:2; align-items: center; gap:5px">
+                                                        <span>수술코드</span>
+                                                        <select name="" id=""style="width:calc(100% - 120px);">
+                                                            <option value="">선택</option>
+                                                        </select>
+                                                        <a href="#" class="btnClassic">추가</a>
+                                                    </div>
+                                                </div><!-- flxWrap //-->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>TNM stage</th>
+                                            <td colspan="3">
+                                                <div class="inputBox flxWrap table_td_hr_UpdateOneTime__Bottom">
+                                                    <div>
+                                                        <span>T</span>
+                                                        <select name="" id="">
+                                                            <option value="">::: Type of sample</option>
+                                                        </select> 
+                                                    </div> 
+                                                    <div>
+                                                        <span>N</span>
+                                                        <select name="" id="">
+                                                            <option value="">::: Type of prime</option>
+                                                        </select> 
+                                                    </div> 
+                                                    <div>
+                                                        <span>M</span>
+                                                        <select name="" id="">
+                                                            <option value="">::: Precentrifugation</option>
+                                                        </select> 
+                                                    </div> 
+                                                    <div>
+                                                        <span>version</span>
+                                                        <select name="" id="">
+                                                            <option value="">::: Centrifugation</option>
+                                                        </select> 
+                                                    </div> 
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>신생물의 형태학적 분류</th>
+                                            <td colspan="3">
+                                                <select name="" id="">
+                                                    <option value="">-- Select --</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>비고</th>
+                                            <td colspan="3"><textarea name="" id="" style="min-height:60px;"></textarea></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div title="동의서" data-options="" style="height:400px;">
+                            <table id="dg_donor_hrg_consent" class="easyui-datagrid" 
+                                    data-options="url:'../_data/dg_donor_hrg_consent.json',method:'get',rownumbers:true, striped:true, singleSelect:true, pagination:true, fit:true">
+                                <thead>
+                                    <tr>
+                                        <th data-options="field:'ck',checkbox:true"></th>
+                                        <th data-options="field:'donor_hrg_consent_prName',width:290">프로젝트명</th>
+                                        <th data-options="field:'donor_hrg_consent_managementNum',width:140">동의서 관리번호</th>
+                                        <th data-options="field:'donor_hrg_consent_writeDate',width:100">동의서 작성일</th>
+                                        <th data-options="field:'donor_hrg_consent_kind',width:100">동의유형</th>
+                                        <th data-options="field:'donor_hrg_consent_purpose',width:100">동의목적</th>
+                                        <th data-options="field:'donor_hrg_consent_date',width:100">동의기간</th>
+                                        <th data-options="field:'donor_hrg_consent_yes',width:100">동의여부</th>
+                                        <th data-options="field:'donor_hrg_consent_forKind',width:100">동의서유형</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <script type="text/javascript">
+                                $(function(){
+                                    var pagerDonorHrgConsent = $('#dg_donor_hrg_consent').datagrid('getPager');	// get the pager of datagrid
+                                                
+                                    pagerDonorHrgConsent.pagination({
+                                        
+                                        buttons:[{
+                                                iconCls:'icon-add',
+                                                title:"추가",
+                                                handler:function(){
+                                                    alert('add');
+                                                }
+                                                },{
+                                                iconCls:'icon-trashBin',
+                                                title:"삭제",
+                                                handler:function(){
+                                                    alert('trashBin');
+                                                }
+                                            }]
+                                    });
+                                })
+                            </script>
+                        </div>
+                        <div title="인체자원" data-options="" style="height:400px;">
+                            <table id="dg_donor_hrg_hr" class="easyui-datagrid" 
+                                    data-options="url:'../_data/dg_donor_hrg_hr.json',method:'get',rownumbers:true, striped:true, singleSelect:true, pagination:true, fit:true">
+                                <thead>
+                                    <tr>
+                                        <th data-options="field:'ck',checkbox:true"></th>
+                                        <th data-options="field:'donor_hrg_hr_lot',width:145">자원 LOT#</th>
+                                        <th data-options="field:'donor_hrg_hr_storageAmount',width:60">입고량</th>
+                                        <th data-options="field:'donor_hrg_hr_currentAmount',width:60">현재량</th>
+                                        <th data-options="field:'donor_hrg_hr_concent',width:70">농도</th>
+                                        <th data-options="field:'donor_hrg_hr_resouceCollectDate',width:100">자원 채취일자</th>
+                                        <th data-options="field:'donor_hrg_hr_resourceFreezeDate',width:100">자원 동결일자</th>
+                                        <th data-options="field:'donor_hrg_hr_bankStorageDate',width:100">은행 저장일자</th>
+                                        <th data-options="field:'donor_hrg_hr_storageLocation',width:450">저장위치</th>
+                                        <th data-options="field:'donor_hrg_hr_resourceKind',width:150">자원종류</th>
+                                        <th data-options="field:'donor_hrg_hr_resouceDetailinfo',width:350">자원상세정보</th>
+                                        <th data-options="field:'donor_hrg_hr_lotTop',width:145">상위자원LOT#</th>
+                                        <th data-options="field:'donor_hrg_hr_resourceBarcode',width:140">자원바코드</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <script type="text/javascript">
+                                $(function(){
+                                    var pagerDonorHrgHr = $('#dg_donor_hrg_hr').datagrid('getPager');	// get the pager of datagrid
+                                                
+                                    pagerDonorHrgHr.pagination({
+                                        
+                                        buttons:[{
+                                                iconCls:'icon-add',
+                                                title:"추가",
+                                                handler:function(){
+                                                    alert('add');
+                                                }
+                                                },{
+                                                iconCls:'icon-trashBin',
+                                                title:"삭제",
+                                                handler:function(){
+                                                    alert('trashBin');
+                                                }
+                                            }]
+                                    });
+                                })
+                            </script>
+                        </div>
+                    </div><!-- easyui-accordion AccoCustom //-->
+                </div><!-- AccoWrap //-->
+                <div class="flxWrap btnWrap bottomBtnWrap">
+                    <div class="left flxWrap"></div>
+                    <div class="right flxWrap">
+                        <a href="#" class="btn_blue left"><i class="xi-check"></i> <span>저장</span></a>    
+                        <a href="#" class="btn_gray right"><i class="xi-close"></i> <span>삭제</span></a>    
+                    </div><!--right-->
+                </div><!--bottomBtnWrap //-->
+            </div><!--easyuiTab__cont //-->
+
+            <!-- 탭_정도관리 -->
+            <div title="정도관리" class="easyuiTab__cont">
+                <div class="AccoWrap">
+                    <div class="easyui-accordion AccoCustom" data-options="multiple:true">
+                        <div title="정도관리" data-options="selected:true" style="height:400px;">
+                            <table id="dg_donor_qc" class="easyui-datagrid" 
+                                    data-options="url:'../_data/dg_donor_qc.json',method:'get',rownumbers:true, striped:true, singleSelect:true, pagination:true, fit:true">
+                                <thead>
+                                    <tr>
+                                        <th data-options="field:'ck',checkbox:true"></th>
+                                        <th data-options="field:'donor_qc_inspect',width:170">검사</th>
+                                        <th data-options="field:'donor_qc_resourceBarcode',width:160">자원 바코드</th>
+                                        <th data-options="field:'donor_qc_inspector',width:100">검사자</th>
+                                        <th data-options="field:'donor_qc_inspectDate',width:100">검사일</th>
+                                        <th data-options="field:'donor_qc_inspectAmount',width:100">검사 사용량</th>
+                                        <th data-options="field:'donor_qc_childrenResource',width:100">자식 자원</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <script type="text/javascript">
+                                // 체크박스는 다중선택, row는 한줄만선택
+                                $('.easyui-datagrid').datagrid({selectOnCheck:$(this).is(':checked')});
+                                $('.easyui-datagrid').datagrid({checkOnSelect:$(this).is(':checked')});
+
+                                $(function(){
+                                    var pagerDonorQc = $('#dg_donor_qc').datagrid('getPager');	// get the pager of datagrid
+                                                
+                                    pagerDonorQc.pagination({
+                                        
+                                        buttons:[{
+                                                iconCls:'icon-add',
+                                                title:"추가",
+                                                handler:function(){
+                                                    alert('add');
+                                                }
+                                                },{
+                                                iconCls:'icon-trashBin',
+                                                title:"삭제",
+                                                handler:function(){
+                                                    alert('trashBin');
+                                                }
+                                            }]
+                                    });
+                                })
+                            </script>
+                        </div>
+                    </div><!-- easyui-accordion AccoCustom //-->
+
+                    <div class="mt10">
+                        <table class="tbl" id="tbl_pjInfo">
+                            <colgroup>
+                                <col width="200px"/>
+                                <col width="34%"/>
+                                <col width="200px"/>
+                                <col width="34%"/>
+                            </colgroup>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>정도관리 적합성여부 <span class="star">*</span></th>
+                                    <td>
+                                        <select name="" id="">
+                                            <option value="">적합</option>
+                                            <option value="">부적합</option>
+                                        </select>
+                                    </td>
+                                    <th>검사자 <span class="star">*</span></th>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <th>검사일 <span class="star">*</span></th>
+                                    <td><input class="easyui-datebox"></td>
+                                    <th>식별번호 <span class="star">*</span></th>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <th>자원 바코드 <span class="star">*</span></th>
+                                    <td><input type="text"></td>
+                                    <th>검사 사용량 <span class="star">*</span></th>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <th>DNA 사용볼륨 <span class="star">*</span></th>
+                                    <td><input type="text"></td>
+                                    <th>TE-BUFFER</th>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <th>OD260/OD280</th>
+                                    <td><input type="text"></td>
+                                    <th>OD260/OD230</th>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <th>농도</th>
+                                    <td><input type="text"></td>
+                                    <th>비고</th>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <th>plate 위치</th>
+                                    <td><input type="text"></td>
+                                    <th>plate 이미지</th>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!-- AccoWrap //-->
+                <div class="flxWrap btnWrap bottomBtnWrap">
+                    <div class="left flxWrap"></div>
+                    <div class="right flxWrap">
+                        <a href="#" class="btn_blue left"><i class="xi-check"></i> <span>저장</span></a>    
+                        <a href="#" class="btn_gray right"><i class="xi-close"></i> <span>삭제</span></a>    
+                    </div><!--right-->
+                </div><!--bottomBtnWrap //-->
+            </div><!--easyuiTab__cont //-->
+
+            <!-- 탭_동의서 -->
+            <div title="동의서" class="easyuiTab__cont tabLiConsent">
+                <div class="AccoWrap">
+                    <div class="easyui-accordion AccoCustom" data-options="multiple:true">
+                        <div title="동의서" data-options="selected:true" style="height:400px;">
+                            <table id="dg_donor_consent" class="easyui-datagrid showAcco" 
+                                    data-options="url:'../_data/dg_donor_consent.json',method:'get',rownumbers:true, striped:true, singleSelect:true, pagination:true, fit:true">
+                                <thead>
+                                    <tr>
+                                        <th data-options="field:'ck',checkbox:true"></th>
+                                        <th data-options="field:'donor_consent_pjName',width:300">프로젝트명</th>
+                                        <th data-options="field:'donor_consent_formKind',width:150">동의서 유형</th>
+                                        <th data-options="field:'donor_consent_manageNumber',width:120">동의서 관리번호</th>
+                                        <th data-options="field:'donor_consent_writeDate',width:100">동의서 작성일</th>
+                                        <th data-options="field:'donor_consent_purpose',width:300">동의목적</th>
+                                        <th data-options="field:'donor_consent_date',width:100">동의기간</th>
+                                        <th data-options="field:'donor_consent_yes',width:100">동의여부</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <script type="text/javascript">
+                                // 체크박스는 다중선택, row는 한줄만선택
+                                $('.easyui-datagrid').datagrid({selectOnCheck:$(this).is(':checked')});
+                                $('.easyui-datagrid').datagrid({checkOnSelect:$(this).is(':checked')});
+
+                                $(function(){
+                                    var pagerDonorConsent = $('#dg_donor_consent').datagrid('getPager');	// get the pager of datagrid
+                                                
+                                    pagerDonorConsent.pagination({
+                                        
+                                        buttons:[{
+                                                iconCls:'icon-add',
+                                                title:"추가",
+                                                handler:function(){
+                                                    alert('add');
+                                                }
+                                                },{
+                                                iconCls:'icon-trashBin',
+                                                title:"삭제",
+                                                handler:function(){
+                                                    alert('trashBin');
+                                                }
+                                            }]
+                                    });
+                                })
+                            </script>
+                        </div>
+                        <div title="지역사회기반 코호트 심층조사사업(안성) (2020) | 01013773" >
+                            <div>
+                                <table class="tbl" id="tbl_pjInfo" style="table-layout:fixed;">
+                                    <colgroup>
+                                        <col width="140px"/>
+                                        <col width="45%"/>
+                                        <col width="140px"/>
+                                        <col width="45%"/>
+                                    </colgroup>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>프로젝트명</th>
+                                            <td>
+                                                <select name="" id="">
+                                                    <option value="">지역사회기반 코호트 심층조사사업</option>
+                                                </select>
+                                            </td>
+                                            <th>동의서 관리번호</th>
+                                            <td><input type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>동의서 작성일</th>
+                                            <td><input class="easyui-datebox" style="width:50%;"></td>
+                                            <th>동의 목적</th>
+                                            <td><textarea name="" id="" style="min-height:60px;"></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <th>동의기간</th>
+                                            <td><input type="text"></td>
+                                            <th>사업참여 동의서 유무</th>
+                                            <td>
+                                                <select name="" id="">
+                                                    <option value="">참여동의서 있음</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>검사대상물의 처리</th>
+                                            <td>
+                                                <select name="" id="">
+                                                    <option value="">보존</option>
+                                                </select>
+                                            </td>
+                                            <th>제3자 제공동의</th>
+                                            <td>
+                                                <select name="" id="">
+                                                    <option value="">동의함</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>제공시 개인정보 포함여부</th>
+                                            <td>
+                                                <select name="" id="">
+                                                    <option value="">개인정보 및 임상-역학정보 포함</option>
+                                                </select>
+                                            </td>
+                                            <th>동의서 유형</th>
+                                            <td>
+                                                <select name="" id="">
+                                                    <option value="">인체유래물 기증 동의서</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>동의서 첨부파일</th>
+                                            <td colspan="3"><input class="easyui-filebox" data-options="prompt:'파일선택'"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div title="자원그룹"  style="height:400px;">
+                            <table id="donor_consent_rg" class="easyui-datagrid" 
+                                    data-options="url:'../_data/donor_consent_rg.json',method:'get',rownumbers:true, striped:true, singleSelect:true, pagination:true, fit:true">
+                                <thead>
+                                    <tr>
+                                        <th data-options="field:'ck',checkbox:true"></th>
+                                        <th data-options="field:'donor_consent_rg_pjName',width:300">프로젝트명</th>
+                                        <th data-options="field:'donor_consent_rg_rgName',width:430">자원그룹명</th>
+                                        <th data-options="field:'donor_consent_rg_diagnosisCode',width:100">진단코드</th>
+                                        <th data-options="field:'donor_consent_rg_diagnosisDate',width:100">진단일자</th>
+                                        <th data-options="field:'donor_consent_rg_surgeryCode',width:100">수술코드</th>
+                                        <th data-options="field:'donor_consent_rg_surgeryDate',width:100">수술일자</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <script type="text/javascript">
+                                // 체크박스는 다중선택, row는 한줄만선택
+                                $('.easyui-datagrid').datagrid({selectOnCheck:$(this).is(':checked')});
+                                $('.easyui-datagrid').datagrid({checkOnSelect:$(this).is(':checked')});
+
+                                $(function(){
+                                    var pagerConsentRg = $('#donor_consent_rg').datagrid('getPager');	// get the pager of datagrid
+                                                
+                                    pagerConsentRg.pagination({
+                                        
+                                        buttons:[{
+                                                iconCls:'icon-save',
+                                                title:"저장",
+                                                handler:function(){
+                                                    alert('저장');
+                                                }
+                                                },{
+                                                iconCls:'icon-trashBin',
+                                                title:"삭제",
+                                                handler:function(){
+                                                    alert('trashBin');
+                                                }
+                                            }]
+                                    });
+                                })
+                            </script>
+                        </div>
+                    </div><!-- easyui-accordion AccoCustom //-->
+                </div><!-- AccoWrap //-->
+                <div class="flxWrap btnWrap bottomBtnWrap">
+                    <div class="left flxWrap"></div>
+                    <div class="right flxWrap">
+                        <a href="#" class="btn_blue left"><i class="xi-check"></i> <span>저장</span></a>    
+                        <a href="#" class="btn_gray right"><i class="xi-close"></i> <span>삭제</span></a>    
+                    </div><!--right-->
+                </div><!--bottomBtnWrap //-->
+            </div><!--easyuiTab__cont //-->
+
+            <!-- 탭_연계정보 -->
+            <div title="연계정보" class="easyuiTab__cont tabLiLinkedDataInfo">
+                <div class="AccoWrap">
+                    <div class="easyui-accordion AccoCustom" data-options="multiple:true">
+                        <div title="연계리스트 정보" data-options="selected:true" style="height:400px;">
+                            <table id="dg_donor_ci_cListinfo" class="easyui-datagrid showAcco" 
+                                    data-options="url:'../_data/dg_donor_ci_cListinfo.json',method:'get',rownumbers:true, striped:true, singleSelect:true, pagination:true, fit:true">
+                                <thead>
+                                    <tr>
+                                        <th data-options="field:'ck',checkbox:true"></th>
+                                        <th data-options="field:'donor_ci_cListinfo_cetc',width:200">공통 및 기타</th>
+                                        <th data-options="field:'donor_ci_cListinfo_vmi',width:200">영상의학검사</th>
+                                        <th data-options="field:'donor_ci_cListinfo_hi',width:150">유전체정보</th>
+                                        <th data-options="field:'donor_ci_cListinfo_dan',width:150">단백체 및 대사체</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <script type="text/javascript">
+                                $(function(){
+                                    var pagerDonorCicListinfo = $('#dg_donor_ci_cListinfo').datagrid('getPager');	// get the pager of datagrid
+                                                
+                                    pagerDonorCicListinfo.pagination({
+                                        
+                                        buttons:[{
+                                                iconCls:'icon-add',
+                                                title:"추가",
+                                                handler:function(){
+                                                    alert('add');
+                                                }
+                                                },{
+                                                iconCls:'icon-trashBin',
+                                                title:"삭제",
+                                                handler:function(){
+                                                    alert('trashBin');
+                                                }
+                                            }]
+                                    });
+                                })
+                            </script>
+                        </div>
+                        <div title="기존 연계정보 수정" data-options="" ><!--style="overflow:auto; -->
+                            <div class="">
+                                <h4 class="flxWrap">
+                                    <p class="h4__left"><i class="xi-play-circle"></i><span class="h4__left--tit">기존 연계정보 수정</span></p>
+                                </h4>
+                                <div class="connectionInfoListWrap">
+                                    <dl>
+                                        <dt>임상역학정보</dt>
+                                        <dd>
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__ce01" id="chk_donor_connectionInfo__ce01"/>
+                                                <label for="chk_donor_connectionInfo__ce01"><span class="checkmark"></span>전체질환 공통항목</label>
+                                            </div><!-- check_wrap //-->
+                                            
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__ce02" id="chk_donor_connectionInfo__ce02"/>
+                                                <label for="chk_donor_connectionInfo__ce02"><span class="checkmark"></span>특성화질환 심화항목</label>
+                                            </div><!-- check_wrap //-->
+
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__ce03" id="chk_donor_connectionInfo__ce03"/>
+                                                <label for="chk_donor_connectionInfo__ce03"><span class="checkmark"></span>라이프로그정보</label>
+                                            </div><!-- check_wrap //-->
+
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__ce04" id="chk_donor_connectionInfo__ce04"/>
+                                                <label for="chk_donor_connectionInfo__ce04"><span class="checkmark"></span>기타 의료정보</label>
+                                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                                            </div><!-- check_wrap //-->
+                                        </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>영상정보</dt>
+                                        <dd>
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__vi01" id="chk_donor_connectionInfo__vi01"/>
+                                                <label for="chk_donor_connectionInfo__vi01"><span class="checkmark"></span>X-Ray 검사정보</label>
+                                            </div><!-- check_wrap //-->
+                                            
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__vi02" id="chk_donor_connectionInfo__vi02"/>
+                                                <label for="chk_donor_connectionInfo__vi02"><span class="checkmark"></span>MRI 검사정보</label>
+                                            </div><!-- check_wrap //-->
+
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__vi03" id="chk_donor_connectionInfo__vi03"/>
+                                                <label for="chk_donor_connectionInfo__vi03"><span class="checkmark"></span>CT 검사정보</label>
+                                            </div><!-- check_wrap //-->
+
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__vi04" id="chk_donor_connectionInfo__vi04"/>
+                                                <label for="chk_donor_connectionInfo__vi04"><span class="checkmark"></span>PET 검사정보</label>
+                                            </div><!-- check_wrap //-->
+
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__vi05" id="chk_donor_connectionInfo__vi05"/>
+                                                <label for="chk_donor_connectionInfo__vi05"><span class="checkmark"></span>SONO 검사정보</label>
+                                            </div><!-- check_wrap //-->
+
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__vi06" id="chk_donor_connectionInfo__vi06"/>
+                                                <label for="chk_donor_connectionInfo__vi06"><span class="checkmark"></span>디지털병리정보</label>
+                                            </div><!-- check_wrap //-->
+
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__vi07" id="chk_donor_connectionInfo__vi07"/>
+                                                <label for="chk_donor_connectionInfo__vi07"><span class="checkmark"></span>기타 검사정보</label>
+                                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                                            </div><!-- check_wrap //-->
+                                        </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>유전체 정보</dt>
+                                        <dd>
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__h01" id="chk_donor_connectionInfo__h01"/>
+                                                <label for="chk_donor_connectionInfo__h01"><span class="checkmark"></span>SNP 정보</label>
+                                            </div><!-- check_wrap //-->
+                                            
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__h02" id="chk_donor_connectionInfo__h02"/>
+                                                <label for="chk_donor_connectionInfo__h02"><span class="checkmark"></span>WGS 정보</label>
+                                            </div><!-- check_wrap //-->
+
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__h03" id="chk_donor_connectionInfo__h03"/>
+                                                <label for="chk_donor_connectionInfo__h03"><span class="checkmark"></span>Target Sequencing 정보</label>
+                                            </div><!-- check_wrap //-->
+
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__h04" id="chk_donor_connectionInfo__h04"/>
+                                                <label for="chk_donor_connectionInfo__h04"><span class="checkmark"></span>CNV 정보</label>
+                                            </div><!-- check_wrap //-->
+
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__h05" id="chk_donor_connectionInfo__h05"/>
+                                                <label for="chk_donor_connectionInfo__h05"><span class="checkmark"></span>Methylation 정보</label>
+                                            </div><!-- check_wrap //-->
+
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__h06" id="chk_donor_connectionInfo__h06"/>
+                                                <label for="chk_donor_connectionInfo__h06"><span class="checkmark"></span>기타 정보</label>
+                                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                                            </div><!-- check_wrap //-->
+                                        </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>오믹스 정보</dt>
+                                        <dd>
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__om01" id="chk_donor_connectionInfo__om01"/>
+                                                <label for="chk_donor_connectionInfo__om01"><span class="checkmark"></span>단백체 정보</label>
+                                            </div><!-- check_wrap //-->
+                                            
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__om02" id="chk_donor_connectionInfo__om02"/>
+                                                <label for="chk_donor_connectionInfo__om02"><span class="checkmark"></span>대사체 정보</label>
+                                            </div><!-- check_wrap //-->
+
+                                            <div class="check_wrap">
+                                                <input type="checkbox" name="chk_donor_connectionInfo__om03" id="chk_donor_connectionInfo__om03"/>
+                                                <label for="chk_donor_connectionInfo__om03"><span class="checkmark"></span>마이크로비움 분석정보</label>
+                                            </div><!-- check_wrap //-->
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div title="인체자원그룹 연결정보" data-options="" style="height:400px;">
+                            <table id="dg_donor_ci_hrci" class="easyui-datagrid" 
+                                    data-options="url:'../_data/dg_donor_ci_hrci.json',method:'get',rownumbers:true, striped:true, singleSelect:true, pagination:true, fit:true">
+                                <thead>
+                                    <tr>
+                                        <th data-options="field:'ck',checkbox:true"></th>
+                                        <th data-options="field:'donor_ci_hrci_prName',width:290">프로젝트명</th>
+                                        <th data-options="field:'donor_ci_hrci_rGroupName',width:350">자원그룹명</th>
+                                        <th data-options="field:'donor_ci_hrci_dianosisCode',width:100">진단코드</th>
+                                        <th data-options="field:'donor_ci_hrci_disanosisDate',width:100">진단일자</th>
+                                        <th data-options="field:'donor_ci_hrci_surgeryCode',width:100">수술코드</th>
+                                        <th data-options="field:'donor_ci_hrci_srugeryDate',width:100">수술일자</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <script type="text/javascript">
+                                // 체크박스는 다중선택, row는 한줄만선택
+                                $('.easyui-datagrid').datagrid({selectOnCheck:$(this).is(':checked')});
+                                $('.easyui-datagrid').datagrid({checkOnSelect:$(this).is(':checked')});
+
+                                $(function(){
+                                    var pagerDonorCiHrci = $('#dg_donor_ci_hrci').datagrid('getPager');	// get the pager of datagrid
+                                                
+                                    pagerDonorCiHrci.pagination({
+                                        
+                                        buttons:[{
+                                                iconCls:'icon-save',
+                                                title:"저장",
+                                                handler:function(){
+                                                    alert('저장');
+                                                }
+                                            }]
+                                    });
+                                })
+                            </script>
+                        </div>
+                    </div><!-- easyui-accordion AccoCustom //-->
+                </div><!-- AccoWrap //-->
+                <div class="flxWrap btnWrap bottomBtnWrap">
+                    <div class="left flxWrap"></div>
+                    <div class="right flxWrap">
+                        <a href="#" class="btn_blue left"><i class="xi-check"></i> <span>저장</span></a>   
+                    </div><!--right-->
+                </div><!--bottomBtnWrap //-->
+            </div><!--easyuiTab__cont //-->
+
+        </div><!-- easyui-tabs // -->
+    </div><!-- easyuiRight // -->
+    
+
+    <!-- 팝업_기본값설정 START -->
+    <div class="dimmodal" id="popup_settingDefault">
+        <div class="modal_container">
+            <p class="modal_container__title"><i class="xi-check-circle"></i>기본값설정</p>
+            <table class="tbl" id="tbl_pjInfo">
+                        <colgroup>
+                            <col width="150px"/>
+                            <col width="300px"/>
+                        </colgroup>
+                        <thead class="thead_2rowspan">
+                            <tr>
+                                <th>설정 항목선택</th>
+                                <th>기본값 참조번호</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>성별</td>
+                                <td>
+                                    <select name="" id="">
+                                        <option value="">남자</option>
+                                        <option value="">여자</option>
+                                        <option value="">모름</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>저장방법</td>
+                                <td>
+                                    <select name="" id="">
+                                        <option value="">개별저장</option>
+                                        <option value="">연속저장</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>바코드 인쇄방법</td>
+                                <td>
+                                    <select name="" id="">
+                                        <option value="">한번출력</option>
+                                        <option value="">연속출력</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+            </table>
+
+            <div class="btnWrap">
+                <div class="flxWrap">
+                    <a href="#" class="btn_gray"><i class="xi-check"></i> <span>확인</span></a>    
+                    <a href="#" class="btn_gray" onclick="fnHidePop('popup_settingDefault')"><i class="xi-close"></i> <span>닫기</span></a>    
+                </div>
+            </div><!--btnWrap //-->
+
+        </div><!--modal_container //-->
+    </div><!--dimmodal //-->
+    <!-- 팝업_기본값설정 END-->
+
+    <!-- 팝업_차수보기 START -->
+    <div class="dimmodal" id="popup_view_NT">
+        <div class="modal_container">
+            <p class="modal_container__title"><i class="xi-check-circle"></i>차수확인</p>
+            <table class="tbl" id="tbl_pjInfo">
+                        <colgroup>
+                            <col width="50px"/>
+                            <col width="auto"/>
+                            <col width="38px"/>
+                            <col width="38px"/>
+                            <col width="38px"/>
+                        </colgroup>
+                        <thead class="thead_2rowspan">
+                            <tr>
+                                <th rowspan="2">참여차수</th>
+                                <th rowspan="2">참여일자</th>
+                                <th colspan="3">참여시 나이</th>
+                            </tr>
+                            <tr>
+                                <th>년</th>
+                                <th>개월</th>
+                                <th>일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1차</td>
+                                <td><input class="easyui-datebox" style="width:146px;"/></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                            </tr>
+                        </tbody>
+            </table>
+
+            <div class="btnWrap">
+                    <div class="flxWrap">
+                        <a href="#" class="btn_gray"><i class="xi-check-circle"></i> <span>확인</span></a>    
+                        <a href="#" class="btn_gray" onclick="fnHidePop('popup_view_NT')"><i class="xi-close"></i> <span>닫기</span></a>    
+                    </div>
+            </div><!--btnWrap //-->
+
+        </div><!--modal_container //-->
+    </div><!--dimmodal //-->
+    <!-- 팝업_차수보기 END-->
+</body>
+</html>
+    

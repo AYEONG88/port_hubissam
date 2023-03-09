@@ -1,0 +1,26 @@
+/*** 시스템관리 > 동의서 유형관리 ***/
+/* 시스템관리 내비 */
+.nav_sys{font-size:15px;}
+    .nav_sys li{margin-bottom:30px;}
+    .nav_sys li:last-child{margin-bottom:0;}
+    .nav_sys li .tit, .nav_sys li a{width:100%;}
+    .nav_sys li .tit{padding:10px; background:var(--blue); color:#fff; border-radius: 4px;  font-weight:500;}
+        .nav_sys .tit img{margin-right:5px;}
+    .nav_sys li a{padding:12px; font-weight:200; border-bottom: 1px dotted var(--line-color);}
+    .nav_sys li a:hover{color:var(--orange);}
+    
+  
+/* before or after xeicon */
+.navSysOn{position:relative; background:var(--gray); font-weight:400 !important;}
+.nav_sys li a.navSysOn {font-family: xeicon!important; display: inline-block; speak: none; font-style: normal; font-weight: 400; font-variant: normal; text-transform: none; line-height: 1;  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+.nav_sys li a.navSysOn:after{display: block; content:"\e93e"; position: absolute; top:50%; transform: translateY(-50%); right:20px; color:#000;}
+.nav_sys li a.navSysOn:hover:after{color:var(--orange);}
+
+/* 동의서유형관리 상단 */
+#toolbar_cTM{display:flex; align-items: center; justify-content: space-between;}
+#toolbar_cTM:after{content: inherit;}
+    #toolbar_cTM .searchInput input{width:380px;}
+
+/* 동의서유형관리 하단 */
+.easyuiRight_sysManager .easyuiBottom .inputWrap{width:100%;}
+.easyuiRight_sysManager .easyuiBottom textarea{min-width:100%; max-width:100%; width:100%; height:170px;}

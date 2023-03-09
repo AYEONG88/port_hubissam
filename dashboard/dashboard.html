@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="height=device-height , width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="shortcut icon" href="../_images/common/favicon.ico">
+    <title>HuBIS_Sam v4.0</title>
+
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css">  
+    <link rel="stylesheet" type="text/css" href="../easyui/demo.css">  
+    <link rel="stylesheet" href="../_common/css/reset.css">
+    <link rel="stylesheet" href="../_common/css/xeicon.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../_common/css/font.css">
+    <link rel="stylesheet" type="text/css" href="../_common/css/style.css">  
+    <link rel="stylesheet" type="text/css" href="../_common/css/layout.css">  
+    <link rel="stylesheet" type="text/css" href="../easyui/easyui_sal.css"> 
+    <link rel="stylesheet" type="text/css" href="../_common/css/header.css">  
+
+
+    <!-- <script src="../_common/js/jquery-latest.min.js"></script> -->
+    <script type="text/javascript" src="../easyui/jquery.min.js"></script>  
+    <script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script> 
+
+    <script type="text/javascript" src="../_common/js/common.js"></script> 
+
+</head>
+<body class="easyui-layout moveLayout" >
+    <div class="header" data-options="region:'north',border:false">
+        <nav>
+            <h1 class="h1 flxWrap">
+                <a href="#" class="logo_hubis"><strong>HuBIS_Sam</strong><span>인체자원관리시스템</span></a>
+                <a href="#" class="logo_organ"><img src="../_images/common/logo_snuh.png"/></a>
+            </h1>
+
+            <ul class="gnb flxWrap">
+                <li><a href="../storeAndReleased/donor.html" class="oneDepth">입출고관리</a></li>
+                <li><a href="../resourceManagement/menuPageLink.html" class="oneDepth">자원관리</a></li>
+                <li><a href="../smartSearch/selectBaseSearchForm.html" class="oneDepth">스마트검색</a></li>
+                <li><a href="../batch/selectBatchMainView.html" class="oneDepth">일괄처리</a></li>
+                <li><a href="../configuration/linkInfoRegis.html" class="oneDepth">환경설정</a></li>
+                <li><a href="#" class="oneDepth">도움말</a></li>  
+            </ul>
+      
+            <div class="navRightWrap flxWrap">
+                <a href="#" class="headersearchWrap"><input type="text"><i class="xi-search"></i></a>
+                <p class="login_user"><span>자원관리자</span><span class="name">홍길동</span></p>
+
+                <!-- 아코디언 -->
+                <div class="hamWrap">
+
+                    <div class="hamWrap__icoWrap">
+                        <input class="checkbox" type="checkbox" id="hamCheck">
+                        <label class="btn_ham" for="hamCheck">
+                            <span class="bar"></span>
+                        </label>
+                    </div>                          
+                    
+                    <div class="hamContWrap">
+                        <div class="hamCont">
+                            <ul class="hamAcco scro">
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">change_circle</span>
+                                    입출고관리<i class="xi-angle-down-min btn_tog"></i>
+                                </li>
+                                <li class="hamAcco__twoDepth" >
+                                    <a href="../storeAndReleased/donor.html">제공자</a>
+                                    <a href="../storeAndReleased/resourceReceiptIntro.html">자원접수</a>
+                                    <a href="../storeAndReleased/resourceInspection.html">자원검수</a>
+                                    <a href="../storeAndReleased/consent.html">동의서</a>
+                                    <a href="#">STR</a>
+                                    <a href="../storeAndReleased/snp.html">SNP</a>
+                                    <a href="../storeAndReleased/qualityControl.html">정도관리</a>
+                                    <a href="../storeAndReleased/resourceDistribute.html">자원분양</a>
+                                </li>
+                            
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-symbols-outlined">slow_motion_video</span>
+                                    자원관리<i class="xi-angle-down-min btn_tog"></i></li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../resourceManagement/menuPageLink.html">자원백업</a>
+                                    <a href="../resourceManagement/resourceDivision.html">자원분주</a>
+                                    <a href="#">자원배양</a>
+                                    <a href="#">자원추출</a>
+                                    <a href="#">반송폐기</a>
+                                    <a href="#">자원소진</a>
+                                    <a href="#">자원정체</a>
+                                    <a href="#">SPREC 변경</a>
+                                    <a href="#">연계정보</a>
+                                </li>
+
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">view_in_ar</span>
+                                    스마트검색<i class="xi-angle-down-min btn_tog"></i>
+                                </li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../smartSearch/selectBaseSearchForm.html">검색기반관리</a>
+                                    <a href="#">저장된 검색어</a>
+                                    <a href="#">내 검색어</a>
+                                    <a href="../smartSearch/frozenCart.html">냉동카트</a>
+                                    <a href="#">비주얼카트</a>
+                                    <a href="#">STP 비교검색</a>
+                                    <a href="../smartSearch/snpCompareSearch.html">SNP 비교검색</a>
+                                    <a href="../smartSearch/inOutView.html">입출고장조회</a>
+                                    <a href="../smartSearch/atchmnFile.html">첨부파일검색</a>
+                                </li>
+                                
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">playlist_add_check</span>
+                                    일괄처리<i class="xi-angle-down-min btn_tog"></i>
+                                </li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../batch/selectBatchMainView.html">일괄처리</a>
+                                    <a href="../batch/selectBatchStatusView.html">처리현황판</a>
+                                    <a href="#">다운로드센터</a>
+                                    <a href="#">저장고관리</a>
+                                    <a href="#">정보편차검출</a>
+                                </li>
+
+                                <li class="hamAcco__oneDepth">
+                                    <i class="xi-wrench"></i>
+                                    환경설정
+                                    <i class="xi-angle-down-min btn_tog"></i></li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../configuration/linkInfoRegis.html">연계정보 등록시 화면</a>
+                                    <a href="../configuration/projectManagement.html">프로젝트관리</a>
+                                    <a href="../configuration/protocol.html">수집프로토콜</a>
+                                    <a href="../configuration/storageMain.html">저장장비</a>
+                                    <a href="../configuration/storageEquipmentHistory.html">저장장비이력</a>
+                                    <a href="../configuration/monitorMain.html">저장장비온도로그</a>
+                                    <a href="#">Quick Link 관리</a>
+                                    <a href="../configuration/userSetting.html">사용자 환경설정</a>
+                                </li>
+
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">info</span>
+                                    도움말
+                                    <i class="xi-angle-down-min btn_tog"></i></li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="#">동의서(for tablet)</a>
+                                    <a href="../help/statisticsMainView.html">통계쿼리관리</a>
+                                    <a href="#">About HuBIS_Sam</a>
+                                    <a href="../help/resourceReceiptForTablet.html">자원접수(for tablet)</a>
+                                    <a href="../help/resourceDistributeForTablet.html">자원분양(for tablet)</a>
+                                </li>
+                            </ul>
+
+                            <div class="hamBottom">
+                                <div class="hamBottom__btnWrap">
+                                    <a href="#">HuBIS-Desk</a>
+                                    <a href="#">HuBIS-Tracker</a>
+                                </div>
+                                <div class="flxWrap hamBottom__footer">
+                                    <a href="../configuration/userSetting.html"><span class="material-icons expt">manage_accounts</span><p>사용자설정</p></a>
+                                    <a href="../sys/sysManager.html"><span class="material-icons">settings</span><p>시스템 환경설정</p></a>
+                                </div>
+                            </div><!-- hamBottom //-->
+                        </div><!--hamCont //-->
+                    </div><!-- hamContWrap  //-->
+                </div><!-- hamWrap //-->        
+            </div><!-- navRightWrap //-->
+        </nav>
+    </div><!-- north //-->
+
+    <link rel="stylesheet" href="../_common/css/dashboard.css">
+    <div id="dashboard">
+        <div class="inner">
+            <!-- s:left -->
+            <div class="info">
+                <div class="user">
+                    <div class="text">
+                        <p>
+                            안녕하세요!<br>
+                            저장된 자원을 확인하세요.
+                        </p>
+                        <h1>홍길동님!</h1>
+                        <a>자원관리자</a>
+                    </div>
+                    <ul>
+                        <li>
+                            <dl>
+                                <dt><span>40</span>건</dt>
+                                <dd>조사연구사업</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><span>417,493</span>명</dt>
+                                <dd>참여자</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt><span>9,417,493</span>vial</dt>
+                                <dd>인체자원</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+                <div class="manageBox">
+                    <div class="manage">
+                        <div class="titBox">
+                            <img src="../_images/dashboard/dashboard_manage_icon01.png">
+                            <p>입출고관리</p>
+                        </div>
+                        <ul>
+                            <li><a href="../storeAndReleased/donor.php">제공자</a></li>
+                            <li><a href="#">자원접수</a></li>
+                            <li><a href="#">자원검수</a></li>
+                            <li><a href="#">동의서</a></li>
+                            <li><a href="#">STR</a></li>
+                            <li><a href="#">SNP</a></li>
+                            <li><a href="#">정도관리</a></li>
+                            <li><a href="../storeAndReleased/resourceDistribute.html">자원분양</a></li>
+                        </ul>
+                    </div>
+                    <div class="manage">
+                        <div class="titBox">
+                            <img src="../_images/dashboard/dashboard_manage_icon02.png">
+                            <p>자원관리</p>
+                        </div>
+                        <ul>
+                            <li><a href="#">자원백업</a></li>
+                            <li><a href="#">자원분주</a></li>
+                            <li><a href="#">자원배양</a></li>
+                            <li><a href="#">자원추출</a></li>
+                            <li><a href="#">반송폐기</a></li>
+                            <li><a href="#">자원소진</a></li>
+                            <li><a href="#">자원정제</a></li>
+                            <li><a href="#">SPREC 변경</a></li>
+                            <li><a href="#">연계정보</a></li>
+                        </ul>
+                    </div>
+                    <div class="manage">
+                        <div class="titBox">
+                            <img src="../_images/dashboard/dashboard_manage_icon03.png">
+                            <p>스마트검색</p>
+                        </div>
+                        <ul>
+                            <li><a href="../smartSearch/selectBaseSearchForm.html">검색기반관리</a></li>
+                            <li><a href="#">저장된 검색어</a></li>
+                            <li><a href="#">내 검색어</a></li>
+                            <li><a href="#">냉동카트</a></li>
+                            <li><a href="#">비주얼카트</a></li>
+                            <li><a href="#">STP 비교검색</a></li>
+                            <li><a href="#">SNP 비교검색</a></li>
+                            <li><a href="#">입출고장조회</a></li>
+                            <li><a href="#">첨부파일검색</a></li>
+                        </ul>
+                    </div>
+                    <div class="manage">
+                        <div class="titBox">
+                            <img src="../_images/dashboard/dashboard_manage_icon04.png">
+                            <p>일괄처리</p>
+                        </div>
+                        <ul>
+                            <li><a href="#">일괄처리</a></li>
+                            <li><a href="#">처리현황판</a></li>
+                            <li><a href="#">다운로드센터</a></li>
+                            <li><a href="#">제정관관리</a></li>
+                            <li><a href="#">정보편차검출</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="quick">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="icon">
+                                    <img src="../_images/dashboard/dashboard_quick_icon01.png">
+                                </div>
+                                <dl>
+                                    <dt>메뉴얼북</dt>
+                                    <dd>
+                                        HuBIS_Sam을 좀 더<br>
+                                        쉽게 만나보세요.
+                                    </dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="icon">
+                                    <img src="../_images/dashboard/dashboard_quick_icon02.png">
+                                </div>
+                                <dl>
+                                    <dt>FAQ</dt>
+                                    <dd>
+                                        HuBIS_Sam에 대한<br>
+                                        궁금한 점을 확인하세요.
+                                    </dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="icon">
+                                    <img src="../_images/dashboard/dashboard_quick_icon03.png">
+                                </div>
+                                <dl>
+                                    <dt>자료실</dt>
+                                    <dd>
+                                        HuBIS_Sam 사용에 필요한<br>
+                                        자료를 다운받으세요.
+                                    </dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="icon">
+                                    <img src="../_images/dashboard/dashboard_quick_icon04.png">
+                                </div>
+                                <dl>
+                                    <dt>주요개정사항</dt>
+                                    <dd>
+                                        HuBIS_Sam 버전별<br>
+                                        개정정보를 확인해주세요.
+                                    </dd>
+                                </dl>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- e:left -->
+            <!-- s:right -->
+            <div class="panelDash">
+                <div class="tabBtn">
+                    <ul>
+                        <li class="active">
+                            <p>분양현황</p>
+                        </li>
+                        <li>
+                            <p>수집현황</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tabBox scro">
+                    <div class="tabCon tabCon01 active">
+                        <p class="dashboard_h2 pat50">참여자(명)</p>
+                        <div id="chart_div01"></div>
+                        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                        <script type="text/javascript">
+                    
+                            // Load the Visualization API and the corechart package.
+                            google.charts.load('current', {'packages':['corechart']});
+                    
+                            // Set a callback to run when the Google Visualization API is loaded.
+                            google.charts.setOnLoadCallback(drawChart1);
+                    
+                            // Callback that creates and populates a data table,
+                            // instantiates the pie chart, passes in the data and
+                            // draws it.
+                            function drawChart1() {
+                    
+                            // Create the data table.
+                            var data = new google.visualization.DataTable();
+                            data.addColumn('string', 'Topping');
+                            data.addColumn('number', 'Slices');
+                            data.addRows([
+                                ['DNA', 433],
+                                ['Serum', 319],
+                                ['Plasma', 173],
+                                ['Zucchini', 74]
+                            ]);
+                    
+                            // Set chart options
+                            var options = {
+                                pieHole: 0.35,
+                                height:300,
+                                chartArea:{height:'70%'},
+                            };
+                    
+                            // Instantiate and draw our chart, passing in some options.
+                            var chart = new google.visualization.PieChart(document.getElementById('chart_div01'));
+                            chart.draw(data, options);
+                            window.addEventListener('resize', drawChart1, false);
+                            }
+                        </script>
+                        <p class="dashboard_h2">인체자원(vaial)</p>
+                        <div id="chart_div02"></div>
+                        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                        <script type="text/javascript">
+                    
+                        // Load the Visualization API and the corechart package.
+                        google.charts.load('current', {'packages':['corechart']});
+                    
+                        // Set a callback to run when the Google Visualization API is loaded.
+                        google.charts.setOnLoadCallback(drawChart2);
+                    
+                        // Callback that creates and populates a data table,
+                        // instantiates the pie chart, passes in the data and
+                        // draws it.
+                        function drawChart2() {
+                            
+                            // Create the data table.
+                            var data = new google.visualization.DataTable();
+                            data.addColumn('string', 'Topping');
+                            data.addColumn('number', 'Slices');
+                            data.addRows([
+                            ['DNA', 303],
+                            ['Serum', 353],
+                            ['Plasma', 212],
+                            ['Zucchini', 132]
+                            ]);
+                    
+                            // Set chart options
+                            var options = {
+                                pieHole: 0.35,
+                                height:300,
+                                chartArea:{height:'70%'},
+                            };
+                            
+                            // Instantiate and draw our chart, passing in some options.
+                            var chart = new google.visualization.PieChart(document.getElementById('chart_div02'));
+                            chart.draw(data, options);
+                            window.addEventListener('resize', drawChart2, false);
+                            
+                        }
+                        </script>             
+                    </div>
+                    <div class="tabCon tabCon01"><p style="padding-top:20px;">수집현황 그래프가 들어가는 공간입니다.</p></div>
+                </div>
+            </div>
+            <!-- e:right -->
+        </div>
+        <div class="guideBox">
+            <p class="txt">
+                도움이 필요하신 경우 <strong>헬프데스크로 전화문의</strong> 주시기 바랍니다. 
+            </p>            
+            <dl>
+                <dt>
+                    <span>전화문의</span>
+                    <p>070-4607-3205</p>
+                </dt>
+                <dd>(주)베데스타소프트</dd>
+            </dl>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('.tabBtn li').click(function(){
+                $('.tabBtn li').removeClass('active');
+                $(this).addClass('active');
+                var tabIn = $(this).index();
+                $('.tabBox .tabCon').removeClass('active');
+                $('.tabBox .tabCon').eq(tabIn).addClass('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+[{
+	"id":1,
+	"text":"Repository(Repository)",
+	"iconCls": "icon-Repo",
+	"children":[{
+		"id":11,
+		"text":"건식DNA저장고(임시)(건식DNA저장고(임시))",
+		"state":"closed",
+		"children":[{
+			"id":111,
+			"text":"MF110(건식DNA(분양용))",
+			"iconCls": "icon-M",
+			"state":"closed",
+			"children":[{
+				"id":1111,
+				"text":"FR001(FR001)",
+				"iconCls": "icon-R",
+				"state":"closed",
+				"children":[{
+					"id":11111,
+					"text":"SB001(SB001)",
+					"iconCls": "icon-B"
+				},{
+					"id":11112,
+					"text":"SB001(SB001)",
+					"iconCls": "icon-B"
+				},{
+					"id":11113,
+					"text":"SB001(SB001)",
+					"iconCls": "icon-B"
+				}]
+			},{
+				"id":1112,
+				"text":"FR002(FR002)"
+				
+			},{
+				"id":1113,
+				"text":"FR003(FR003)"
+			}]
+		}]
+	},{
+		"id":12,
+		"text":"국건영2D바코드(전자동(2D바코드))",
+		"state":"closed",
+		"children":[{
+			"id":121,
+			"text":"국건영2D바코드(전자동(2D바코드))1"
+		},{
+			"id":122,
+			"text":"국건영2D바코드(전자동(2D바코드))2"
+			
+		},{
+			"id":123,
+			"text":"국건영2D바코드(전자동(2D바코드))3"
+		}]
+	},{
+		"id":13,
+		"text":"내부저장용MF장비(내부저장용MF장비)",
+		"state":"closed",
+		"children":[{
+			"id":131,
+			"text":"내부저장용MF장비(내부저장용MF장비)1"
+		},{
+			"id":132,
+			"text":"내부저장용MF장비(내부저장용MF장비)2"
+		},{
+			"id":133,
+			"text":"내부저장용MF장비(내부저장용MF장비)3"
+		}]
+	},{
+		"id":14,
+		"text":"만성질환관리과 가상저장용(만성질환관리과 가상저장용)",
+		"state":"closed",
+		"children":[{
+			"id":141,
+			"text":"LF001(DNA_만성콩팥병)",
+			"iconCls": "icon-L"
+		},{
+			"id":142,
+			"text":"LF001(DNA_만성콩팥병)",
+			"iconCls": "icon-L",
+			"state":"closed",
+			"children":[{
+				"id":1421,
+				"text":"FR001(에프알공공일)",
+				"iconCls": "icon-R",
+				"state":"closed",
+				"children":[{
+					"id":14211,
+					"text":"SB001(SB001)",
+					"iconCls": "icon-B"
+				},{
+					"id":14212,
+					"text":"SB002(SB002)",
+					"iconCls": "icon-B"
+				}]
+			}]
+		}]
+	},{
+		"id":15,
+		"text":"만성질환관리과 가상저장용(만성질환관리과 가상저장용)",
+		"state":"closed",
+		"children":[{
+			"id":151,
+			"text":"LF001(DNA_만성콩팥병)",
+			"iconCls": "icon-L"
+		},{
+			"id":152,
+			"text":"LF001(DNA_만성콩팥병)",
+			"iconCls": "icon-L",
+			"state":"closed",
+			"children":[{
+				"id":1521,
+				"text":"FR001(에프알공공일)",
+				"iconCls": "icon-R",
+				"state":"closed",
+				"children":[{
+					"id":15211,
+					"text":"SB001(SB001)",
+					"iconCls": "icon-B"
+				},{
+					"id":15212,
+					"text":"SB002(SB002)",
+					"iconCls": "icon-B"
+				}]
+			}]
+		}]
+	},{
+		"id":16,
+		"text":"만성질환관리과 가상저장용(만성질환관리과 가상저장용)",
+		"state":"closed",
+		"children":[{
+			"id":161,
+			"text":"LF001(DNA_만성콩팥병)",
+			"iconCls": "icon-L"
+		},{
+			"id":162,
+			"text":"LF001(DNA_만성콩팥병)",
+			"iconCls": "icon-L",
+			"state":"closed",
+			"children":[{
+				"id":1621,
+				"text":"FR001(에프알공공일)",
+				"iconCls": "icon-R",
+				"state":"closed",
+				"children":[{
+					"id":16211,
+					"text":"SB001(SB001)",
+					"iconCls": "icon-B"
+				},{
+					"id":16212,
+					"text":"SB002(SB002)",
+					"iconCls": "icon-B"
+				}]
+			}]
+		}]
+	}]
+}]

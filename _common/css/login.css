@@ -1,0 +1,76 @@
+body {overflow:hidden; }
+/* 로그인페이지*/
+#loginPage {width:100%;height:100vh; line-height:1.4; overflow: hidden; background:url(../../_images/login/loginpage_bg.jpg)center center/cover no-repeat;}
+#loginPage > .inner {width:100%; height:100%; display:flex; justify-content:center; align-items:center; }
+/* 로그인페이지_왼쪽문구 */
+#loginPage .infoBox .topBox >h1 { padding:72px 0 40px 0; font-size:44px; font-weight:500; color:#fff; line-height:1.2;}
+#loginPage .infoBox .topBox >h1 strong {font-weight:900;}
+#loginPage .infoBox .topBox .downVersionInfo {width:300px; height:53px; background-color:#011646; border-radius:6px; display:flex; flex-direction:row; justify-content:center; align-items:center;}
+#loginPage .infoBox .topBox .downVersionInfo .tit {font-size:18px; font-weight:500; color:#fff;}
+#loginPage .infoBox .topBox .downVersionInfo .date {font-size:18px; font-weight:100; color:#fff; opacity:0.5; padding-left:10px;}
+#loginPage .infoBox .topBox .downVersionInfo:hover{background: var(--navy); color:var(--yellow);}
+#loginPage .infoBox .topBox .downVersionInfo:hover .tit, #loginPage .infoBox .topBox .downVersionInfo:hover .date{color:var(--yellow);}
+#loginPage .infoBox .topBox img {width:auto !important;}
+#loginPage .infoBox .guideBox {padding-top:178px;}
+#loginPage .infoBox .guideBox .txt {font-size:16px; font-weight:300; color:#fff; opacity:0.5; padding-bottom:18px;}
+#loginPage .infoBox .guideBox >dl {display:flex; flex-direction:row; align-items: baseline;}
+#loginPage .infoBox .guideBox >dl dt {display:flex; flex-direction:row; align-items:center;}
+#loginPage .infoBox .guideBox >dl dt span {width:77px; height:28px; line-height:28px; border-radius:14px; background-color:#fff; text-align:center; font-size:15px; font-weight:900; color:#023096; margin-right:5px;}
+#loginPage .infoBox .guideBox >dl dt p {font-size:18px; font-weight:900; color:#fff;}
+#loginPage .infoBox .guideBox >dl dd {font-size:15px; font-weight:400; color:#fff; opacity:0.5; padding-left:12px;}
+/* 로그인페이지_로그인박스 */
+#loginPage .loginBox {width:600px; height:665px; background-color:#fff; border-radius:13px; margin-left:223px;}
+#loginPage .loginBox .inner {padding:0 120px; width:100%; height:100%; display:flex; flex-direction:column; justify-content:center; align-items:center;}
+#loginPage .loginBox .topBox {display:flex; justify-content: space-between; width:100%;height:68px; flex-direction:row; align-items:center; padding-bottom:20px; border-bottom:2px solid #023096; box-sizing:border-box;}
+#loginPage .loginBox .topBox:after{content:inherit;}
+#loginPage .loginBox .topBox figure{max-width:220px;}
+#loginPage .loginBox .topBox figure img{max-width: 100%; width: auto;}
+#loginPage .loginBox .topBox p {font-size:24px; font-weight:500; color:#2e2c2c;}
+#loginPage .loginBox form {width:358px; padding:28px 0 58px 0;}
+#loginPage .loginBox form .log_input_box {width:100%;}
+#loginPage .loginBox form .log_input_box label {display:block; font-size:13px; font-weight:400; color:#aaaaaa;}
+#loginPage .loginBox form .log_input_box input {width:100%; height:50px; border:1px solid #cccccc; box-sizing:border-box; margin:8px 0 18px 0; padding:0 10px;}
+#loginPage .loginBox form .log_input_box input::placeholder {}
+#loginPage .loginBox form button {margin:8px 0 16px 0; width:358px; height:50px; line-height:50px; background-color:#454545; color:#fff; border:none; font-size:16px; font-weight:500;}
+#loginPage .loginBox form button:hover{background:var(--navy); color:var(--yellow);}
+#loginPage .loginBox form .log_btn_wrap {display:flex; flex-direction:row; justify-content:space-between;}
+.log_btn_wrap:after{content:inherit;}
+#loginPage .loginBox form .log_checks label {font-size:13px; font-weight:500; color:#aaa;}
+#loginPage .loginBox form .log_search a {font-size:13px; font-weight:500; color:#aaa; cursor:pointer;}
+#loginPage .loginBox form .log_search a:hover{color: var(--navy);}
+/* 로그인페이지_체크박스커스텀 */
+#loginPage .log_checks {position: relative;}
+#loginPage .log_checks input[type="checkbox"] {  /* 실제 체크박스는 화면에서 숨김 */ position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip:rect(0,0,0,0);border:0;}
+#loginPage .log_checks input[type="checkbox"] + label {display: inline-block;position: relative;cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;}
+#loginPage .log_checks.etrans input[type="checkbox"] + label:hover:before {border-color:var(--navy); }
+#loginPage .log_checks input[type="checkbox"] + label:before {  /* 가짜 체크박스 */ content: ' ';display: inline-block;width:15px;  /* 체크박스의 너비를 지정 */height:15px;  /* 체크박스의 높이를 지정 */line-height: 21px; /* 세로정렬을 위해 높이값과 일치 */margin: -2px 8px 0 0;text-align: center; vertical-align: middle;background:#fff;border: 1px solid #d8d8d8;border-radius:50%;box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);}
+#loginPage .log_checks input[type="checkbox"] + label:active:before,.log_checks input[type="checkbox"]:checked + label:active:before {box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);}
+#loginPage .log_checks input[type="checkbox"]:checked + label:before {  /* 체크박스를 체크했을때 */ content: '\2714';  /* 체크표시 유니코드 사용 */color: #99a1a7;text-shadow: 1px 1px #fff;background: #e9ecee;border-color: #adb8c0;box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);}
+#loginPage .log_checks.etrans input[type="checkbox"] + label {padding-left:25px;color:#aaaaaa;  font-size:13px;}
+#loginPage .log_checks.etrans input[type="checkbox"] + label:before {position: absolute;left: 0;top:2px;margin-top: 0;opacity: .6;box-shadow: none;border-color:#d8d8d8;-webkit-transition: all .12s, border-color .08s;transition: all .12s, border-color .08s;}
+#loginPage .log_checks.etrans input[type="checkbox"]:checked + label {color:#454545;}
+#loginPage .log_checks.etrans input[type="checkbox"]:checked + label:before {position: absolute;content: "";width:8px;top: -5px;left: 5px;border-radius: 0;opacity:1; background: transparent;border-color:transparent #454545 #454545 transparent;border-top-color:transparent;border-left-color:transparent;-ms-transform:rotate(45deg);-webkit-transform:rotate(45deg);transform:rotate(45deg);}
+#loginPage .no-csstransforms .log_checks.etrans input[type="checkbox"]:checked + label:before {content: "\2714";top: 0;left: 0;width: 21px;line-height: 21px;color: #fff;text-align: center;}
+#loginPage .copyright {font-size:14px; font-weight:400; color:#cccccc;}
+#loginPage .log_checks input[type="checkbox"] + label:hover{color:var(--navy);}
+
+
+
+/* 팝업 */
+.popup { width:100%;height:100vh; background-color:rgba(0,0,0,0.8); position:fixed; top:0;left:0;z-index:9999999999; display:none; justify-content:center; align-items:center;}
+.popup.on {display:flex;}
+.popup .inner { background-color:#fff; border-radius:13px; position:relative; padding:20px;}
+.popup .topBox {display:flex; flex-direction:row; justify-content:space-between; align-items:center;}
+.popup .topBox::after {content:none;}
+.popup .topBox h1 {font-size:21px;}
+.popup .closeBox {cursor:pointer;}
+.popup .closeBox i {font-size:2em;}
+.popup .textBox {border:1px solid #ccc; box-sizing:border-box; margin-top:20px;}
+.popup .textBox .txt {padding:20px; font-size:16px; font-weight:400; color:#8d8d8d;}
+
+@media screen and (max-width:980px) {
+    .popup {padding:0 20px;}
+    .popup .topBox h1 {font-size:18px;}
+    .popup .closeBox i {font-size:1.5em;}
+    .popup .textBox .txt {font-size:16px;} 
+}

@@ -1,0 +1,21 @@
+/*** 스마트검색 > 검색기반관리 ***/
+/* left */
+/* .layout-panel-center{padding-bottom:0;} */
+
+.sBSF__searchWrap{min-width:max-content;}
+.LeftContWrap_incaseBottom{ overflow: auto; height:100%;}
+/* .sBSF__searchWrap{min-width:1000px; width:1000px;} */
+.sBSF__searchWrap__tit{align-items: center; justify-content: space-between;}
+.sBSF__searchWrap__tit:after{content: inherit;}
+    .sBSF__searchWrap__tit select{max-width:380px;}
+    
+    .sBSF__searchWrap__tit .rightWrap{align-items: center;}
+        .sBSF__searchWrap__tit .xi-help{margin-left:9px; font-size:28px; color:var(--orange);}
+
+    
+.sBSF__searchWrap table{border-top:1px solid #999;}
+
+
+
+
+/* bottom*/

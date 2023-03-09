@@ -1,0 +1,16 @@
+
+body{background:#fff;}
+
+.popWindowWrap{overflow:auto; padding:20px; height:inherit;}
+    /* .popWindowWrap, .popWindowWrap > article, .popWindowWrap > article > .panel, .popWindowWrap > article > .panel > .datagrid-wrap, .popWindowWrap > article > .panel > .datagrid-wrap > .datagrid-view{height:100%;} */
+    /* .popWindowWrap .datagrid-view{min-height:200px !important} */
+
+    .toolbar_windowpop{margin-bottom:15px;}
+    .popWindowWrap .flxWrap{align-items: center;}
+    .popWindowWrap .gap20{gap:10px 20px;}
+    .popWindowWrap .item > label{margin-right:10px; cursor: default;}
+    .popWindowWrap .inputBox p{margin-right:5px;}
+    .popWindowWrap .link{color:var(--blue);}
+    
+    
+    .popWindowWrap .btnWrap .flxWrap{justify-content: center;}

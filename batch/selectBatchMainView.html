@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="height=device-height , width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="shortcut icon" href="../_images/common/favicon.ico">
+    <title>HuBIS_Sam v4.0</title>
+
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css">  
+    <link rel="stylesheet" type="text/css" href="../easyui/demo.css">  
+    <link rel="stylesheet" href="../_common/css/reset.css">
+    <link rel="stylesheet" href="../_common/css/xeicon.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../_common/css/font.css">
+    <link rel="stylesheet" type="text/css" href="../_common/css/style.css">  
+    <link rel="stylesheet" type="text/css" href="../_common/css/layout.css">  
+    <link rel="stylesheet" type="text/css" href="../easyui/easyui_sal.css"> 
+    <link rel="stylesheet" type="text/css" href="../_common/css/header.css">  
+
+
+    <!-- <script src="../_common/js/jquery-latest.min.js"></script> -->
+    <script type="text/javascript" src="../easyui/jquery.min.js"></script>  
+    <script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script> 
+    <script type="text/javascript" src="../easyui/datagrid-detailview.js"></script>
+
+    <script type="text/javascript" src="../_common/js/common.js"></script> 
+
+</head>
+<body class="easyui-layout moveLayout" >
+	<div class="loaderWrap">
+        <div class="loaderWrap__cont">
+            <div class="loading-container">
+                <div class="loading"></div>
+                <div id="loading-text">loading</div>
+            </div>
+        </div>        
+	</div><!--loaderWrap //-->
+    <link rel="stylesheet" href="../easyui/easyui_Onepage.css">
+    <link rel="stylesheet" href="../_common/css/batch.css">
+    <!-- 왼쪽 컨텐츠 -->
+	<div class="easyuiLeft" data-options="region:'center',title:'기본 컨텐츠',">
+        <h2 class="flxWrap" >
+            <p class="h2__left"><i class="xi-caret-down-square"></i><span>스마트검색</span><i class="xi-play"></i><span class="txtBold">일괄처리</span></p>
+        </h2>
+        
+        <div class="toolbar_selectBatchMainView">
+            <div class="flxWrap toolbar_selectBatchMainView__Step">
+                <a href="#" class="active_step01"><p class="num">01</p><p class="dot"></p><p class="des">파일선택</p></a>
+                <a href="#" class="active_step02"><p class="num">02</p><p class="dot"></p><p class="des">엑셀유효성 검사</p></a>
+                <a href="#" class="active_step03"><p class="num">03</p><p class="dot"></p><p class="des">DB유효성 검사 및 일괄 처리</p></a>
+                <a href="#" class="active_step04"><p class="num">04</p><p class="dot"></p><p class="des">처리현황 확인</p></a>
+            </div>
+        </div><!-- toolbar_selectBatchMainView -->
+        <script>
+            $(function(){
+                //현재페이지
+                $('.toolbar_selectBatchMainView__Step a:nth-child(1)').addClass('active_step');
+                    $('.toolbar_selectBatchMainView__Step a:nth-child(2)').addClass('active_step');                    
+                    $('.toolbar_selectBatchMainView__Step a:nth-child(2)').addClass('active_stepBefore');
+                    $('.toolbar_selectBatchMainView__Step a:nth-child(1)').addClass('active_stepAfter');
+                    $('.toolbar_selectBatchMainView__Step a:nth-child(3),.toolbar_selectBatchMainView__Step a:nth-child(4)').removeClass('active_step');
+                    $('.toolbar_selectBatchMainView__Step a:nth-child(3)').removeClass('active_stepBefore');
+                    $('.toolbar_selectBatchMainView__Step a:nth-child(2),.toolbar_selectBatchMainView__Step a:nth-child(3)').removeClass('active_stepAfter');
+
+                //step01. 파일선택 클릭시
+                $('.toolbar_selectBatchMainView__Step a:nth-child(1)').click(function(){
+                    $(this).addClass('active_step');
+                    $('.toolbar_selectBatchMainView__Step a').not(this).removeClass('active_step active_stepBefore');
+                    $('.toolbar_selectBatchMainView__Step a').removeClass('active_stepAfter');
+                });
+
+                //step02. 엑셀유효성검사 클릭시
+                $('.toolbar_selectBatchMainView__Step a:nth-child(2)').click(function(){
+                    $('.toolbar_selectBatchMainView__Step a:nth-child(1),.toolbar_selectBatchMainView__Step a:nth-child(2)').addClass('active_step active_stepBefore active_stepAfter');
+                    $('.toolbar_selectBatchMainView__Step a:nth-child(3),.toolbar_selectBatchMainView__Step a:nth-child(4)').removeClass('active_step active_stepBefore');
+                    $('.toolbar_selectBatchMainView__Step a:nth-child(2),.toolbar_selectBatchMainView__Step a:nth-child(3)').removeClass('active_stepAfter');
+                });
+
+                //step03. DB유효성검사및일괄처리 클릭시
+                $('.toolbar_selectBatchMainView__Step a:nth-child(3)').click(function(){
+                    $('.toolbar_selectBatchMainView__Step a').not('.toolbar_selectBatchMainView__Step a:nth-child(4)').addClass('active_step active_stepBefore active_stepAfter');
+                    $('.toolbar_selectBatchMainView__Step a:nth-child(4)').removeClass('active_step active_stepBefore');
+                    $('.toolbar_selectBatchMainView__Step a:nth-child(3)').removeClass('active_stepAfter');
+                });
+
+                //step04. 처리현황확인 클릭시
+                $('.toolbar_selectBatchMainView__Step a:nth-child(4)').click(function(){
+                    $('.toolbar_selectBatchMainView__Step a').addClass('active_step active_stepBefore active_stepAfter');                   
+                });
+            });
+        </script>
+
+        <table id="dg_selectBatchMainView" class="easyui-datagrid"
+            toolbar=".toolbar_selectBatchMainView" 
+            data-options="rownumbers:true, url:'../_data/dg_selectBatchMainView.json', striped:true, singleSelect:true, collapsible:true, 
+            displayMsg: false, showPageList: false, showRefresh: false, showPageInfo: true, 
+            pagination:true, pageList:[10,50,100,500], pageSize:10, fit:true, method:'get',
+            ">
+            <thead>
+                <tr>
+                    <th data-options="field:'ck',checkbox:true"></th>
+                    <th data-options="field:'dg_selectBatchMainView_pjName', width:200,styler:cellStyler">프로젝트명</th>
+                    <th data-options="field:'dg_selectBatchMainView_donorId', width:140, align:'center'">제공자식별자</th>
+                    <th data-options="field:'dg_selectBatchMainView_name', width:80, align:'center'">성명</th>
+                    <th data-options="field:'dg_selectBatchMainView_gender', width:60, align:'center'">성별</th>
+                    <th data-options="field:'dg_selectBatchMainView_birth', width:100, align:'center',styler:cellStyler">생년월일</th>
+                    <th data-options="field:'dg_selectBatchMainView_partiDate', width:100, align:'center',styler:cellStyler">참여일자</th>
+                    <th data-options="field:'dg_selectBatchMainView_dornorBarcode', width:120, align:'center'">제공자바코드</th>
+                    <th data-options="field:'dg_selectBatchMainView_groupNum', width:80, align:'center'">그룹번호</th>
+                    <th data-options="field:'dg_selectBatchMainView_generNum', width:80, align:'center'">세대번호</th>
+                    <th data-options="field:'dg_selectBatchMainView_rStartNum', width:100, align:'center'">자원시작번호</th>
+                    <th data-options="field:'dg_selectBatchMainView_sBoxsize', width:100, align:'center'">보관박스규격</th>
+                    <th data-options="field:'dg_selectBatchMainView_rKindCode', width:100, align:'center'">자원종류코드</th>
+                    <th data-options="field:'dg_selectBatchMainView_2dimenBarcode', width:100, align:'center'">2차원바코드</th>
+                    <th data-options="field:'dg_selectBatchMainView_rDetailCode', width:100, align:'center'">자원상세코드</th>
+                    <th data-options="field:'dg_selectBatchMainView_rGetDate', width:100, align:'center',styler:cellStyler">자원채취일자</th>
+                    <th data-options="field:'dg_selectBatchMainView_rFrozenDate', width:100, align:'center',styler:cellStyler">자원동결일자</th>
+                    <th data-options="field:'dg_selectBatchMainView_bankRDate', width:100, align:'center',styler:cellStyler">은행접수일자</th>
+                    <th data-options="field:'dg_selectBatchMainView_sprec', width:170, align:'center'">SPREC</th>
+                    <th data-options="field:'dg_selectBatchMainView_sBoxBarcode', width:170, align:'center'">시작박스바코드</th>
+                    <th data-options="field:'dg_selectBatchMainView_eBoxBarcode', width:170, align:'center'">마지막박스바코드</th>
+                    <th data-options="field:'dg_selectBatchMainView_divisionEa', width:80, align:'center'">분주개수</th>
+                    <th data-options="field:'dg_selectBatchMainView_divisionCellcount', width:220, align:'center'">분주기분량(&micro;l/&micro;g/gm/cellcount)</th>
+                    <th data-options="field:'dg_selectBatchMainView_divisionElectAmount', width:100, align:'center'">분주전자원량</th>
+                    <th data-options="field:'dg_selectBatchMainView_density', width:80, align:'center'">농도</th>
+                    <th data-options="field:'dg_selectBatchMainView_qualityController', width:120, align:'center'">정도관리시행자</th>
+                    <th data-options="field:'dg_selectBatchMainView_qualityControlDate', width:120, align:'center'">정도관리시행일자</th>
+                    <th data-options="field:'dg_selectBatchMainView_dna230', width:140, align:'center'">DNA순도(260/230)</th>
+                    <th data-options="field:'dg_selectBatchMainView_dna300', width:140, align:'center'">DNA순도(260/300)</th>
+                </tr>
+            </thead>
+        </table>
+        <script type="text/javascript">            
+            // 체크박스는 다중선택, row는 한줄만선택
+            $('.easyui-datagrid').datagrid({selectOnCheck:$(this).is(':checked')});
+            $('.easyui-datagrid').datagrid({checkOnSelect:$(this).is(':checked')});
+
+            // column background-color
+            function cellStyler(value,row,index){
+                return 'background-color:#ffee00;color:red;';
+            }
+        </script>
+    </div><!-- easyuiLeft //-->
+</body>
+</html>

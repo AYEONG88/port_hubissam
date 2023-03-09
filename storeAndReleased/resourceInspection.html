@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="height=device-height , width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="shortcut icon" href="../_images/common/favicon.ico">
+    <title>HuBIS_Sam v4.0</title>
+
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css">  
+    <link rel="stylesheet" type="text/css" href="../easyui/demo.css">  
+    <link rel="stylesheet" href="../_common/css/reset.css">
+    <link rel="stylesheet" href="../_common/css/xeicon.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../_common/css/font.css">
+    <link rel="stylesheet" type="text/css" href="../_common/css/style.css">  
+    <link rel="stylesheet" type="text/css" href="../_common/css/layout.css">  
+    <link rel="stylesheet" type="text/css" href="../easyui/easyui_sal.css"> 
+    <link rel="stylesheet" type="text/css" href="../_common/css/header.css">  
+
+
+    <!-- <script src="../_common/js/jquery-latest.min.js"></script> -->
+    <script type="text/javascript" src="../easyui/jquery.min.js"></script>  
+    <script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script> 
+    <script type="text/javascript" src="../easyui/datagrid-detailview.js"></script>
+
+    <script type="text/javascript" src="../_common/js/common.js"></script> 
+
+</head>
+<body class="easyui-layout moveLayout" >
+	<div class="loaderWrap">
+			<div class="loaderWrap__cont">
+				<div class="loading-container">
+					<div class="loading"></div>
+					<div id="loading-text">loading</div>
+				</div>
+			</div>        
+	</div><!--loaderWrap //-->
+	<div class="header" data-options="region:'north',border:false">
+        <nav>
+            <h1 class="h1 flxWrap">
+                <a href="#" class="logo_hubis"><strong>HuBIS_Sam</strong><span>인체자원관리시스템</span></a>
+                <a href="#" class="logo_organ"><img src="../_images/common/logo_snuh.png"/></a>
+            </h1>
+
+            <ul class="gnb flxWrap">
+                <li><a href="../storeAndReleased/donor.html" class="oneDepth">입출고관리</a></li>
+                <li><a href="../resourceManagement/menuPageLink.html" class="oneDepth">자원관리</a></li>
+                <li><a href="../smartSearch/selectBaseSearchForm.html" class="oneDepth">스마트검색</a></li>
+                <li><a href="../batch/selectBatchMainView.html" class="oneDepth">일괄처리</a></li>
+                <li><a href="../configuration/linkInfoRegis.html" class="oneDepth">환경설정</a></li>
+                <li><a href="#" class="oneDepth">도움말</a></li>  
+            </ul>
+      
+            <div class="navRightWrap flxWrap">
+                <a href="#" class="headersearchWrap"><input type="text"><i class="xi-search"></i></a>
+                <p class="login_user"><span>자원관리자</span><span class="name">홍길동</span></p>
+
+                <!-- 아코디언 -->
+                <div class="hamWrap">
+
+                    <div class="hamWrap__icoWrap">
+                        <input class="checkbox" type="checkbox" id="hamCheck">
+                        <label class="btn_ham" for="hamCheck">
+                            <span class="bar"></span>
+                        </label>
+                    </div>                          
+                    
+                    <div class="hamContWrap">
+                        <div class="hamCont">
+                            <ul class="hamAcco scro">
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">change_circle</span>
+                                    입출고관리<i class="xi-angle-down-min btn_tog"></i>
+                                </li>
+                                <li class="hamAcco__twoDepth" >
+                                    <a href="../storeAndReleased/donor.html">제공자</a>
+                                    <a href="../storeAndReleased/resourceReceiptIntro.html">자원접수</a>
+                                    <a href="../storeAndReleased/resourceInspection.html">자원검수</a>
+                                    <a href="../storeAndReleased/consent.html">동의서</a>
+                                    <a href="#">STR</a>
+                                    <a href="../storeAndReleased/snp.html">SNP</a>
+                                    <a href="../storeAndReleased/qualityControl.html">정도관리</a>
+                                    <a href="../storeAndReleased/resourceDistribute.html">자원분양</a>
+                                </li>
+                            
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-symbols-outlined">slow_motion_video</span>
+                                    자원관리<i class="xi-angle-down-min btn_tog"></i></li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../resourceManagement/menuPageLink.html">자원백업</a>
+                                    <a href="../resourceManagement/resourceDivision.html">자원분주</a>
+                                    <a href="#">자원배양</a>
+                                    <a href="#">자원추출</a>
+                                    <a href="#">반송폐기</a>
+                                    <a href="#">자원소진</a>
+                                    <a href="#">자원정체</a>
+                                    <a href="#">SPREC 변경</a>
+                                    <a href="#">연계정보</a>
+                                </li>
+
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">view_in_ar</span>
+                                    스마트검색<i class="xi-angle-down-min btn_tog"></i>
+                                </li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../smartSearch/selectBaseSearchForm.html">검색기반관리</a>
+                                    <a href="#">저장된 검색어</a>
+                                    <a href="#">내 검색어</a>
+                                    <a href="../smartSearch/frozenCart.html">냉동카트</a>
+                                    <a href="#">비주얼카트</a>
+                                    <a href="#">STP 비교검색</a>
+                                    <a href="../smartSearch/snpCompareSearch.html">SNP 비교검색</a>
+                                    <a href="../smartSearch/inOutView.html">입출고장조회</a>
+                                    <a href="../smartSearch/atchmnFile.html">첨부파일검색</a>
+                                </li>
+                                
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">playlist_add_check</span>
+                                    일괄처리<i class="xi-angle-down-min btn_tog"></i>
+                                </li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../batch/selectBatchMainView.html">일괄처리</a>
+                                    <a href="../batch/selectBatchStatusView.html">처리현황판</a>
+                                    <a href="#">다운로드센터</a>
+                                    <a href="#">저장고관리</a>
+                                    <a href="#">정보편차검출</a>
+                                </li>
+
+                                <li class="hamAcco__oneDepth">
+                                    <i class="xi-wrench"></i>
+                                    환경설정
+                                    <i class="xi-angle-down-min btn_tog"></i></li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="../configuration/linkInfoRegis.html">연계정보 등록시 화면</a>
+                                    <a href="../configuration/projectManagement.html">프로젝트관리</a>
+                                    <a href="../configuration/protocol.html">수집프로토콜</a>
+                                    <a href="../configuration/storageMain.html">저장장비</a>
+                                    <a href="../configuration/storageEquipmentHistory.html">저장장비이력</a>
+                                    <a href="../configuration/monitorMain.html">저장장비온도로그</a>
+                                    <a href="#">Quick Link 관리</a>
+                                    <a href="../configuration/userSetting.html">사용자 환경설정</a>
+                                </li>
+
+                                <li class="hamAcco__oneDepth">
+                                    <span class="material-icons">info</span>
+                                    도움말
+                                    <i class="xi-angle-down-min btn_tog"></i></li>
+                                <li class="hamAcco__twoDepth">
+                                    <a href="#">동의서(for tablet)</a>
+                                    <a href="../help/statisticsMainView.html">통계쿼리관리</a>
+                                    <a href="#">About HuBIS_Sam</a>
+                                    <a href="../help/resourceReceiptForTablet.html">자원접수(for tablet)</a>
+                                    <a href="../help/resourceDistributeForTablet.html">자원분양(for tablet)</a>
+                                </li>
+                            </ul>
+
+                            <div class="hamBottom">
+                                <div class="hamBottom__btnWrap">
+                                    <a href="#">HuBIS-Desk</a>
+                                    <a href="#">HuBIS-Tracker</a>
+                                </div>
+                                <div class="flxWrap hamBottom__footer">
+                                    <a href="../configuration/userSetting.html"><span class="material-icons expt">manage_accounts</span><p>사용자설정</p></a>
+                                    <a href="../sys/sysManager.html"><span class="material-icons">settings</span><p>시스템 환경설정</p></a>
+                                </div>
+                            </div><!-- hamBottom //-->
+                        </div><!--hamCont //-->
+                    </div><!-- hamContWrap  //-->
+                </div><!-- hamWrap //-->        
+            </div><!-- navRightWrap //-->
+        </nav>
+    </div><!-- north //-->
+
+    <link rel="stylesheet" href="../_common/css/storeAndReleased.css">
+	<link rel="stylesheet" href="../easyui/easyui_Onepage.css">
+
+    <!-- 왼쪽 컨텐츠 -->
+	<div class="easyuiLeft easyuiLeft_ResourceInspectionWrap" data-options="region:'center',title:'기본 컨텐츠',">
+        <h2 class="flxWrap" >
+            <p class="h2__left"><i class="xi-caret-down-square"></i><span>입출고관리</span><i class="xi-play"></i><span class="txtBold">자원검수</span></p>
+        </h2>
+        
+        <div id="toolbar">
+            <article class="resourceInspection__topBoxWrap">
+                <div class="tit">03.06(목요일) &middot; <span class="color_orange">DNA</span></div>
+                <div class="contWrap scro">
+                    <ul class="cont">
+                        <li class="flxWrap">
+                            <p class="titBox">분양</p>
+                            <div>
+                                <p class="location">MF110 > FR001 > SB001</p>
+                                <p class="dcode">01SB522194</p>
+                            </div>                            
+                        </li>
+                        <li class="flxWrap">
+                            <p class="titBox">분양</p>
+                            <div>
+                                <p class="location">MF110 > FR001 > SB001</p>
+                                <p class="dcode">01SB522194</p>
+                            </div>                            
+                        </li>
+                        <li class="flxWrap">
+                            <p class="titBox">분양</p>
+                            <div>
+                                <p class="location">MF110 > FR001 > SB001</p>
+                                <p class="dcode">01SB522194</p>
+                            </div>                            
+                        </li>
+                        <li class="flxWrap">
+                            <p class="titBox">분양</p>
+                            <div>
+                                <p class="location">MF110 > FR001 > SB001</p>
+                                <p class="dcode">01SB522194</p>
+                            </div>                            
+                        </li>
+                        <li class="flxWrap">
+                            <p class="titBox">분양</p>
+                            <div>
+                                <p class="location">MF110 > FR001 > SB001</p>
+                                <p class="dcode">01SB522194</p>
+                            </div>                            
+                        </li>
+                        <li class="flxWrap">
+                            <p class="titBox">분양</p>
+                            <div>
+                                <p class="location">MF110 > FR001 > SB001</p>
+                                <p class="dcode">01SB522194</p>
+                            </div>                            
+                        </li>
+                        <li class="flxWrap">
+                            <p class="titBox">분양</p>
+                            <div>
+                                <p class="location">MF110 > FR001 > SB001</p>
+                                <p class="dcode">01SB522194</p>
+                            </div>                            
+                        </li>
+                        <li class="flxWrap">
+                            <p class="titBox">분양</p>
+                            <div>
+                                <p class="location">MF110 > FR001 > SB001</p>
+                                <p class="dcode">01SB522194</p>
+                            </div>                            
+                        </li>
+                        <li class="flxWrap">
+                            <p class="titBox">분양</p>
+                            <div>
+                                <p class="location">MF110 > FR001 > SB001</p>
+                                <p class="dcode">01SB522194</p>
+                            </div>                            
+                        </li>
+                        <li class="flxWrap">
+                            <p class="titBox">분양</p>
+                            <div>
+                                <p class="location">MF110 > FR001 > SB001</p>
+                                <p class="dcode">01SB522194</p>
+                            </div>                            
+                        </li>
+                    </ul>
+                </div><!--contWrap //-->                    
+            </article><!--resourceInspection__topBoxWrap -->
+        </div><!-- toolbar -->
+
+        <div class="droppableLeftRightWrap flxWrap">
+            <div class="droppableLeftRightWrap__Left">
+                <h3 class="flxWrap bb_no tit_h3_inLeft">
+                    <p class="h3__left"><span class="h3__left--numCircle">01SB522194</span><span>건식DNA저장고(임시)</span><i class="xi-play"></i><span>MF110</span><i class="xi-play"></i><span>FR001</span><i class="xi-play"></i><span class="h3__left-b">SB001</span></p>
+                    <div class="h3__right flxWrap">
+                        <div class="barcodeBoxWrap flxWrap">
+                            <input type="text" placeholder="       박스바코드를 읽어주세요">
+                            <div class="btnClassic xi-list-number" onclick="fnShowPop('popup_viewTree')"></div>
+                        </div>
+                        <a href="#" class="btnClassic"><img src="../_images/common/ico_download.png" class="btnClassic_imgDown"><span>페이퍼 검수</span></a>
+                    </div>
+                </h3>
+
+                <ul class="droppableLeftRightWrap__contentTop flxWrap">
+                    <li class="left flxWrap">
+                        <p class="droppableLeftRightWrap__contentTop-tit">검수량</p>
+                        <div class="btnClassic">5%</div>
+                        <div class="btnClassic">10%</div>
+                        <div class="btnClassic">20%</div>
+                        <div class="btnClassic">50%</div>
+                        <div class="btnClassic">100%</div>
+                        <div class="btnClassic">사용자 지정</div>
+                        <p class="droppableLeftRightWrap__contentTop-tit ml30">홀번호</p>
+                        <div class="radioWrap flxWrap">
+                            <label class="radio_container">1
+                                <input type="radio" name="radio_holeNum" checked="checked">
+                                <span class="radio_chkmark"></span>
+                            </label>                                    
+                            <label class="radio_container">A
+                                <input type="radio" name="radio_holeNum">
+                                <span class="radio_chkmark"></span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="right flxWrap">
+                        <dl>
+                            <dt class="droppableLeftRightWrap__back--blue"></dt>
+                            <dd>일반 검수 완료</dd>
+                        </dl>
+                        <dl>
+                            <dt class="droppableLeftRightWrap__back--black"></dt>
+                            <dd>백업 검수 완료</dd>
+                        </dl>
+                        <dl>
+                            <dt class="droppableLeftRightWrap__back--green"></dt>
+                            <dd>분양 검수 완료</dd>
+                        </dl>
+                        <dl>
+                            <dt class="droppableLeftRightWrap__back--purple"></dt>
+                            <dd>정도관리 검수 완료</dd>
+                        </dl>
+                        <dl>
+                            <dt class="droppableLeftRightWrap__back--red"></dt>
+                            <dd>미일치</dd>
+                        </dl>
+                    </li>
+                </ul>
+
+                <div class="boxAlignWrapWrap">
+                    <div class="scro">
+                        <div class="boxAlignWrap flxWrap">
+                            <div class="dropWrap">
+                                <table>
+                                    <tr>
+                                        <td class="drop">
+                                            <div class="item assigned">
+                                                <dl>
+                                                    <dt class="back_blue">1</dt>
+                                                    <dd>
+                                                        <p>01399693</p>
+                                                        <p>DNA</p>
+                                                        <p>B0-B307010701</p>
+                                                    </dd>
+                                                </dl>
+                                            </div><!-- item //-->
+                                        </td>
+                                        <td class="drop"></td>
+                                        <td class="drop">
+                                            <div class="item assigned">
+                                                <dl>
+                                                    <dt class="back_black">3</dt>
+                                                    <dd>
+                                                        <p>01399693</p>
+                                                        <p>DNA</p>
+                                                        <p>B0-B307010701</p>
+                                                    </dd>
+                                                </dl>
+                                            </div><!-- item //-->
+                                        </td>
+                                        <td class="drop">
+                                            <div class="item assigned">
+                                                <dl>
+                                                    <dt class="back_green">4</dt>
+                                                    <dd>
+                                                        <p>01399693</p>
+                                                        <p>DNA</p>
+                                                        <p>B0-B307010701</p>
+                                                    </dd>
+                                                </dl>
+                                            </div><!-- item //-->
+                                        </td>
+                                        <td class="drop">
+                                            <div class="item assigned">
+                                                <dl>
+                                                    <dt class="back_purple">5</dt>
+                                                    <dd>
+                                                        <p>01399693</p>
+                                                        <p>DNA</p>
+                                                        <p>B0-B307010701</p>
+                                                    </dd>
+                                                </dl>
+                                            </div><!-- item //-->
+                                        </td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop">
+                                            <div class="item assigned">
+                                                <dl>
+                                                    <dt class="back_red">13</dt>
+                                                    <dd>
+                                                        <p>01399693</p>
+                                                        <p>DNA</p>
+                                                        <p>B0-B307010701</p>
+                                                    </dd>
+                                                </dl>
+                                            </div><!-- item //-->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop">
+                                            <div class="item assigned">
+                                                <dl>
+                                                    <dt class="back_gray">20</dt>
+                                                    <dd>
+                                                        <p>01399693</p>
+                                                        <p>DNA</p>
+                                                        <p>B0-B307010701</p>
+                                                    </dd>
+                                                </dl>
+                                            </div><!-- item //-->
+                                        </td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop">
+                                            <div class="item assigned">
+                                                <dl>
+                                                    <dt class="back_blue">25</dt>
+                                                    <dd>
+                                                        <p>01399693</p>
+                                                        <p>DNA</p>
+                                                        <p>B0-B307010701</p>
+                                                    </dd>
+                                                </dl>
+                                            </div><!-- item //-->
+                                        </td>
+                                        <td class="drop"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                        <td class="drop"></td>
+                                    </tr>
+                                </table>
+                            </div><!-- dropWrap// -->
+
+                            <script>
+                                $(function(){
+                                    $('.dropWrap .item').draggable({
+                                        revert:true, //드래그 멈추면, 원래자리로 이동
+                                        //proxy:'clone', // 드래그후, 해당아이템 지우지않고, 복사시킴
+                                    });
+
+                                    $('.dropWrap td.drop').droppable({
+                                        accept: '.item',
+                                        onDragEnter:function(){
+                                            $(this).addClass('over');
+                                            
+                                        },
+                                        onDragLeave:function(){
+                                            $(this).removeClass('over');
+                                            
+                                        },
+                                        onDrop:function(e,source){
+                                            $(this).removeClass('over');
+                                            
+                                            if ($(this).children().hasClass('assigned')){
+                                                //alert('할당된 아이템이 있음');
+                                                //$(this).removeClass('droppable');
+                                            } else {
+                                                //alert('할당된 아이템 없음');
+                                                var c = $(source).addClass('assigned');
+                                                $(this).empty().append(c);
+                                                
+                                            }
+                                        }
+                                    });
+                                });
+                            </script>
+                        </div><!--boxAlignWrap //-->
+                    </div><!-- scro -->
+                </div><!-- boxAlignWrapWrap //-->
+            </div><!-- droppableLeftRightWrap__Left-->
+
+            <div class="droppableLeftRightWrap__Right">
+                
+                <div class="specimenInfoTit"><p><i class="xi-play-circle"></i>Specimen Information</p></div>
+                <input type="text" value="01039683">
+
+                <dl class="specimenInfoBarcodeWrap flxWrap">
+                    <dt><img src="../_images/common/img_barcode.png" alt=""></dt>
+                    <dd>01394181<br/>
+                        DNA D-@BLD:PRBL<br/>
+                        02  1  01<br/>
+                        (BO-J304019101)
+                    </dd>
+                </dl><!--specimenInfoBarcodeWrap //-->
+                
+                <div class="forScro forScro_SpeciInfo">
+                    <table class="specimenInfoBarcodeWrap_detail">
+                        <tbody>
+                            <tr>
+                                <th><p>저 장 위 치</p></th>
+                                <td>건식DNA저장고(임시) > MF110 > FR001 > SB001</td>
+                            </tr>
+                            <tr>
+                                <th><p>식 별 번 호</p></th>
+                                <td>BO-J304019101</td>
+                            </tr>
+                            <tr>
+                                <th><p>바 코 드</p></th>
+                                <td>01394181</td>
+                            </tr>
+                            <tr>
+                                <th><p>성 명</p></th>
+                                <td>남숙</td>
+                            </tr>
+                            <tr>
+                                <th><p>성 별</p></th>
+                                <td>여자</td>
+                            </tr>
+                            <tr>
+                                <th><p>프 로 젝 트</p></th>
+                                <td>국민건강영양조사 사업(2012)</td>
+                            </tr>
+                            <tr>
+                                <th><p>자 원 명</p></th>
+                                <td>DNA</td>
+                            </tr>
+                            <tr>
+                                <th><p>접 수 일 자</p></th>
+                                <td>20140306</td>
+                            </tr>
+                            <tr>
+                                <th><p>비 고</p></th>
+                                <td>내용이 보이는 공간입니다.말줄임없이 모든 내용 노출</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!-- forScro //-->
+
+                <div class="nomatchResourceListWrap">
+                    <div class="specimenInfoTit"><p><i class="xi-play-circle"></i>미일치 자원 리스트</p><span class="num">14</span></div>
+                    <div class="nomatchResourceList">
+                        <table class="tbl">
+                            <colgroup>
+                                <col width="54px">
+                                <col width="auto">
+                            </colgroup><tbody>
+                                <tr>
+                                    <th>홀번호<span>A799</span></th>
+                                    <td>
+                                        <dl>
+                                            <dt>제공자 바코드</dt>
+                                            <dd class="fc_orange">01394181</dd>
+                                        </dl>
+                                        <dl class="wd50 fl">
+                                            <dt>박스</dt>
+                                            <dd>01394181</dd>
+                                        </dl>
+                                        <dl class="wd50 fr">
+                                            <dt>자원</dt>
+                                            <dd>01394181</dd>
+                                        </dl>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>홀번호<span>A799</span></th>
+                                    <td>
+                                        <dl>
+                                            <dt>제공자 바코드</dt>
+                                            <dd class="fc_orange">01394181</dd>
+                                        </dl>
+                                        <dl class="wd50 fl">
+                                            <dt>박스</dt>
+                                            <dd>01394181</dd>
+                                        </dl>
+                                        <dl class="wd50 fr">
+                                            <dt>자원</dt>
+                                            <dd>01394181</dd>
+                                        </dl>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><!--nomatchResourceList //-->
+                </div><!--nomatchResourceListWrap //-->
+
+                <div class="btnWrap">
+                <a href="#" class="btn_black"> 미일치 넘기기</a>    
+                </div><!--btnWrap//-->
+                
+            </div><!-- droppableLeftRightWrap__Right //-->
+        </div><!-- droppableLeftRightWrap //-->
+    </div><!-- easyuiLeft //-->
+
+    <!--<div class="easyuiRight" data-options="region:'east',split:true,collapsed:true,title:'오른쪽 컨텐츠', collapsedSize:20,"></div>-->
+
+    <!-- 팝업_박스바코드 START -->
+    <div class="dimmodal" id="popup_viewTree">
+        <div class="modal_container">
+            <p class="modal_container__title mb5"><i class="xi-check-circle"></i>저장고(저장고명|용도|박스 바코드|자원 바코드)</p>
+
+            <div class="inputBox flxWrap table_td_hr_UpdateOneTime__Bottom mb5">
+                <div>
+                    <span>version</span>
+                    <select name="" id="">
+                        <option value="">선택</option>
+                    </select> 
+                </div> 
+            </div>
+
+            <div class="treeWrap">
+                <div class="easyui-panel" style="padding:10px 5px">
+                    <ul id="storageMain_tree" class="easyui-tree"
+                            data-options="
+                            url: '../_data/tree_configuration_storageMain.json', 
+                            method: 'get', animate: true, lines: true,
+                            onContextMenu: function(e,node){
+                                e.preventDefault();
+                                $(this).tree('select',node.target);
+                                $('#storageMain_tree_RightClick').menu('show',{
+                                    left: e.pageX,
+                                    top: e.pageY
+                                });
+                            }
+                        "></ul>
+                </div><!--easyui-panel //-->
+            </div> <!--treeWrap //-->
+
+            <div class="btnWrap">
+                    <div class="flxWrap">
+                        <a href="#" class="btn_gray"><i class="xi-check"></i> <span>확인</span></a>       
+                        <a href="#" class="btn_gray" onclick="fnHidePop('popup_viewTree')"><i class="xi-close"></i> <span>닫기</span></a>    
+                    </div>
+            </div><!--btnWrap //-->
+
+        </div><!--modal_container //-->
+    </div><!--dimmodal //-->
+    <!-- 팝업_박스바코드 END-->
+</body>
+</html>
